@@ -14,4 +14,4 @@ def chamar_funcoes():
 if __name__ == "__main__":
     dotenv.load_dotenv()
     frequencia = Frequencia()
-    frequencia.__tratar_dado__("arquivo_exemplo")
+    frequencia.__tratar_dado__()

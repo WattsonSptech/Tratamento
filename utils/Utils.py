@@ -3,6 +3,8 @@ import os
 import boto3
 import pyspark.sql.functions as F
 from pyspark.sql.functions import format_number as format
+import json
+import datetime
 
 
 
@@ -21,18 +23,43 @@ class Utils:
     
         return spark
 
-    def get_data_s3_csv(self, nome_arquivo):
+    def get_data_s3_csv(self):
         try:
             bucket_name = os.getenv("BUCKET_NAME_RAW")
             s3 = boto3.client('s3')
-            path = "/temp/" + nome_arquivo
-            s3.download_file(bucket_name, nome_arquivo, path)
             print("Dados coletados")
+
+            response = s3.list_objects_v2(Bucket=bucket_name)
+            ultimo_arquivo = ""
+            if 'Contents' in response:
+                arquivos = sorted(response['Contents'], key=lambda obj: obj['LastModified'], reverse=True)
+
+                ultimo_arquivo = arquivos[0]['Key']
+                print("Último arquivo:", ultimo_arquivo)
+                path = "temp/" + ultimo_arquivo
+                s3.download_file(bucket_name, ultimo_arquivo, path)
+                return ultimo_arquivo
+            else:
+                raise Exception("Nenhum arquivo encontrado no bucket.")
+                
         except Exception as e:
             print(f"""Erro ao coletar dados da AWS: 
                   BUCKET_NAME: {bucket_name}
-                  NOME_ARQUIVO: {nome_arquivo}
                   PATH: {path}
+                  error: {e}
+                  """)
+
+    def set_data_s3_file(self, object_name):
+        try:
+            bucket_name = os.getenv("BUCKET_NAME_TRUSTED")
+            s3 = boto3.client('s3')
+            print("Dados coletados")
+
+            response = s3.upload_file(object_name, bucket_name, object_name)
+            print(response) 
+        except Exception as e:
+            print(f"""Erro ao inserir dados na AWS: 
+                  BUCKET_NAME: {bucket_name}
                   error: {e}
                   """)
 
@@ -55,4 +82,21 @@ class Utils:
         return df
         
     def format_number(self, df, coluna):
-        return df.select("id", format(coluna, 2).alias("formatted_value"))
+        return df.withColumn(coluna, format(F.col(coluna), 2).cast('float'))
+    
+    def remove_null(self, df):
+        return df.dropna()
+    
+    def remove_wrong_float(self, df, coluna):
+        return df.withColumn(coluna, F.col(coluna).cast("float")).filter(F.col(coluna).isNotNull())
+    
+    def tranform_df_to_json(self, df, sensor):
+
+        dados = df.toPandas().to_dict(orient="records")
+        file_name = "trusted_" + sensor + str(datetime.datetime.now().year) + str(datetime.datetime.now().day) + str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) \
+        + str(datetime.datetime.now().microsecond)+ ".json"
+
+        with open(file_name, "w") as f:
+            json.dump(dados, f, indent=4)
+        
+        return file_name
