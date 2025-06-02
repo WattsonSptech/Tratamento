@@ -4,3 +4,4 @@ pyspark~=2.2.5
 pyspark.sql~=2.2.5
 matplotlib~=2.2.5
 json~=2.2.5
+setuptools=any
