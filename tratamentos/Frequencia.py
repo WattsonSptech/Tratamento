@@ -25,18 +25,24 @@ class Frequencia(ITratamentoDados):
         df = self.utils.remove_null(df)
         print("removendo nulls")
         df.show()
+
+        df = self.utils.filter_by_sensor(df, "valueType", "Hz")
+
         
-        df = self.utils.remove_wrong_float(df, "frequencia")
+        df = self.utils.remove_wrong_float(df, "value")
         print("removendo campos que não sao float da coluna frquence")
         df.show()
 
-        df = self.utils.format_number(df, "frequencia")
+        df = self.utils.format_number(df, "value")
         print("formatando numeros")
         df.printSchema()
         df.show()
 
+        print("ordenando por data")
+        df = self.utils.order_by_coluna_desc(df, "instant")
+
         print("gerando arquivo")
-        object_name = self.utils.transform_df_to_json(df, "frequencia")
+        object_name = self.utils.transform_df_to_json(df, "value")
 
         self.utils.set_data_s3_file(object_name)
         print("Feito!")

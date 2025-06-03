@@ -100,3 +100,12 @@ class Utils:
             json.dump(dados, f, indent=4)
         
         return file_name
+    
+    def filter_by_sensor(self, df, coluna, sensor):
+        return df.filter(F.col(coluna) == sensor)
+    
+    def order_by_coluna_desc(self, df, coluna):
+        return df.orderBy(F.desc(coluna))
+    
+    def order_by_coluna_asc(self, df, coluna):
+        return df.orderBy(F.asc(coluna))
