@@ -15,22 +15,35 @@ class Harmonica(ITratamentoDados):
         nome_arquivo = self.utils.get_data_s3_csv()
         path = "temp/" + nome_arquivo
 
+        # criando dataframe com o arquivo lido do bucket RAW
         df = self.spark.read.option("multiline", "true") \
             .json(path)                                  \
-            .printSchema()                               \
-        
+            .printSchema()
         df.show()
         
+        # removendo valores nulos
         df = self.utils.remove_null(df)
         df.show()
-        
-        df = self.utils.remove_wrong_float(df, "Porcentagem")
+
+        # pegando dados apenas do sensor de harmônicas
+        df = self.utils.filter_by_sensor(df, "valueType", "Porcentagem")
         df.show()
 
-        df = self.utils.format_number(df, "Porcentagem")
+        # removendo valores que não são floats
+        df = self.utils.remove_wrong_float(df, "value")
+        df.show()
+
+        # formatando numeros
+        df = self.utils.format_number(df, "value")
         df.printSchema()
         df.show()
 
-        object_name = self.utils.transform_df_to_json(df, "Porcentagem")
+        # ordenando por data, da maior para a menor
+        df = self.utils.order_by_coluna_desc(df, "instant")
+        df.show()
 
+        # convertendo dataframe filtrado em um json
+        object_name = self.utils.transform_df_to_json(df, "value")
+
+        # enviando json filtrado para o bucket trusted
         self.utils.set_data_s3_file(object_name)

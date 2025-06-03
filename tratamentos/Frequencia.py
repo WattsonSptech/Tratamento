@@ -28,7 +28,6 @@ class Frequencia(ITratamentoDados):
 
         df = self.utils.filter_by_sensor(df, "valueType", "Hz")
 
-        
         df = self.utils.remove_wrong_float(df, "value")
         print("removendo campos que não sao float da coluna frquence")
         df.show()
