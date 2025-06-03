@@ -16,8 +16,8 @@ class Utils:
         spark = SparkSession.builder \
             .appName(self.project_name) \
             .master("local[*]") \
-            .config("spark.memory.offHeap.enabled", "true") \
-            .config("spark.memory.offHeap.size", "10g") \
+            .config("spark.memoffHeap.enabled", "true") \
+            .config("spark.memory.offHeary.op.size", "10g") \
             .config("spark.hadoop.hadoop.security.authentication", "simple") \
             .getOrCreate()
     
