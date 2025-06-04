@@ -49,10 +49,12 @@ class Harmonica(ITratamentoDados):
         # enviando json filtrado para o bucket trusted
         self.utils.set_data_s3_file(object_name=trusted_json_file, bucket=EnumBuckets.TRUSTED)
 
+        self.__gerar_arquivo_client__()
+
     def __gerar_arquivo_client__(self) -> None:
         arquivo_harmonicas = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED, sensor="Porcentagem")
         arquivo_tensao = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED, sensor="volts")
- 
+
         path_harmonicas = "temp/" + arquivo_harmonicas
         path_tensao = "temp/" + arquivo_tensao
 
