@@ -23,22 +23,37 @@ class Utils:
     
         return spark
 
-    def get_data_s3_csv(self):
+    def get_data_s3_csv(self, bucket_name, sensor=None):
         try:
-            bucket_name = os.getenv("BUCKET_NAME_RAW")
             s3 = boto3.client('s3')
-            print("Dados coletados")
-
             response = s3.list_objects_v2(Bucket=bucket_name)
             ultimo_arquivo = ""
+
             if 'Contents' in response:
                 arquivos = sorted(response['Contents'], key=lambda obj: obj['LastModified'], reverse=True)
 
-                ultimo_arquivo = arquivos[0]['Key']
+                if sensor != None:
+
+                    arquivo_existe = False
+
+                    for i in range(arquivos):
+                        if (sensor in arquivos[i]['Key']):
+                            arquivo_existe = True
+                            ultimo_arquivo = arquivos[i]['Key']
+                            break
+                    
+                    if not arquivo_existe:
+                        raise Exception(f"Nenhum arquivo do sensor {sensor} encontrado no bucket.")
+                else:
+                    ultimo_arquivo = arquivos[0]['Key']
+
                 print("Último arquivo:", ultimo_arquivo)
+
                 path = "temp/" + ultimo_arquivo
                 s3.download_file(bucket_name, ultimo_arquivo, path)
+
                 return ultimo_arquivo
+            
             else:
                 raise Exception("Nenhum arquivo encontrado no bucket.")
                 
@@ -49,12 +64,9 @@ class Utils:
                   error: {e}
                   """)
 
-    def set_data_s3_file(self, object_name):
+    def set_data_s3_file(self, object_name, bucket_name):
         try:
-            bucket_name = os.getenv("BUCKET_NAME_TRUSTED")
             s3 = boto3.client('s3')
-            print("Dados coletados")
-
             response = s3.upload_file(object_name, bucket_name, object_name)
             print(response) 
         except Exception as e:
