@@ -1,6 +1,7 @@
 from interfaces.ITratamento import ITratamentoDados
 import pyspark.sql.functions as F
 from pyspark.sql.functions import format_number as format
+from interfaces.EnumBuckets import EnumBuckets
 import os
 
 
@@ -13,7 +14,7 @@ class Harmonica(ITratamentoDados):
     
     
     def __tratar_dado__(self) -> None:
-        nome_arquivo = self.utils.get_data_s3_csv(os.getenv("BUCKET_NAME_RAW"))
+        nome_arquivo = self.utils.get_data_s3_csv(EnumBuckets.RAW.value)
         path = "temp/" + nome_arquivo
 
         # criando dataframe com o arquivo lido do bucket RAW
@@ -51,8 +52,8 @@ class Harmonica(ITratamentoDados):
         self.__gerar_arquivo_client__()
 
     def __gerar_arquivo_client__(self) -> None:
-        arquivo_harmonicas = self.utils.get_data_s3_csv(bucket_name=os.getenv("BUCKET_NAME_TRUSTED"), sensor="Porcentagem")
-        arquivo_tensao = self.utils.get_data_s3_csv(bucket_name=os.getenv("BUCKET_NAME_CLIENT"), sensor="volts")
+        arquivo_harmonicas = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="Porcentagem")
+        arquivo_tensao = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="volts")
 
         path_harmonicas = "temp/" + arquivo_harmonicas
         path_tensao = "temp/" + arquivo_tensao
