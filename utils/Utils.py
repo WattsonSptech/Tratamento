@@ -102,13 +102,13 @@ class Utils:
     def remove_wrong_float(self, df, coluna):
         return df.withColumn(coluna, F.col(coluna).cast("float")).filter(F.col(coluna).isNotNull())
     
-    def transform_df_to_json(self, df, sensor):
+    def transform_df_to_json(self, df, sensor, prefix):
 
         dados = df.toPandas().to_dict(orient="records")
-        file_name = "trusted_" + sensor + str(datetime.datetime.now().year) + str(datetime.datetime.now().day) + str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) \
+        file_name = prefix + "_" + sensor + str(datetime.datetime.now().year) + str(datetime.datetime.now().day) + str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) \
         + str(datetime.datetime.now().microsecond)+ ".json"
 
-        with open(file_name, "w") as f:
+        with open("temp/" + file_name, "w") as f:
             json.dump(dados, f, indent=4)
         
         return file_name

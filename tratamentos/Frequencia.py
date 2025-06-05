@@ -43,7 +43,7 @@ class Frequencia(ITratamentoDados):
         df = self.utils.order_by_coluna_desc(df, "instant")
 
         print("gerando arquivo")
-        object_name = self.utils.transform_df_to_json(df, self.tipo_dado)
+        object_name = self.utils.transform_df_to_json(df, self.tipo_dado, "trusted")
 
 
         self.utils.set_data_s3_file(object_name, EnumBuckets.TRUSTED.value)
