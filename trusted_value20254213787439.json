@@ -1,0 +1,6995 @@
+[
+    {
+        "instant": "1981-07-26T08:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.029998779296875,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-26T08:15:00",
+        "scenery": "NORMAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-26T08:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.84000015258789,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-22T21:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.099998474121094,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-22T21:30:00",
+        "scenery": "NORMAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-22T21:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-19T11:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.900001525878906,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-19T11:00:00",
+        "scenery": "NORMAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-19T11:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-16T00:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-16T00:45:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-16T00:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.150001525878906,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-12T14:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.90999984741211,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-12T14:45:00",
+        "scenery": "NORMAL",
+        "value": 60.08000183105469,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-12T14:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-09T05:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.880001068115234,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-09T05:00:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-09T05:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-05T19:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.93000030517578,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-05T19:30:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-05T19:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-02T10:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.119998931884766,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-02T10:15:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-07-02T10:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-29T01:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.970001220703125,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-29T01:15:00",
+        "scenery": "NORMAL",
+        "value": 60.099998474121094,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-29T01:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.08000183105469,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-25T16:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.959999084472656,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-25T16:30:00",
+        "scenery": "NORMAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-25T16:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-22T08:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.040000915527344,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-22T08:00:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-22T08:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-18T23:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.09000015258789,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-18T23:45:00",
+        "scenery": "NORMAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-18T23:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-15T15:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.90999984741211,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-15T15:45:00",
+        "scenery": "NORMAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-15T15:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.81999969482422,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-12T08:00:00",
+        "scenery": "TERRIVEL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-12T08:00:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-12T08:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.06999969482422,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-09T00:30:00",
+        "scenery": "TERRIVEL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-09T00:30:00",
+        "scenery": "NORMAL",
+        "value": 59.70000076293945,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-09T00:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.22999954223633,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-05T17:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.040000915527344,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-05T17:15:00",
+        "scenery": "NORMAL",
+        "value": 59.70000076293945,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-05T17:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-02T10:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.79999923706055,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-02T10:15:00",
+        "scenery": "NORMAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-06-02T10:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-30T03:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.810001373291016,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-30T03:30:00",
+        "scenery": "NORMAL",
+        "value": 59.83000183105469,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-30T03:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-26T21:00:00",
+        "scenery": "TERRIVEL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-26T21:00:00",
+        "scenery": "NORMAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-26T21:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-23T14:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.970001220703125,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-23T14:45:00",
+        "scenery": "NORMAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-23T14:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-20T08:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-20T08:45:00",
+        "scenery": "NORMAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-20T08:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-17T03:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.97999954223633,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-17T03:00:00",
+        "scenery": "NORMAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-17T03:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-13T21:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.93000030517578,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-13T21:30:00",
+        "scenery": "NORMAL",
+        "value": 59.77000045776367,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-13T21:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.06999969482422,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-10T16:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.849998474121094,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-10T16:15:00",
+        "scenery": "NORMAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-10T16:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.099998474121094,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-07T11:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.810001373291016,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-07T11:15:00",
+        "scenery": "NORMAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-07T11:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.11000061035156,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-04T06:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.91999816894531,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-04T06:30:00",
+        "scenery": "NORMAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-04T06:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-01T02:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.97999954223633,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-01T02:00:00",
+        "scenery": "NORMAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-05-01T02:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-27T21:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.0,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-27T21:45:00",
+        "scenery": "NORMAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-27T21:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.16999816894531,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-24T17:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-24T17:45:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-24T17:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-21T14:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.25,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-21T14:00:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-21T14:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-18T10:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.02000045776367,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-18T10:30:00",
+        "scenery": "NORMAL",
+        "value": 59.810001373291016,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-18T10:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-15T07:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.08000183105469,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-15T07:15:00",
+        "scenery": "NORMAL",
+        "value": 59.849998474121094,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-15T07:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-12T04:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.959999084472656,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-12T04:15:00",
+        "scenery": "NORMAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-12T04:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-09T01:30:00",
+        "scenery": "TERRIVEL",
+        "value": 60.040000915527344,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-09T01:30:00",
+        "scenery": "NORMAL",
+        "value": 59.70000076293945,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-09T01:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-05T23:00:00",
+        "scenery": "TERRIVEL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-05T23:00:00",
+        "scenery": "NORMAL",
+        "value": 60.18000030517578,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-05T23:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.13999938964844,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-02T20:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-02T20:45:00",
+        "scenery": "NORMAL",
+        "value": 60.099998474121094,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-04-02T20:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-30T18:45:00",
+        "scenery": "TERRIVEL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-30T18:45:00",
+        "scenery": "NORMAL",
+        "value": 59.81999969482422,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-30T18:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-27T17:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.9900016784668,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-27T17:00:00",
+        "scenery": "NORMAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-27T17:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.81999969482422,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-24T15:30:00",
+        "scenery": "TERRIVEL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-24T15:30:00",
+        "scenery": "NORMAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-24T15:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-21T14:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.279998779296875,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-21T14:15:00",
+        "scenery": "NORMAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-21T14:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-18T13:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.84000015258789,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-18T13:15:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-18T13:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-15T12:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.02000045776367,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-15T12:30:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-15T12:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-12T12:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.04999923706055,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-12T12:00:00",
+        "scenery": "NORMAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-12T12:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.790000915527344,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-09T11:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.90999984741211,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-09T11:45:00",
+        "scenery": "NORMAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-09T11:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-06T11:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-06T11:45:00",
+        "scenery": "NORMAL",
+        "value": 60.040000915527344,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-06T11:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "CENTRO"
+    },
+    {
+        "instant": "1981-03-03T12:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.88999938964844,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-03-03T12:00:00",
+        "scenery": "NORMAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-03-03T12:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-28T12:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.880001068115234,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-28T12:30:00",
+        "scenery": "NORMAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-28T12:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.83000183105469,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-25T13:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.90999984741211,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-25T13:15:00",
+        "scenery": "NORMAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-25T13:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-22T14:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.939998626708984,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-22T14:15:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-22T14:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-19T15:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.02000045776367,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-19T15:30:00",
+        "scenery": "NORMAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-19T15:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.83000183105469,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-16T17:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.9900016784668,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-16T17:00:00",
+        "scenery": "NORMAL",
+        "value": 60.08000183105469,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-16T17:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-13T18:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.040000915527344,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-13T18:45:00",
+        "scenery": "NORMAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-13T18:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-10T20:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.97999954223633,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-10T20:45:00",
+        "scenery": "NORMAL",
+        "value": 60.06999969482422,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-10T20:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-07T23:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.90999984741211,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-07T23:00:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-07T23:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-05T01:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.099998474121094,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-05T01:30:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-05T01:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.18000030517578,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-02T04:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.11000061035156,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-02T04:15:00",
+        "scenery": "NORMAL",
+        "value": 60.130001068115234,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-02-02T04:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-30T07:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.95000076293945,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-30T07:15:00",
+        "scenery": "NORMAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-30T07:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.08000183105469,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-27T10:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.060001373291016,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-27T10:30:00",
+        "scenery": "NORMAL",
+        "value": 59.790000915527344,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-27T10:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-24T14:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.029998779296875,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-24T14:00:00",
+        "scenery": "NORMAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-24T14:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-21T17:45:00",
+        "scenery": "TERRIVEL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-21T17:45:00",
+        "scenery": "NORMAL",
+        "value": 60.040000915527344,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-21T17:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-18T21:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.13999938964844,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-18T21:45:00",
+        "scenery": "NORMAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-18T21:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-16T02:00:00",
+        "scenery": "TERRIVEL",
+        "value": 60.119998931884766,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-16T02:00:00",
+        "scenery": "NORMAL",
+        "value": 60.130001068115234,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-16T02:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-13T06:30:00",
+        "scenery": "TERRIVEL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-13T06:30:00",
+        "scenery": "NORMAL",
+        "value": 60.08000183105469,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-13T06:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-10T11:15:00",
+        "scenery": "TERRIVEL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-10T11:15:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-10T11:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-07T16:15:00",
+        "scenery": "TERRIVEL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-07T16:15:00",
+        "scenery": "NORMAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-07T16:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.11000061035156,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-04T21:30:00",
+        "scenery": "TERRIVEL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-04T21:30:00",
+        "scenery": "NORMAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-04T21:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-02T03:00:00",
+        "scenery": "TERRIVEL",
+        "value": 60.06999969482422,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-02T03:00:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1981-01-02T03:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-30T08:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.02000045776367,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-30T08:45:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-30T08:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-27T14:45:00",
+        "scenery": "TERRIVEL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-27T14:45:00",
+        "scenery": "NORMAL",
+        "value": 59.560001373291016,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-27T14:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-24T21:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.040000915527344,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-24T21:00:00",
+        "scenery": "NORMAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-24T21:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.79999923706055,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-22T03:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.189998626708984,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-22T03:30:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-22T03:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-19T10:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.25,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-19T10:15:00",
+        "scenery": "NORMAL",
+        "value": 60.040000915527344,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-19T10:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-16T17:15:00",
+        "scenery": "TERRIVEL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-16T17:15:00",
+        "scenery": "NORMAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-16T17:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-14T00:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.9900016784668,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-14T00:30:00",
+        "scenery": "NORMAL",
+        "value": 59.790000915527344,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-14T00:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-11T08:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.06999969482422,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-11T08:00:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-11T08:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-08T15:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-08T15:45:00",
+        "scenery": "NORMAL",
+        "value": 60.11000061035156,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-08T15:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-05T23:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.040000915527344,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-05T23:45:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-05T23:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.18000030517578,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-03T08:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.099998474121094,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-03T08:00:00",
+        "scenery": "NORMAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-12-03T08:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.150001525878906,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-30T16:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.93000030517578,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-30T16:30:00",
+        "scenery": "NORMAL",
+        "value": 59.83000183105469,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-30T16:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-28T01:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.97999954223633,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-28T01:15:00",
+        "scenery": "NORMAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-28T01:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-25T10:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.77000045776367,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-25T10:15:00",
+        "scenery": "NORMAL",
+        "value": 59.7400016784668,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-25T10:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.20000076293945,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-22T19:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.060001373291016,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-22T19:30:00",
+        "scenery": "NORMAL",
+        "value": 59.709999084472656,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-22T19:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.15999984741211,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-20T05:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.16999816894531,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-20T05:00:00",
+        "scenery": "NORMAL",
+        "value": 60.189998626708984,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-20T05:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-17T14:45:00",
+        "scenery": "TERRIVEL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-17T14:45:00",
+        "scenery": "NORMAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-17T14:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-15T00:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.130001068115234,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-15T00:45:00",
+        "scenery": "NORMAL",
+        "value": 59.689998626708984,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-15T00:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.130001068115234,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-12T11:00:00",
+        "scenery": "TERRIVEL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-12T11:00:00",
+        "scenery": "NORMAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-12T11:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-09T21:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.959999084472656,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-09T21:30:00",
+        "scenery": "NORMAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-09T21:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.13999938964844,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-07T08:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.02000045776367,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-07T08:15:00",
+        "scenery": "NORMAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-07T08:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.099998474121094,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-04T19:15:00",
+        "scenery": "TERRIVEL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-04T19:15:00",
+        "scenery": "NORMAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-04T19:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.83000183105469,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-02T06:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.86000061035156,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-02T06:30:00",
+        "scenery": "NORMAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-11-02T06:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-10-30T18:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.16999816894531,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-10-30T18:00:00",
+        "scenery": "NORMAL",
+        "value": 59.7599983215332,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-10-30T18:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-10-28T05:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.939998626708984,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-10-28T05:45:00",
+        "scenery": "NORMAL",
+        "value": 59.779998779296875,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-10-28T05:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-10-25T17:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.060001373291016,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-10-25T17:45:00",
+        "scenery": "NORMAL",
+        "value": 59.7599983215332,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-10-25T17:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.099998474121094,
+        "valueType": "Hz",
+        "zone": "OESTE"
+    },
+    {
+        "instant": "1980-10-23T06:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.06999969482422,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-23T06:00:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-23T06:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-20T18:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.040000915527344,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-20T18:30:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-20T18:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.150001525878906,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-18T07:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.93000030517578,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-18T07:15:00",
+        "scenery": "NORMAL",
+        "value": 59.779998779296875,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-18T07:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.13999938964844,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-15T20:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.04999923706055,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-15T20:15:00",
+        "scenery": "NORMAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-15T20:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.040000915527344,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-13T09:30:00",
+        "scenery": "TERRIVEL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-13T09:30:00",
+        "scenery": "NORMAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-13T09:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-10T23:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.040000915527344,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-10T23:00:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-10T23:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-08T12:45:00",
+        "scenery": "TERRIVEL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-08T12:45:00",
+        "scenery": "NORMAL",
+        "value": 60.15999984741211,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-08T12:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-06T02:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.099998474121094,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-06T02:45:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-06T02:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-03T17:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.90999984741211,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-03T17:00:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-03T17:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-01T07:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.790000915527344,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-01T07:30:00",
+        "scenery": "NORMAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-10-01T07:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-28T22:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.119998931884766,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-28T22:15:00",
+        "scenery": "NORMAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-28T22:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.15999984741211,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-26T13:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.0,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-26T13:15:00",
+        "scenery": "NORMAL",
+        "value": 60.189998626708984,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-26T13:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-24T04:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.91999816894531,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-24T04:30:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-24T04:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-21T20:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.040000915527344,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-21T20:00:00",
+        "scenery": "NORMAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-21T20:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-19T11:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.0,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-19T11:45:00",
+        "scenery": "NORMAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-19T11:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.099998474121094,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-17T03:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-17T03:45:00",
+        "scenery": "NORMAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-17T03:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-14T20:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.709999084472656,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-14T20:00:00",
+        "scenery": "NORMAL",
+        "value": 59.779998779296875,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-14T20:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-12T12:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.040000915527344,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-12T12:30:00",
+        "scenery": "NORMAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-12T12:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-10T05:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.13999938964844,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-10T05:15:00",
+        "scenery": "NORMAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-10T05:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.189998626708984,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-07T22:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.970001220703125,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-07T22:15:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-07T22:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-05T15:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.06999969482422,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-05T15:30:00",
+        "scenery": "NORMAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-05T15:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-03T09:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.95000076293945,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-03T09:00:00",
+        "scenery": "NORMAL",
+        "value": 59.84000015258789,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-03T09:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.77000045776367,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-01T02:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.06999969482422,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-01T02:45:00",
+        "scenery": "NORMAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-09-01T02:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-29T20:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.0099983215332,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-29T20:45:00",
+        "scenery": "NORMAL",
+        "value": 60.16999816894531,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-29T20:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-27T15:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.04999923706055,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-27T15:00:00",
+        "scenery": "NORMAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-27T15:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-25T09:30:00",
+        "scenery": "TERRIVEL",
+        "value": 60.040000915527344,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-25T09:30:00",
+        "scenery": "NORMAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-25T09:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-23T04:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.79999923706055,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-23T04:15:00",
+        "scenery": "NORMAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-23T04:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-20T23:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.9900016784668,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-20T23:15:00",
+        "scenery": "NORMAL",
+        "value": 59.779998779296875,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-20T23:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.810001373291016,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-18T18:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.060001373291016,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-18T18:30:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-18T18:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.25,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-16T14:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.130001068115234,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-16T14:00:00",
+        "scenery": "NORMAL",
+        "value": 59.790000915527344,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-16T14:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-14T09:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.90999984741211,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-14T09:45:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-14T09:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-12T05:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.099998474121094,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-12T05:45:00",
+        "scenery": "NORMAL",
+        "value": 59.810001373291016,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-12T05:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-10T02:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-10T02:00:00",
+        "scenery": "NORMAL",
+        "value": 59.72999954223633,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-10T02:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.130001068115234,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-07T22:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.130001068115234,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-07T22:30:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-07T22:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-05T19:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.83000183105469,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-05T19:15:00",
+        "scenery": "NORMAL",
+        "value": 59.7599983215332,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-05T19:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.08000183105469,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-03T16:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.09000015258789,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-03T16:15:00",
+        "scenery": "NORMAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-03T16:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.06999969482422,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-01T13:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.15999984741211,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-01T13:30:00",
+        "scenery": "NORMAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-08-01T13:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-30T11:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.959999084472656,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-30T11:00:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-30T11:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-28T08:45:00",
+        "scenery": "TERRIVEL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-28T08:45:00",
+        "scenery": "NORMAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-28T08:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-26T06:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.900001525878906,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-26T06:45:00",
+        "scenery": "NORMAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-26T06:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-24T05:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.79999923706055,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-24T05:00:00",
+        "scenery": "NORMAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-24T05:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-22T03:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-22T03:30:00",
+        "scenery": "NORMAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-22T03:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-20T02:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.93000030517578,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-20T02:15:00",
+        "scenery": "NORMAL",
+        "value": 59.810001373291016,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-20T02:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.040000915527344,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-18T01:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.119998931884766,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-18T01:15:00",
+        "scenery": "NORMAL",
+        "value": 59.7400016784668,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-18T01:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-16T00:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-16T00:30:00",
+        "scenery": "NORMAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-16T00:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-14T00:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-14T00:00:00",
+        "scenery": "NORMAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-14T00:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.13999938964844,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-11T23:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-11T23:45:00",
+        "scenery": "NORMAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-11T23:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-09T23:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-09T23:45:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-09T23:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "SUL"
+    },
+    {
+        "instant": "1980-07-08T00:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.91999816894531,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-07-08T00:00:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-07-08T00:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.20000076293945,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-07-06T00:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.15999984741211,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-07-06T00:30:00",
+        "scenery": "NORMAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-07-06T00:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-07-04T01:15:00",
+        "scenery": "TERRIVEL",
+        "value": 60.06999969482422,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-07-04T01:15:00",
+        "scenery": "NORMAL",
+        "value": 59.709999084472656,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-07-04T01:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-07-02T02:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.88999938964844,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-07-02T02:15:00",
+        "scenery": "NORMAL",
+        "value": 60.16999816894531,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-07-02T02:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.06999969482422,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-30T03:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.119998931884766,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-30T03:30:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-30T03:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.84000015258789,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-28T05:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.15999984741211,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-28T05:00:00",
+        "scenery": "NORMAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-28T05:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-26T06:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.81999969482422,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-26T06:45:00",
+        "scenery": "NORMAL",
+        "value": 59.77000045776367,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-26T06:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-24T08:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.939998626708984,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-24T08:45:00",
+        "scenery": "NORMAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-24T08:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-22T11:00:00",
+        "scenery": "TERRIVEL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-22T11:00:00",
+        "scenery": "NORMAL",
+        "value": 59.84000015258789,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-22T11:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-20T13:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.13999938964844,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-20T13:30:00",
+        "scenery": "NORMAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-20T13:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.720001220703125,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-18T16:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.060001373291016,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-18T16:15:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-18T16:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-16T19:15:00",
+        "scenery": "TERRIVEL",
+        "value": 60.150001525878906,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-16T19:15:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-16T19:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-14T22:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.869998931884766,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-14T22:30:00",
+        "scenery": "NORMAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-14T22:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-13T02:00:00",
+        "scenery": "TERRIVEL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-13T02:00:00",
+        "scenery": "NORMAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-13T02:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.83000183105469,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-11T05:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.060001373291016,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-11T05:45:00",
+        "scenery": "NORMAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-11T05:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-09T09:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.18000030517578,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-09T09:45:00",
+        "scenery": "NORMAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-09T09:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-07T14:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.84000015258789,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-07T14:00:00",
+        "scenery": "NORMAL",
+        "value": 59.81999969482422,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-07T14:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-05T18:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.900001525878906,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-05T18:30:00",
+        "scenery": "NORMAL",
+        "value": 59.810001373291016,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-05T18:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-03T23:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.09000015258789,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-03T23:15:00",
+        "scenery": "NORMAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-03T23:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-02T04:15:00",
+        "scenery": "TERRIVEL",
+        "value": 60.130001068115234,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-02T04:15:00",
+        "scenery": "NORMAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-06-02T04:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-31T09:30:00",
+        "scenery": "TERRIVEL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-31T09:30:00",
+        "scenery": "NORMAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-31T09:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-29T15:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.0099983215332,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-29T15:00:00",
+        "scenery": "NORMAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-29T15:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-27T20:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.16999816894531,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-27T20:45:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-27T20:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-26T02:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.150001525878906,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-26T02:45:00",
+        "scenery": "NORMAL",
+        "value": 59.779998779296875,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-26T02:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-24T09:00:00",
+        "scenery": "TERRIVEL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-24T09:00:00",
+        "scenery": "NORMAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-24T09:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-22T15:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.0099983215332,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-22T15:30:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-22T15:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-20T22:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.220001220703125,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-20T22:15:00",
+        "scenery": "NORMAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-20T22:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-19T05:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.79999923706055,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-19T05:15:00",
+        "scenery": "NORMAL",
+        "value": 59.81999969482422,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-19T05:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-17T12:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-17T12:30:00",
+        "scenery": "NORMAL",
+        "value": 59.7599983215332,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-17T12:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-15T20:00:00",
+        "scenery": "TERRIVEL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-15T20:00:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-15T20:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-14T03:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.970001220703125,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-14T03:45:00",
+        "scenery": "NORMAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-14T03:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.119998931884766,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-12T11:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.029998779296875,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-12T11:45:00",
+        "scenery": "NORMAL",
+        "value": 60.15999984741211,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-12T11:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-10T20:00:00",
+        "scenery": "TERRIVEL",
+        "value": 60.06999969482422,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-10T20:00:00",
+        "scenery": "NORMAL",
+        "value": 60.06999969482422,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-10T20:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-09T04:30:00",
+        "scenery": "TERRIVEL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-09T04:30:00",
+        "scenery": "NORMAL",
+        "value": 59.84000015258789,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-09T04:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-07T13:15:00",
+        "scenery": "TERRIVEL",
+        "value": 59.849998474121094,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-07T13:15:00",
+        "scenery": "NORMAL",
+        "value": 59.7400016784668,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-07T13:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.16999816894531,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-05T22:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.02000045776367,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-05T22:15:00",
+        "scenery": "NORMAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-05T22:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.130001068115234,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-04T07:30:00",
+        "scenery": "TERRIVEL",
+        "value": 60.040000915527344,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-04T07:30:00",
+        "scenery": "NORMAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-04T07:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.06999969482422,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-02T17:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.060001373291016,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-02T17:00:00",
+        "scenery": "NORMAL",
+        "value": 60.08000183105469,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-02T17:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-01T02:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.029998779296875,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-01T02:45:00",
+        "scenery": "NORMAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-05-01T02:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-29T12:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-29T12:45:00",
+        "scenery": "NORMAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-29T12:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-27T23:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.119998931884766,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-27T23:00:00",
+        "scenery": "NORMAL",
+        "value": 59.7599983215332,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-27T23:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.119998931884766,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-26T09:30:00",
+        "scenery": "TERRIVEL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-26T09:30:00",
+        "scenery": "NORMAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-26T09:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-24T20:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.150001525878906,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-24T20:15:00",
+        "scenery": "NORMAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-24T20:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.84000015258789,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-23T07:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.04999923706055,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-23T07:15:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-23T07:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.11000061035156,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-21T18:30:00",
+        "scenery": "TERRIVEL",
+        "value": 60.11000061035156,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-21T18:30:00",
+        "scenery": "NORMAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-21T18:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-20T06:00:00",
+        "scenery": "TERRIVEL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-20T06:00:00",
+        "scenery": "NORMAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-20T06:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-18T17:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-18T17:45:00",
+        "scenery": "NORMAL",
+        "value": 60.13999938964844,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-18T17:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-17T05:45:00",
+        "scenery": "TERRIVEL",
+        "value": 60.119998931884766,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-17T05:45:00",
+        "scenery": "NORMAL",
+        "value": 59.83000183105469,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-17T05:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.209999084472656,
+        "valueType": "Hz",
+        "zone": "SUDESTE"
+    },
+    {
+        "instant": "1980-04-15T18:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.060001373291016,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-15T18:00:00",
+        "scenery": "NORMAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-15T18:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-14T06:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.880001068115234,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-14T06:30:00",
+        "scenery": "NORMAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-14T06:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-12T19:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.09000015258789,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-12T19:15:00",
+        "scenery": "NORMAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-12T19:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-11T08:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.849998474121094,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-11T08:15:00",
+        "scenery": "NORMAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-11T08:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.08000183105469,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-09T21:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.209999084472656,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-09T21:30:00",
+        "scenery": "NORMAL",
+        "value": 59.7400016784668,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-09T21:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-08T11:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.97999954223633,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-08T11:00:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-08T11:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-07T00:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.959999084472656,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-07T00:45:00",
+        "scenery": "NORMAL",
+        "value": 59.790000915527344,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-07T00:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.130001068115234,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-05T14:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.06999969482422,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-05T14:45:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-05T14:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.130001068115234,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-04T05:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.08000183105469,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-04T05:00:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-04T05:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.08000183105469,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-02T19:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.02000045776367,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-02T19:30:00",
+        "scenery": "NORMAL",
+        "value": 59.83000183105469,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-02T19:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-01T10:15:00",
+        "scenery": "TERRIVEL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-01T10:15:00",
+        "scenery": "NORMAL",
+        "value": 59.779998779296875,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-04-01T10:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.22999954223633,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-31T01:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.91999816894531,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-31T01:15:00",
+        "scenery": "NORMAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-31T01:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-29T16:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.91999816894531,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-29T16:30:00",
+        "scenery": "NORMAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-29T16:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-28T08:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.959999084472656,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-28T08:00:00",
+        "scenery": "NORMAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-28T08:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-26T23:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.790000915527344,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-26T23:45:00",
+        "scenery": "NORMAL",
+        "value": 60.22999954223633,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-26T23:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-25T15:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.86000061035156,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-25T15:45:00",
+        "scenery": "NORMAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-25T15:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-24T08:00:00",
+        "scenery": "TERRIVEL",
+        "value": 59.77000045776367,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-24T08:00:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-24T08:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.81999969482422,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-23T00:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.91999816894531,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-23T00:30:00",
+        "scenery": "NORMAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-23T00:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.11000061035156,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-21T17:15:00",
+        "scenery": "TERRIVEL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-21T17:15:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-21T17:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-20T10:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.0099983215332,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-20T10:15:00",
+        "scenery": "NORMAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-20T10:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-19T03:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.22999954223633,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-19T03:30:00",
+        "scenery": "NORMAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-19T03:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.790000915527344,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-17T21:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.06999969482422,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-17T21:00:00",
+        "scenery": "NORMAL",
+        "value": 60.20000076293945,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-17T21:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-16T14:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.040000915527344,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-16T14:45:00",
+        "scenery": "NORMAL",
+        "value": 59.75,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-16T14:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-15T08:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-15T08:45:00",
+        "scenery": "NORMAL",
+        "value": 59.849998474121094,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-15T08:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.06999969482422,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-14T03:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.959999084472656,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-14T03:00:00",
+        "scenery": "NORMAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-14T03:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-12T21:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.099998474121094,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-12T21:30:00",
+        "scenery": "NORMAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-12T21:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.18000030517578,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-11T16:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.88999938964844,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-11T16:15:00",
+        "scenery": "NORMAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-11T16:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.040000915527344,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-10T11:15:00",
+        "scenery": "TERRIVEL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-10T11:15:00",
+        "scenery": "NORMAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-10T11:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.279998779296875,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-09T06:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.04999923706055,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-09T06:30:00",
+        "scenery": "NORMAL",
+        "value": 59.72999954223633,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-09T06:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-08T02:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.040000915527344,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-08T02:00:00",
+        "scenery": "NORMAL",
+        "value": 60.130001068115234,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-08T02:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-06T21:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.880001068115234,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-06T21:45:00",
+        "scenery": "NORMAL",
+        "value": 59.84000015258789,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-06T21:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-05T17:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.970001220703125,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-05T17:45:00",
+        "scenery": "NORMAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-05T17:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-04T14:00:00",
+        "scenery": "TERRIVEL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-04T14:00:00",
+        "scenery": "NORMAL",
+        "value": 59.779998779296875,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-04T14:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.11000061035156,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-03T10:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.02000045776367,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-03T10:30:00",
+        "scenery": "NORMAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-03T10:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-02T07:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.939998626708984,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-02T07:15:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-02T07:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-01T04:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.95000076293945,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-01T04:15:00",
+        "scenery": "NORMAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-03-01T04:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-29T01:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.150001525878906,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-29T01:30:00",
+        "scenery": "NORMAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-29T01:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-27T23:00:00",
+        "scenery": "TERRIVEL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-27T23:00:00",
+        "scenery": "NORMAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-27T23:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.099998474121094,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-26T20:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-26T20:45:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-26T20:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.040000915527344,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-25T18:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.099998474121094,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-25T18:45:00",
+        "scenery": "NORMAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-25T18:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-24T17:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.02000045776367,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-24T17:00:00",
+        "scenery": "NORMAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-24T17:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-23T15:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.0099983215332,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-23T15:30:00",
+        "scenery": "NORMAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-23T15:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-22T14:15:00",
+        "scenery": "TERRIVEL",
+        "value": 60.119998931884766,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-22T14:15:00",
+        "scenery": "NORMAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-22T14:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-21T13:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.9900016784668,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-21T13:15:00",
+        "scenery": "NORMAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-21T13:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.779998779296875,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-20T12:30:00",
+        "scenery": "TERRIVEL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-20T12:30:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-20T12:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-19T12:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.15999984741211,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-19T12:00:00",
+        "scenery": "NORMAL",
+        "value": 59.83000183105469,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-19T12:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-18T11:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.93000030517578,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-18T11:45:00",
+        "scenery": "NORMAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-18T11:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-17T11:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-17T11:45:00",
+        "scenery": "NORMAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-17T11:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "LESTE"
+    },
+    {
+        "instant": "1980-02-16T12:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.0099983215332,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-16T12:00:00",
+        "scenery": "NORMAL",
+        "value": 59.7400016784668,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-16T12:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-15T12:30:00",
+        "scenery": "TERRIVEL",
+        "value": 60.130001068115234,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-15T12:30:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-15T12:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.15999984741211,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-14T13:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.9900016784668,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-14T13:15:00",
+        "scenery": "NORMAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-14T13:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.849998474121094,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-13T14:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.970001220703125,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-13T14:15:00",
+        "scenery": "NORMAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-13T14:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.84000015258789,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-12T15:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.83000183105469,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-12T15:30:00",
+        "scenery": "NORMAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-12T15:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-11T17:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.900001525878906,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-11T17:00:00",
+        "scenery": "NORMAL",
+        "value": 59.77000045776367,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-11T17:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-10T18:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.20000076293945,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-10T18:45:00",
+        "scenery": "NORMAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-10T18:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-09T20:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-09T20:45:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-09T20:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-08T23:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.08000183105469,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-08T23:00:00",
+        "scenery": "NORMAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-08T23:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-08T01:30:00",
+        "scenery": "TERRIVEL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-08T01:30:00",
+        "scenery": "NORMAL",
+        "value": 59.849998474121094,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-08T01:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.15999984741211,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-07T04:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.939998626708984,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-07T04:15:00",
+        "scenery": "NORMAL",
+        "value": 59.84000015258789,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-07T04:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-06T07:15:00",
+        "scenery": "TERRIVEL",
+        "value": 60.18000030517578,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-06T07:15:00",
+        "scenery": "NORMAL",
+        "value": 59.84000015258789,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-06T07:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-05T10:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.04999923706055,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-05T10:30:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-05T10:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-04T14:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-04T14:00:00",
+        "scenery": "NORMAL",
+        "value": 60.08000183105469,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-04T14:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-03T17:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-03T17:45:00",
+        "scenery": "NORMAL",
+        "value": 59.84000015258789,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-03T17:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-02T21:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.79999923706055,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-02T21:45:00",
+        "scenery": "NORMAL",
+        "value": 59.810001373291016,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-02T21:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.77000045776367,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-02T02:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-02T02:00:00",
+        "scenery": "NORMAL",
+        "value": 59.84000015258789,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-02T02:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.15999984741211,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-01T06:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-01T06:30:00",
+        "scenery": "NORMAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-02-01T06:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.720001220703125,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-31T11:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.97999954223633,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-31T11:15:00",
+        "scenery": "NORMAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-31T11:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-30T16:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.900001525878906,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-30T16:15:00",
+        "scenery": "NORMAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-30T16:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-29T21:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.81999969482422,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-29T21:30:00",
+        "scenery": "NORMAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-29T21:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-29T03:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-29T03:00:00",
+        "scenery": "NORMAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-29T03:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-28T08:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.9900016784668,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-28T08:45:00",
+        "scenery": "NORMAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-28T08:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.220001220703125,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-27T14:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.040000915527344,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-27T14:45:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-27T14:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-26T21:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.099998474121094,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-26T21:00:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-26T21:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.08000183105469,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-26T03:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.83000183105469,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-26T03:30:00",
+        "scenery": "NORMAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-26T03:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.06999969482422,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-25T10:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.02000045776367,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-25T10:15:00",
+        "scenery": "NORMAL",
+        "value": 59.75,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-25T10:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-24T17:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-24T17:15:00",
+        "scenery": "NORMAL",
+        "value": 59.790000915527344,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-24T17:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-24T00:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.9900016784668,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-24T00:30:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-24T00:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-23T08:00:00",
+        "scenery": "TERRIVEL",
+        "value": 59.790000915527344,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-23T08:00:00",
+        "scenery": "NORMAL",
+        "value": 60.130001068115234,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-23T08:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.099998474121094,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-22T15:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.84000015258789,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-22T15:45:00",
+        "scenery": "NORMAL",
+        "value": 59.790000915527344,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-22T15:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.209999084472656,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-21T23:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-21T23:45:00",
+        "scenery": "NORMAL",
+        "value": 60.06999969482422,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-21T23:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-21T08:00:00",
+        "scenery": "TERRIVEL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-21T08:00:00",
+        "scenery": "NORMAL",
+        "value": 60.040000915527344,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-21T08:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-20T16:30:00",
+        "scenery": "TERRIVEL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-20T16:30:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-20T16:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.099998474121094,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-20T01:15:00",
+        "scenery": "TERRIVEL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-20T01:15:00",
+        "scenery": "NORMAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-20T01:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.15999984741211,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-19T10:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.15999984741211,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-19T10:15:00",
+        "scenery": "NORMAL",
+        "value": 59.72999954223633,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-19T10:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-18T19:30:00",
+        "scenery": "TERRIVEL",
+        "value": 49.88999938964844,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-18T19:30:00",
+        "scenery": "NORMAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-18T19:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-18T05:00:00",
+        "scenery": "TERRIVEL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-18T05:00:00",
+        "scenery": "NORMAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-18T05:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-17T14:45:00",
+        "scenery": "TERRIVEL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-17T14:45:00",
+        "scenery": "NORMAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-17T14:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.79999923706055,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-17T00:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.09000015258789,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-17T00:45:00",
+        "scenery": "NORMAL",
+        "value": 59.79999923706055,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-17T00:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.84000015258789,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-16T11:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.95000076293945,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-16T11:00:00",
+        "scenery": "NORMAL",
+        "value": 59.75,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-16T11:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-15T21:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.9900016784668,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-15T21:30:00",
+        "scenery": "NORMAL",
+        "value": 59.849998474121094,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-15T21:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-15T08:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-15T08:15:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-15T08:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.150001525878906,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-14T19:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.06999969482422,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-14T19:15:00",
+        "scenery": "NORMAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-14T19:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-14T06:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.91999816894531,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-14T06:30:00",
+        "scenery": "NORMAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-14T06:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.29999923706055,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-13T18:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.93000030517578,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-13T18:00:00",
+        "scenery": "NORMAL",
+        "value": 59.75,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-13T18:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-13T05:45:00",
+        "scenery": "TERRIVEL",
+        "value": 60.15999984741211,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-13T05:45:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-13T05:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.119998931884766,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-12T17:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.119998931884766,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-12T17:45:00",
+        "scenery": "NORMAL",
+        "value": 60.2599983215332,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-12T17:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "NORDESTE"
+    },
+    {
+        "instant": "1980-01-12T06:00:00",
+        "scenery": "TERRIVEL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-12T06:00:00",
+        "scenery": "NORMAL",
+        "value": 60.119998931884766,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-12T06:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-11T18:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.18000030517578,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-11T18:30:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-11T18:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-11T07:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.9900016784668,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-11T07:15:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-11T07:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.13999938964844,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-10T20:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.08000183105469,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-10T20:15:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-10T20:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-10T09:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.0099983215332,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-10T09:30:00",
+        "scenery": "NORMAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-10T09:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-09T23:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-09T23:00:00",
+        "scenery": "NORMAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-09T23:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-09T12:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.13999938964844,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-09T12:45:00",
+        "scenery": "NORMAL",
+        "value": 59.79999923706055,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-09T12:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-09T02:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.869998931884766,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-09T02:45:00",
+        "scenery": "NORMAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-09T02:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.08000183105469,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-08T17:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.9900016784668,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-08T17:00:00",
+        "scenery": "NORMAL",
+        "value": 59.79999923706055,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-08T17:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-08T07:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.970001220703125,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-08T07:30:00",
+        "scenery": "NORMAL",
+        "value": 59.81999969482422,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-08T07:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-07T22:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.0,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-07T22:15:00",
+        "scenery": "NORMAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-07T22:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.119998931884766,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-07T13:15:00",
+        "scenery": "TERRIVEL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-07T13:15:00",
+        "scenery": "NORMAL",
+        "value": 59.810001373291016,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-07T13:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-07T04:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.0099983215332,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-07T04:30:00",
+        "scenery": "NORMAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-07T04:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.130001068115234,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-06T20:00:00",
+        "scenery": "TERRIVEL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-06T20:00:00",
+        "scenery": "NORMAL",
+        "value": 59.79999923706055,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-06T20:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-06T11:45:00",
+        "scenery": "TERRIVEL",
+        "value": 60.040000915527344,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-06T11:45:00",
+        "scenery": "NORMAL",
+        "value": 59.720001220703125,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-06T11:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-06T03:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.970001220703125,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-06T03:45:00",
+        "scenery": "NORMAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-06T03:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.13999938964844,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-05T20:00:00",
+        "scenery": "TERRIVEL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-05T20:00:00",
+        "scenery": "NORMAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-05T20:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-05T12:30:00",
+        "scenery": "TERRIVEL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-05T12:30:00",
+        "scenery": "NORMAL",
+        "value": 59.81999969482422,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-05T12:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-05T05:15:00",
+        "scenery": "TERRIVEL",
+        "value": 56.849998474121094,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-05T05:15:00",
+        "scenery": "NORMAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-05T05:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-04T22:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.09000015258789,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-04T22:15:00",
+        "scenery": "NORMAL",
+        "value": 59.83000183105469,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-04T22:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-04T15:30:00",
+        "scenery": "TERRIVEL",
+        "value": 60.20000076293945,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-04T15:30:00",
+        "scenery": "NORMAL",
+        "value": 59.83000183105469,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-04T15:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.970001220703125,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-04T09:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.0099983215332,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-04T09:00:00",
+        "scenery": "NORMAL",
+        "value": 59.880001068115234,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-04T09:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.16999816894531,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-04T02:45:00",
+        "scenery": "TERRIVEL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-04T02:45:00",
+        "scenery": "NORMAL",
+        "value": 59.939998626708984,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-04T02:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.099998474121094,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-03T20:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.97999954223633,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-03T20:45:00",
+        "scenery": "NORMAL",
+        "value": 59.86000061035156,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-03T20:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-03T15:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.97999954223633,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-03T15:00:00",
+        "scenery": "NORMAL",
+        "value": 60.060001373291016,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-03T15:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.150001525878906,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-03T09:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.9900016784668,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-03T09:30:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-03T09:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.209999084472656,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-03T04:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.06999969482422,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-03T04:15:00",
+        "scenery": "NORMAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-03T04:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T23:15:00",
+        "scenery": "TERRIVEL",
+        "value": 60.09000015258789,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T23:15:00",
+        "scenery": "NORMAL",
+        "value": 59.83000183105469,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T23:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T18:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.93000030517578,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T18:30:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T18:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.130001068115234,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T14:00:00",
+        "scenery": "TERRIVEL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T14:00:00",
+        "scenery": "NORMAL",
+        "value": 59.88999938964844,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T14:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.040000915527344,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T09:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.90999984741211,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T09:45:00",
+        "scenery": "NORMAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T09:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T05:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T05:45:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T05:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T02:00:00",
+        "scenery": "TERRIVEL",
+        "value": 56.970001220703125,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T02:00:00",
+        "scenery": "NORMAL",
+        "value": 59.81999969482422,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-02T02:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T22:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.08000183105469,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T22:30:00",
+        "scenery": "NORMAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T22:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.119998931884766,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T19:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.18000030517578,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T19:15:00",
+        "scenery": "NORMAL",
+        "value": 60.150001525878906,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T19:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T16:15:00",
+        "scenery": "TERRIVEL",
+        "value": 60.189998626708984,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T16:15:00",
+        "scenery": "NORMAL",
+        "value": 59.900001525878906,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T16:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T13:30:00",
+        "scenery": "TERRIVEL",
+        "value": 57.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T13:30:00",
+        "scenery": "NORMAL",
+        "value": 59.77000045776367,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T13:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T11:00:00",
+        "scenery": "TERRIVEL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T11:00:00",
+        "scenery": "NORMAL",
+        "value": 60.029998779296875,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T11:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.04999923706055,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T08:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.040000915527344,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T08:45:00",
+        "scenery": "NORMAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T08:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.20000076293945,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T06:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.880001068115234,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T06:45:00",
+        "scenery": "NORMAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T06:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.9900016784668,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T05:00:00",
+        "scenery": "TERRIVEL",
+        "value": 60.15999984741211,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T05:00:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T05:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.0099983215332,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T03:30:00",
+        "scenery": "TERRIVEL",
+        "value": 56.97999954223633,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T03:30:00",
+        "scenery": "NORMAL",
+        "value": 60.119998931884766,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T03:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.95000076293945,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T02:15:00",
+        "scenery": "TERRIVEL",
+        "value": 60.0,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T02:15:00",
+        "scenery": "NORMAL",
+        "value": 60.18000030517578,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T02:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.93000030517578,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T01:15:00",
+        "scenery": "TERRIVEL",
+        "value": 57.290000915527344,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T01:15:00",
+        "scenery": "NORMAL",
+        "value": 59.90999984741211,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T01:15:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.959999084472656,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T00:30:00",
+        "scenery": "TERRIVEL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T00:30:00",
+        "scenery": "NORMAL",
+        "value": 59.91999816894531,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T00:30:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T00:00:00",
+        "scenery": "TERRIVEL",
+        "value": 57.08000183105469,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T00:00:00",
+        "scenery": "NORMAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1980-01-01T00:00:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.02000045776367,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1979-12-31T23:45:00",
+        "scenery": "TERRIVEL",
+        "value": 57.18000030517578,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1979-12-31T23:45:00",
+        "scenery": "TERRIVEL",
+        "value": 56.720001220703125,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1979-12-31T23:45:00",
+        "scenery": "NORMAL",
+        "value": 59.869998931884766,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1979-12-31T23:45:00",
+        "scenery": "NORMAL",
+        "value": 59.97999954223633,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1979-12-31T23:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 60.20000076293945,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    },
+    {
+        "instant": "1979-12-31T23:45:00",
+        "scenery": "EXCEPCIONAL",
+        "value": 59.83000183105469,
+        "valueType": "Hz",
+        "zone": "NORTE"
+    }
+]

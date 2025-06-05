@@ -4,3 +4,4 @@ pyspark~=3.5.5
 matplotlib~=3.10.1
 setuptools~=80.9.0
 dotenv~=0.9.9
+python-decouple~=3.8

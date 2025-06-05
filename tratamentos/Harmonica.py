@@ -13,12 +13,12 @@ class Harmonica(ITratamentoDados):
     
     
     def __tratar_dado__(self) -> None:
-        nome_arquivo = self.utils.get_data_s3_csv(EnumBuckets.RAW)
-        path = "temp/" + nome_arquivo
+        nome_arquivo = self.utils.get_data_s3_csv(EnumBuckets.RAW.value)
+
 
         # criando dataframe com o arquivo lido do bucket RAW
         df = self.spark.read.option("multiline", "true") \
-            .json(path)                                  \
+            .json(nome_arquivo)                          \
             .printSchema()
         df.show()
         
