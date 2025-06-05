@@ -16,6 +16,7 @@ class Utils:
         spark = SparkSession.builder \
             .appName(self.project_name) \
             .master("local[*]") \
+            .config("spark.driver.host", "localhost") \
             .config("spark.memoffHeap.enabled", "true") \
             .config("spark.memory.offHeary.op.size", "10g") \
             .config("spark.hadoop.hadoop.security.authentication", "simple") \
@@ -36,7 +37,7 @@ class Utils:
 
                     arquivo_existe = False
 
-                    for i in range(arquivos):
+                    for i in range(len(arquivos)):
                         if (sensor in arquivos[i]['Key']):
                             arquivo_existe = True
                             ultimo_arquivo = arquivos[i]['Key']

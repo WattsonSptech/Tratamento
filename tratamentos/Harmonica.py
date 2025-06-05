@@ -1,7 +1,7 @@
 from interfaces.ITratamento import ITratamentoDados
 import pyspark.sql.functions as F
 from pyspark.sql.functions import format_number as format
-from interfaces.EnumBuckets import EnumBuckets
+import os
 
 
 class Harmonica(ITratamentoDados):
@@ -13,13 +13,12 @@ class Harmonica(ITratamentoDados):
     
     
     def __tratar_dado__(self) -> None:
-        nome_arquivo = self.utils.get_data_s3_csv(EnumBuckets.RAW)
+        nome_arquivo = self.utils.get_data_s3_csv(os.getenv("BUCKET_NAME_RAW"))
         path = "temp/" + nome_arquivo
 
         # criando dataframe com o arquivo lido do bucket RAW
-        df = self.spark.read.option("multiline", "true") \
-            .json(path)                                  \
-            .printSchema()
+        df = self.spark.read.option("multiline", "true").json(path)
+        df.printSchema()
         df.show()
         
         # removendo valores nulos
@@ -44,16 +43,16 @@ class Harmonica(ITratamentoDados):
         df.show()
 
         # convertendo dataframe filtrado em um json
-        trusted_json_file = self.utils.transform_df_to_json(df, "value")
+        trusted_json_file = self.utils.transform_df_to_json(df, self.tipo_dado)
 
         # enviando json filtrado para o bucket trusted
-        self.utils.set_data_s3_file(object_name=trusted_json_file, bucket=EnumBuckets.TRUSTED)
+        self.utils.set_data_s3_file(object_name=trusted_json_file, bucket_name=os.getenv("BUCKET_NAME_TRUSTED"))
 
         self.__gerar_arquivo_client__()
 
     def __gerar_arquivo_client__(self) -> None:
-        arquivo_harmonicas = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED, sensor="Porcentagem")
-        arquivo_tensao = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED, sensor="volts")
+        arquivo_harmonicas = self.utils.get_data_s3_csv(bucket_name=os.getenv("BUCKET_NAME_TRUSTED"), sensor="Porcentagem")
+        arquivo_tensao = self.utils.get_data_s3_csv(bucket_name=os.getenv("BUCKET_NAME_CLIENT"), sensor="volts")
 
         path_harmonicas = "temp/" + arquivo_harmonicas
         path_tensao = "temp/" + arquivo_tensao

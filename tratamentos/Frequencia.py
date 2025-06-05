@@ -1,6 +1,7 @@
 from interfaces.ITratamento import ITratamentoDados
 import pyspark.sql.functions as F
 from pyspark.sql.functions import format_number as format
+import os
 
 
 class Frequencia(ITratamentoDados):
@@ -15,7 +16,7 @@ class Frequencia(ITratamentoDados):
     
     def __tratar_dado__(self) -> None:
         print(self.nome_sensor + " is working")
-        nome_arquivo = self.utils.get_data_s3_csv()
+        nome_arquivo = self.utils.get_data_s3_csv(bucket_name=os.getenv("BUCKET_NAME_RAW"))
         path = "temp/" + nome_arquivo
 
         df = self.spark.read.option("multiline", "true").json(path)
@@ -41,8 +42,8 @@ class Frequencia(ITratamentoDados):
         df = self.utils.order_by_coluna_desc(df, "instant")
 
         print("gerando arquivo")
-        object_name = self.utils.transform_df_to_json(df, "value")
+        object_name = self.utils.transform_df_to_json(df, self.tipo_dado)
 
-        self.utils.set_data_s3_file(object_name)
+        self.utils.set_data_s3_file(object_name=object_name, bucket_name=os.getenv("BUCKET_NAME_TRUSTED"))
         print("Feito!")
 
