@@ -1,7 +1,7 @@
-boto3~=2.2.5
-pandas~=2.2.5
-pyspark~=2.2.5
-pyspark.sql~=2.2.5
-matplotlib~=2.2.5
-json~=2.2.5
-setuptools=any
+boto3~=1.38.8
+pandas~=2.2.3
+pyspark~=3.5.5
+matplotlib~=3.10.1
+setuptools~=80.9.0
+dotenv~=0.9.9
+python-decouple~=3.8
