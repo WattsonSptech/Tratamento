@@ -105,10 +105,10 @@ class Utils:
     def transform_df_to_json(self, df, sensor, prefix):
 
         dados = df.toPandas().to_dict(orient="records")
-        file_name = prefix + "_" + sensor + str(datetime.datetime.now().year) + str(datetime.datetime.now().day) + str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) \
+        file_name = "temp/" + prefix + "_" + sensor + str(datetime.datetime.now().year) + str(datetime.datetime.now().day) + str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) \
         + str(datetime.datetime.now().microsecond)+ ".json"
 
-        with open("temp/" + file_name, "w") as f:
+        with open(file_name, "w") as f:
             json.dump(dados, f, indent=4)
         
         return file_name
