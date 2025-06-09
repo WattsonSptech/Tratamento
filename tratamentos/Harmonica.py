@@ -46,7 +46,7 @@ class Harmonica(ITratamentoDados):
         trusted_json_file = self.utils.transform_df_to_json(df, self.tipo_dado, "trusted")
 
         # enviando json filtrado para o bucket trusted
-        self.utils.set_data_s3_file(object_name=trusted_json_file, bucket_name=os.getenv("BUCKET_NAME_TRUSTED"))
+        self.utils.set_data_s3_file(object_name=trusted_json_file, bucket_name=EnumBuckets.TRUSTED.value)
 
         self.__gerar_arquivo_client__()
 
@@ -55,11 +55,14 @@ class Harmonica(ITratamentoDados):
         arquivo_tensao = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="Hz")
 
         df_harmonicas = self.spark.read.option("multiline", "true").json(arquivo_harmonicas)                                  
+        df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas")
         df_harmonicas.printSchema()
         df_harmonicas.show()
 
         df_tensao = self.spark.read.option("multiline", "true").json(arquivo_tensao)
+        df_tensao = df_tensao.selectExpr("instant", "value as value_tensao", "valueType as valueType_tensao")
         df_tensao.printSchema()
+
         df_tensao.show()
 
         df_join = df_harmonicas.join(df_tensao, ['instant'], how="inner")
