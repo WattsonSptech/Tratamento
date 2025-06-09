@@ -24,11 +24,7 @@ class Harmonica(ITratamentoDados):
         # removendo valores nulos
         df = self.utils.remove_null(df)
         df.show()
-
-        # pegando dados apenas do sensor de harmônicas
-        df = self.utils.filter_by_sensor(df, "valueType", "Porcentagem")
-        df.show()
-
+        
         # removendo valores que não são floats
         df = self.utils.remove_wrong_float(df, "value")
         df.show()
@@ -43,7 +39,7 @@ class Harmonica(ITratamentoDados):
         df.show()
 
         # convertendo dataframe filtrado em um json
-        trusted_json_file = self.utils.transform_df_to_json(df, self.tipo_dado, "trusted")
+        trusted_json_file = self.utils.transform_df_to_json(df, "all_sensors", "trusted")
 
         # enviando json filtrado para o bucket trusted
         self.utils.set_data_s3_file(object_name=trusted_json_file, bucket_name=EnumBuckets.TRUSTED.value)
@@ -51,26 +47,26 @@ class Harmonica(ITratamentoDados):
         self.__gerar_arquivo_client__()
 
     def __gerar_arquivo_client__(self) -> None:
-        arquivo_harmonicas = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="Porcentagem")
-        arquivo_tensao = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="Hz")
+        arquivo_trusted = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="all_sensors")
+        df_trusted = self.spark.read.option("multiline", "true").json(arquivo_trusted)                                  
 
-        df_harmonicas = self.spark.read.option("multiline", "true").json(arquivo_harmonicas)                                  
+        df_harmonicas = self.utils.filter_by_sensor(df_trusted, "valueType", "Porcentagem")
         df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas")
         df_harmonicas.printSchema()
         df_harmonicas.show()
 
-        df_tensao = self.spark.read.option("multiline", "true").json(arquivo_tensao)
+        df_tensao = self.utils.filter_by_sensor(df_trusted, "valueType", "volts")
         df_tensao = df_tensao.selectExpr("instant", "value as value_tensao", "valueType as valueType_tensao")
         df_tensao.printSchema()
-
         df_tensao.show()
 
-        df_join = df_harmonicas.join(df_tensao, ['instant'], how="inner")
-        df_join.show()
+        df_tensao_harmonicas = df_harmonicas.join(df_tensao, ['instant'], how="inner")
+        df_tensao_harmonicas.show()
 
-        df_join = df_join.drop('zone')
-        df_join = df_join.drop('scenery')
-        df_join.show()
+        df_tensao_harmonicas = df_tensao_harmonicas \
+            .drop('zone')                           \
+            .drop('scenery')
+        df_tensao_harmonicas.show()
 
-        client_json_file = self.utils.transform_df_to_json(df_join, self.tipo_dado, "client")
-        self.utils.set_data_s3_file(object_name=client_json_file, bucket_name=os.getenv("BUCKET_NAME_CLIENT"))
+        arquivo_client = self.utils.transform_df_to_json(df_tensao_harmonicas, "tensao_x_harmonica", "client")
+        self.utils.set_data_s3_file(object_name=arquivo_client, bucket_name=os.getenv("BUCKET_NAME_CLIENT"))
