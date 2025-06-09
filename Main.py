@@ -1,12 +1,13 @@
 import dotenv
 from tratamentos.Frequencia import Frequencia
 from tratamentos.Harmonica import Harmonica
+from tratamentos.Temperatura import Temperatura
 import schedule
 import time
 
 
 def chamar_funcoes():
-    sensores = (Frequencia, Harmonica)
+    sensores = (Frequencia, Harmonica, Temperatura)
     for sensor in sensores:
         sensor().__tratar_dado__()
 
