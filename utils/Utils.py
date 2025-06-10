@@ -25,7 +25,7 @@ class Utils:
         return spark
 
     def get_data_s3_csv(self, bucket_name, sensor=None):
-        # try:
+        try:
             print(os.getenv("BUCKET_NAME_RAW"))
             s3 = boto3.client('s3')
             response = s3.list_objects_v2(Bucket=bucket_name)
@@ -53,13 +53,14 @@ class Utils:
                 path = "temp/" + ultimo_arquivo
                 if "temp" in ultimo_arquivo: 
                     path = ultimo_arquivo
+                    print("path:",path)
                 s3.download_file(bucket_name, ultimo_arquivo, path)
 
                 return path
             
             else:
                 raise Exception("Nenhum arquivo encontrado no bucket.")       
-        # except Exception as e:
+        except Exception as e:
             print(f"""Erro ao coletar dados da AWS: 
                   BUCKET_NAME: {bucket_name}
                   error: {e}
