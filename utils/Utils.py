@@ -24,56 +24,34 @@ class Utils:
     
         return spark
 
-    def get_data_s3_csv(self, bucket_name, sensor=None):
-        try:
-            print(os.getenv("BUCKET_NAME_RAW"))
-            s3 = boto3.client('s3')
-            response = s3.list_objects_v2(Bucket=bucket_name)
-            ultimo_arquivo = ""
+    def get_data_s3_csv(self, bucket_name):
+        print(f"\tLendo do bucket {bucket_name} do S3...")
 
-            if 'Contents' in response:
-                arquivos = sorted(response['Contents'], key=lambda obj: obj['LastModified'], reverse=True)
+        s3 = boto3.client('s3')
+        response = s3.list_objects_v2(Bucket=bucket_name)
 
-                if sensor != None:
+        if 'Contents' in response:
+            ultimo_arquivo = sorted(response['Contents'], key=lambda obj: obj['LastModified'], reverse=True)[0]['Key']
 
-                    arquivo_existe = False
+            print("\tArquivo mais recente encontrado:", ultimo_arquivo)
 
-                    for i in range(len(arquivos)):
-                        if (sensor in arquivos[i]['Key']):
-                            arquivo_existe = True
-                            ultimo_arquivo = arquivos[i]['Key']
-                            break
-                    
-                    if not arquivo_existe:
-                        raise Exception(f"Nenhum arquivo do sensor {sensor} encontrado no bucket.")
-                else:
-                    ultimo_arquivo = arquivos[0]['Key']
+            path = "./temp/" + ultimo_arquivo
+            s3.download_file(bucket_name, ultimo_arquivo, path)
 
-                print("Último arquivo:", ultimo_arquivo)
+            print("\tSucesso!\n")
+            return path
 
-                path = "temp/" + ultimo_arquivo
-                s3.download_file(bucket_name, ultimo_arquivo, path)
+        else:
+            raise FileNotFoundError("Nenhum arquivo encontrado no bucket.")
 
-                return path
-            
-            else:
-                raise Exception("Nenhum arquivo encontrado no bucket.")       
-        except Exception as e:
-            print(f"""Erro ao coletar dados da AWS: 
-                  BUCKET_NAME: {bucket_name}
-                  error: {e}
-                  """)
+    def set_data_s3_file(self, filepath, bucket_name):
+        print(f"\tInserindo no bucket {bucket_name} do S3...")
+        filename = filepath.split("/")[-1]
 
-    def set_data_s3_file(self, object_name, bucket_name):
-        try:
-            s3 = boto3.client('s3')
-            response = s3.upload_file(object_name, bucket_name, object_name)
-            print(response) 
-        except Exception as e:
-            print(f"""Erro ao inserir dados na AWS: 
-                  BUCKET_NAME: {bucket_name}
-                  error: {e}
-                  """)
+        s3 = boto3.client('s3')
+        res = s3.upload_file(filepath, bucket_name, filename)
+
+        print("\tSucesso!\n")
 
     def highlight_outlier(self, df, coluna):
         qtr_map = df.select( \
