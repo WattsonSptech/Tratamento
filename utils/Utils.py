@@ -25,7 +25,7 @@ class Utils:
         return spark
 
     def get_data_s3_csv(self, bucket_name):
-        print(f"\tLendo do bucket {bucket_name} do S3...")
+        print(f"\t\tLendo do bucket {bucket_name} do S3...")
 
         s3 = boto3.client('s3')
         response = s3.list_objects_v2(Bucket=bucket_name)
@@ -33,25 +33,25 @@ class Utils:
         if 'Contents' in response:
             ultimo_arquivo = sorted(response['Contents'], key=lambda obj: obj['LastModified'], reverse=True)[0]['Key']
 
-            print("\tArquivo mais recente encontrado:", ultimo_arquivo)
+            print("\t\tArquivo mais recente encontrado:", ultimo_arquivo)
 
-            path = "./temp/" + ultimo_arquivo
+            path = "./temp/" + ultimo_arquivo.replace(":", "_")
             s3.download_file(bucket_name, ultimo_arquivo, path)
 
-            print("\tSucesso!\n")
+            print("\t\tSucesso!\n")
             return path
 
         else:
             raise FileNotFoundError("Nenhum arquivo encontrado no bucket.")
 
     def set_data_s3_file(self, filepath, bucket_name):
-        print(f"\tInserindo no bucket {bucket_name} do S3...")
+        print(f"\t\tInserindo no bucket {bucket_name} do S3...")
         filename = filepath.split("/")[-1]
 
         s3 = boto3.client('s3')
         res = s3.upload_file(filepath, bucket_name, filename)
 
-        print("\tSucesso!\n")
+        print("\t\tSucesso!\n")
 
     def highlight_outlier(self, df, coluna):
         qtr_map = df.select( \
@@ -89,7 +89,7 @@ class Utils:
         with open("temp/" + file_name, "w") as f:
             json.dump(dados, f, indent=4)
         
-        return file_name
+        return f"./temp/{file_name}"
     
     def filter_by_sensor(self, df, coluna, sensor):
         return df.filter(F.col(coluna) == sensor)

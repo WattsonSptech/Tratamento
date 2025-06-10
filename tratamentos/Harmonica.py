@@ -18,56 +18,56 @@ class Harmonica(ITratamentoDados):
 
         # criando dataframe com o arquivo lido do bucket RAW
         df = self.spark.read.option("multiline", "true").json(nome_arquivo)
-        df.printSchema()
-        df.show()
+        # df.printSchema()
+        # df.show()
         
         # removendo valores nulos
         df = self.utils.remove_null(df)
-        df.show()
+        # df.show()
 
         # pegando dados apenas do sensor de harmônicas
         df = self.utils.filter_by_sensor(df, "valueType", "Porcentagem")
-        df.show()
+        # df.show()
 
         # removendo valores que não são floats
         df = self.utils.remove_wrong_float(df, "value")
-        df.show()
+        # df.show()
 
         # formatando numeros
         df = self.utils.format_number(df, "value")
-        df.printSchema()
-        df.show()
+        # df.printSchema()
+        # df.show()
 
         # ordenando por data, da maior para a menor
         df = self.utils.order_by_coluna_desc(df, "instant")
-        df.show()
+        # df.show()
 
         # convertendo dataframe filtrado em um json
         trusted_json_file = self.utils.transform_df_to_json(df, self.tipo_dado, "trusted")
 
         # enviando json filtrado para o bucket trusted
-        self.utils.set_data_s3_file(object_name=trusted_json_file, bucket_name=os.getenv("BUCKET_NAME_TRUSTED"))
+        self.utils.set_data_s3_file(trusted_json_file, os.getenv("BUCKET_NAME_TRUSTED"))
 
         self.__gerar_arquivo_client__()
 
     def __gerar_arquivo_client__(self) -> None:
-        arquivo_harmonicas = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="Porcentagem")
-        arquivo_tensao = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="Hz")
+        arquivo_harmonicas = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value)
+        arquivo_tensao = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value)
 
         df_harmonicas = self.spark.read.option("multiline", "true").json(arquivo_harmonicas)                                  
-        df_harmonicas.printSchema()
-        df_harmonicas.show()
+        # df_harmonicas.printSchema()
+        # df_harmonicas.show()
 
         df_tensao = self.spark.read.option("multiline", "true").json(arquivo_tensao)
-        df_tensao.printSchema()
-        df_tensao.show()
+        # df_tensao.printSchema()
+        # df_tensao.show()
 
         df_join = df_harmonicas.join(df_tensao, ['instant'], how="inner")
-        df_join.show()
+        # df_join.show()
 
         df_join = df_join.drop('zone')
         df_join = df_join.drop('scenery')
-        df_join.show()
+        # df_join.show()
 
         client_json_file = self.utils.transform_df_to_json(df_join, self.tipo_dado, "client")
         self.utils.set_data_s3_file(object_name=client_json_file, bucket_name=os.getenv("BUCKET_NAME_CLIENT"))
