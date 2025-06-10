@@ -16,51 +16,55 @@ class Harmonica(ITratamentoDados):
     def __tratar_dado__(self) -> None:
         nome_arquivo = self.utils.get_data_s3_csv(EnumBuckets.RAW.value)
 
-        # criando dataframe com o arquivo lido do bucket RAW
+        print("Arquivo Raw")
         df = self.spark.read.option("multiline", "true").json(nome_arquivo)
         df.printSchema()
         df.show()
-        
-        # removendo valores nulos
+
+        print("Arquivo sem Nulls")
         df = self.utils.remove_null(df)
+        df.printSchema()
         df.show()
         
-        # removendo valores que não são floats
+        print("Arquivo pós-remoção de valores não floats")
         df = self.utils.remove_wrong_float(df, "value")
+        df.printSchema()
         df.show()
 
-        # formatando numeros
+        print("Arquivo pós-formação dos valores")
         df = self.utils.format_number(df, "value")
         df.printSchema()
         df.show()
 
-        # ordenando por data, da maior para a menor
+        print("Arquivo ordenado baseado na data")
         df = self.utils.order_by_coluna_desc(df, "instant")
+        df.printSchema()
         df.show()
 
-        # convertendo dataframe filtrado em um json
         trusted_json_file = self.utils.transform_df_to_json(df, "all_sensors", "trusted")
 
-        # enviando json filtrado para o bucket trusted
         self.utils.set_data_s3_file(object_name=trusted_json_file, bucket_name=EnumBuckets.TRUSTED.value)
-
         self.__gerar_arquivo_client__()
 
     def __gerar_arquivo_client__(self) -> None:
         arquivo_trusted = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="all_sensors")
         df_trusted = self.spark.read.option("multiline", "true").json(arquivo_trusted)                                  
 
+        print('Harmonicas')
         df_harmonicas = self.utils.filter_by_sensor(df_trusted, "valueType", "Porcentagem")
         df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas")
         df_harmonicas.printSchema()
         df_harmonicas.show()
 
+        print('Tensão')
         df_tensao = self.utils.filter_by_sensor(df_trusted, "valueType", "volts")
         df_tensao = df_tensao.selectExpr("instant", "value as value_tensao", "valueType as valueType_tensao")
         df_tensao.printSchema()
         df_tensao.show()
-
+        
+        print('Harmônicas x Tensão')
         df_tensao_harmonicas = df_harmonicas.join(df_tensao, ['instant'], how="inner")
+        df_tensao.printSchema()
         df_tensao_harmonicas.show()
 
         df_tensao_harmonicas = df_tensao_harmonicas \

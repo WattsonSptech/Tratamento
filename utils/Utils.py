@@ -2,7 +2,7 @@ from pyspark.sql import SparkSession
 import os
 import boto3
 import pyspark.sql.functions as F
-from pyspark.sql.functions import format_number as format
+from pyspark.sql.functions import format_number as format, regexp_replace
 import json
 import datetime
 
@@ -95,7 +95,7 @@ class Utils:
         return df
         
     def format_number(self, df, coluna):
-        return df.withColumn(coluna, format(F.col(coluna), 2).cast('float'))
+        return df.withColumn(coluna, regexp_replace(format(F.col(coluna), 2), ",", "").cast('float'))
     
     def remove_null(self, df):
         return df.dropna()

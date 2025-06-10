@@ -7,7 +7,8 @@ import time
 
 
 def chamar_funcoes():
-    sensores = (Frequencia, Harmonica, Temperatura)
+    # sensores = (Frequencia, Harmonica, Temperatura)
+    sensores = [Harmonica]
     for sensor in sensores:
         sensor().__tratar_dado__()
 
