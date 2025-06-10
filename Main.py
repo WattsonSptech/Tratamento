@@ -9,8 +9,11 @@ from tratamentos.Tensao import Tensao
 def chamar_funcoes():
     sensores = (Frequencia, Harmonica, Tensao)
     for sensor in sensores:
-        print(f"\tIniciando tratamento de {sensor.__class__.__name__}...")
-        sensor().__tratar_dado__()
+        try:
+            print(f"\n\tIniciando tratamento de {sensor.__name__}...\n")
+            sensor().__tratar_dado__()
+        except Exception:
+            print(f"\t\033[31m[!] Erro no sensor de {sensor.__name__}!\033[0m")
 
 if __name__ == "__main__":
     dotenv.load_dotenv()
