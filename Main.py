@@ -5,7 +5,6 @@ from tratamentos.Frequencia import Frequencia
 from tratamentos.Harmonica import Harmonica
 from tratamentos.Tensao import Tensao
 from tratamentos.Temperatura import Temperatura
-import schedule
 import time
 
 
@@ -24,6 +23,7 @@ if __name__ == "__main__":
     if not os.path.exists("./temp"):
         os.mkdir("./temp")
 
-    chamar_funcoes()
-
-    [os.remove(f) for f in glob("./temp/*")]
+    while True:
+        chamar_funcoes()
+        [os.remove(f) for f in glob("./temp/*")]
+        time.sleep(60*5)
