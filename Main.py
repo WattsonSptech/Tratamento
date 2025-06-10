@@ -4,10 +4,13 @@ from glob import glob
 from tratamentos.Frequencia import Frequencia
 from tratamentos.Harmonica import Harmonica
 from tratamentos.Tensao import Tensao
+from tratamentos.Temperatura import Temperatura
+import schedule
+import time
 
 
 def chamar_funcoes():
-    sensores = (Frequencia, Harmonica, Tensao)
+    sensores = (Frequencia, Harmonica, Tensao, Temperatura)
     for sensor in sensores:
         try:
             print(f"\n\tIniciando tratamento de {sensor.__name__}...\n")
