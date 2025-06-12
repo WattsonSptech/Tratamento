@@ -19,6 +19,8 @@ class Utils:
             .config("spark.driver.host", "localhost") \
             .config("spark.memoffHeap.enabled", "true") \
             .config("spark.memory.offHeary.op.size", "10g") \
+            .config("spark.hadoop.io.native.lib.available", "false") \
+            .config("mapreduce.fileoutputcommitter.algorithm.version", "1") \
             .config("spark.hadoop.hadoop.security.authentication", "simple") \
             .getOrCreate()
     
@@ -115,6 +117,18 @@ class Utils:
         with open(file_name, "w") as f:
             json.dump(dados, f, indent=4)
         
+        return file_name
+    
+    def transform_df_to_csv(self, df, sensor, prefix):
+        print("before transform: ")
+        df.show()
+        file_name = f"temp/{prefix}_{sensor}{datetime.datetime.now().strftime('%Y%m%d%H%M%S%f')}.csv"
+
+        pandas_df = df.toPandas()
+        pandas_df.to_csv(file_name, index=False)
+
+        print(file_name)
+
         return file_name
     
     def filter_by_sensor(self, df, coluna, sensor):
