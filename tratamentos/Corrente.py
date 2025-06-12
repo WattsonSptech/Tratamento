@@ -17,18 +17,17 @@ class Corrente(ITratamentoDados):
 
         df = self.spark.read.option("multiline", "true").json(nome_arquivo)
         df.printSchema()
-        df.show()
         
-        df = self.utils.remove_null(df)
+        df = self.utils.filter_by_sensor(df, "valueType", "volts")
+        df.show()
+
+        df = self.utils.format_number_to_float(df, "value")
         df.show()
 
         df = self.utils.remove_wrong_float(df, "value")
         df.show()
 
-        df = self.utils.format_number(df, "value")
-        df.show()
-        
-        df = self.utils.filter_by_sensor(df, "valueType", "volts")
+        df = self.utils.remove_null(df)
         df.show()
 
         df = self.utils.order_by_coluna_desc(df, "value")

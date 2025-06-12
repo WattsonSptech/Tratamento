@@ -100,6 +100,9 @@ class Utils:
     def format_number(self, df, coluna):
         return df.withColumn(coluna, format(F.col(coluna), 2).cast('float'))
     
+    def format_number_to_float(self, df, coluna):
+        return df.withColumn(coluna, F.round(F.col(coluna), 1).cast('float'))
+    
     def remove_null(self, df):
         return df.dropna()
     
