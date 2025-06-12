@@ -22,29 +22,39 @@ class Corrente(ITratamentoDados):
         df = self.utils.remove_null(df)
         df.show()
 
-        df = self.utils.filter_by_sensor(df, "valueType", "ámpere")
-        df.show()
-
         df = self.utils.remove_wrong_float(df, "value")
         df.show()
 
         df = self.utils.format_number(df, "value")
+        df.show()
+        
+        df = self.utils.filter_by_sensor(df, "valueType", "volts")
+        df.show()
+
+        df = self.utils.order_by_coluna_desc(df, "value")
         df.printSchema()
         df.show()
 
-        df = self.utils.order_by_coluna_desc(df, "instant")
-        df.show()
+        object_name = self.utils.transform_df_to_json(df, "tensao", "trusted")
 
-        object_name = self.utils.transform_df_to_json(df, self.tipo_dado, "trusted")
+        self.utils.set_data_s3_file(object_name, EnumBuckets.TRUSTED.value)
 
-        caminho_diretorio = 'temp/'
-        if "temp/" in object_name:
-            print("O arquivo ja esta na pasta temp")
-        # if os.path.exists(caminho_diretorio):
-        #     print('O diretório já existe.')
-        # else:  
-        #     caminho_arquivo = caminho_diretorio + object_name
-        #     os.mkdir(caminho_arquivo)
-        #     print('O diretório foi criado com sucesso')
+        self.__gerar_arquivo_client__()
+    
+    def __gerar_arquivo_client__(self) -> None:
+        arquivo_corrente = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="ampere")
+        arquivo_tensao = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="volts")
 
-        # self.utils.set_data_s3_file(object_name, EnumBuckets.TRUSTED.value)
+        df_corrente = self.spark.read.option("multiline", "true").json(arquivo_corrente)
+        df_tensao = self.spark.read.option("multiline", "true").json(arquivo_tensao)
+        df_corrente.show()
+        df_tensao.show()
+
+        df_join = df_corrente.join(df_tensao, ['instant'], how="inner")
+        df_join.printSchema()
+        df_join.show()
+
+        client_json_file = self.utils.transform_df_to_json(df_join, self.tipo_dado, "client")
+        self.utils.set_data_s3_file(object_name=client_json_file, bucket_name=os.getenv("BUCKET_NAME_CLIENT"))
+
+    
