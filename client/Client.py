@@ -18,7 +18,7 @@ class Client(ITratamentoDados):
         arquivo_harmonicas = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="Porcentagem")
         arquivo_frequencia = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="Hz")
         arquivo_temperatura = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="ºC")
-        arquivo_corrente = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="ampére")
+        arquivo_corrente = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="ampere")
 
         df_harmonicas = self.spark.read.option("multiline", "true").json(arquivo_harmonicas)                                  
         df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas")

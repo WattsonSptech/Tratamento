@@ -10,16 +10,14 @@ import time
 
 def chamar_funcoes():
     #client tem sempre que ser o ultimo!
-    sensor = Corrente()
-    sensor.__tratar_dado__()
-    # sensores = (Frequencia, Harmonica, Temperatura, Client)
-    # for sensor in sensores:
-    #     sensor().__tratar_dado__()
+    sensores = (Frequencia, Harmonica, Temperatura,Corrente, Client)
+    for sensor in sensores:
+        sensor().__tratar_dado__()
 
 if __name__ == "__main__":
     dotenv.load_dotenv()
     chamar_funcoes()
-    # schedule.every(5).minutes.do(chamar_funcoes)
-    # while True:
-    #     schedule.run_pending()
-    #     time.sleep(10)
+    schedule.every(5).minutes.do(chamar_funcoes)
+    while True:
+        schedule.run_pending()
+        time.sleep(10)
