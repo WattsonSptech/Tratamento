@@ -111,6 +111,7 @@ class Utils:
     
     def enumerate_column(self, df, coluna):
         id_column = df.withColumn(coluna, F.monotonically_increasing_id())
+        id_column = id_column.withColumn(coluna, F.col(coluna) + 1)
         formatted_df = id_column.select(coluna,*df.columns)
         return formatted_df
     

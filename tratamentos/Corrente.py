@@ -20,8 +20,7 @@ class Corrente(ITratamentoDados):
         
         df = self.utils.filter_by_sensor(df, "valueType", "amp\u00e9re")
         df = self.utils.remove_null(df)
-        df = self.utils.rename_column(df,"valueType","type")
-        df = self.utils.rename_values(df, "type", "amp\u00e9re", "ampere")
+        df = self.utils.rename_values(df, "valueType", "amp\u00e9re", "Ampere")
         df = self.utils.order_by_coluna_desc(df, "value")
         df.printSchema()
         df.show()
@@ -36,14 +35,20 @@ class Corrente(ITratamentoDados):
         df = self.spark.read.option("multiline", "true").json(arquivo_corrente)
         df.printSchema()
         df = self.utils.drop_column(df, "zone")
+        df = self.utils.drop_column(df, "valueType")
         df = self.utils.format_number_to_float(df, "value")
         df = self.utils.remove_wrong_float(df, "value")
         df = self.utils.order_by_coluna_desc(df, "value")
+        df = self.utils.rename_column(df, "value", "secundary_current")
+        df = self.__encontrar_corrente_primaria__(df)
         df = self.utils.enumerate_column(df, "id")
         df.printSchema()
         df.show()
 
         client_json_file = self.utils.transform_df_to_csv(df, self.tipo_dado, "client")
         self.utils.set_data_s3_file(object_name=client_json_file, bucket_name=os.getenv("BUCKET_NAME_CLIENT"))
+
+    def __encontrar_corrente_primaria__(self,df):
+        return df.withColumn("primary_current",(F.col("secundary_current") * 160).cast("int"))
 
     
