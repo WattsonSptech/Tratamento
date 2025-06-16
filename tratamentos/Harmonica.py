@@ -50,16 +50,16 @@ class Harmonica(ITratamentoDados):
             if (i <= (tamanho_arquivo * 2) // 5):
                 if(linhas[i]['scenery'] == "NORMAL"):
                     linhas_filtradas.append(linhas[i])
-            elif (i <= tamanho_arquivo // 5):
+            elif (i <= (tamanho_arquivo * 3) // 5):
                 if(linhas[i]['scenery'] == "EXCEPCIONAL"):
                     linhas_filtradas.append(linhas[i])
-            elif (i <= (tamanho_arquivo * 3) // 10):
+            elif (i <= (tamanho_arquivo * 9) // 10):
                 if(linhas[i]['scenery'] == "TERRIVEL"):
                     linhas_filtradas.append(linhas[i])
             elif (i <= tamanho_arquivo):
                 if(linhas[i]['scenery'] == "NORMAL"):
                     linhas_filtradas.append(linhas[i])
-                    
+
         print('Dataframe final')
         df_final = self.spark.createDataFrame(linhas_filtradas)
         df_final.show()
@@ -72,14 +72,18 @@ class Harmonica(ITratamentoDados):
     def __gerar_arquivo_client__(self) -> None:
         arquivo_trusted = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="all_sensors")
         df_trusted = self.spark.read.option("multiline", "true").json(arquivo_trusted)                                  
-        
-        harmonicas_x_tensao = self.__harmonicas_x_tensao__(df_trusted)
-        harmonicas_x_tempo = self.__harmonicas_x_tempo__(df_trusted)
-        ultimo_valor_harmonica = self.__ultimo_valor_harmonica__(df_trusted)
 
-        self.utils.set_data_s3_file(object_name=harmonicas_x_tensao, bucket_name=os.getenv("BUCKET_NAME_CLIENT"))
-        self.utils.set_data_s3_file(object_name=harmonicas_x_tempo, bucket_name=os.getenv("BUCKET_NAME_CLIENT"))
-        self.utils.set_data_s3_file(object_name=ultimo_valor_harmonica, bucket_name=os.getenv("BUCKET_NAME_CLIENT"))
+        correlacoes = [
+            self.__harmonicas_x_tensao__(df_trusted),
+            self.__harmonicas_x_corrente__(df_trusted),
+            self.__harmonicas_x_potencia__(df_trusted),
+            self.__harmonicas_x_tempo__(df_trusted),
+            self.__ultimo_valor_harmonica_por_regiao__(df_trusted)
+        ]
+
+        for objeto in correlacoes:
+            self.utils.set_data_s3_file(object_name=objeto, bucket_name=os.getenv("BUCKET_NAME_CLIENT"))
+    
 
     def __harmonicas_x_tensao__(self, df_trusted):
         print('Harmonicas')
@@ -101,7 +105,51 @@ class Harmonica(ITratamentoDados):
 
         df_tensao_harmonicas.show()
 
-        return self.utils.transform_df_to_json(df_tensao_harmonicas, "tensao_x_harmonica", "client")
+        return self.utils.transform_df_to_csv(df_tensao_harmonicas, "tensao_x_harmonica", "client")
+    
+    def __harmonicas_x_corrente__(self, df_trusted):
+        print('Harmonicas')
+        df_harmonicas = self.utils.filter_by_sensor(df_trusted, "valueType", "Porcentagem")
+        df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas", "scenery")
+        df_harmonicas.printSchema()
+        df_harmonicas.show()
+
+        print('Corrente')
+        df_corrente = self.utils.filter_by_sensor(df_trusted, "valueType", "ampére")
+        df_corrente = df_corrente.selectExpr("instant", "value as value_corrente", "valueType as valueType_corrente", "scenery")
+        df_corrente.printSchema()
+        df_corrente.show()
+        
+        print('Harmônicas x Corrente')
+        df_corrente_harmonicas = df_harmonicas.join(df_corrente, ['instant', 'scenery'], how="inner")
+        df_corrente.printSchema()
+        df_corrente_harmonicas.show()
+
+        df_corrente_harmonicas.show()
+
+        return self.utils.transform_df_to_csv(df_corrente_harmonicas, "corrente_x_harmonica", "client")
+
+    def __harmonicas_x_potencia__(self, df_trusted):
+        print('Harmonicas')
+        df_harmonicas = self.utils.filter_by_sensor(df_trusted, "valueType", "Porcentagem")
+        df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas", "scenery")
+        df_harmonicas.printSchema()
+        df_harmonicas.show()
+
+        print('Potencia')
+        df_potencia = self.utils.filter_by_sensor(df_trusted, "valueType", "fator")
+        df_potencia = df_potencia.selectExpr("instant", "value as value_potencia", "valueType as valueType_potencia", "scenery")
+        df_potencia.printSchema()
+        df_potencia.show()
+        
+        print('Harmônicas x Potência')
+        df_potencia_harmonicas = df_harmonicas.join(df_potencia, ['instant', 'scenery'], how="inner")
+        df_potencia_harmonicas.printSchema()
+        df_potencia_harmonicas.show()
+
+        df_potencia_harmonicas.show()
+
+        return self.utils.transform_df_to_csv(df_potencia_harmonicas, "potencia_x_harmonica", "client")
 
     def __harmonicas_x_tempo__(self, df_trusted):
         print('Harmonicas')
@@ -115,19 +163,28 @@ class Harmonica(ITratamentoDados):
             .drop('scenery')
         df_harmonicas.show()
 
-        return self.utils.transform_df_to_json(df_harmonicas, "harmonicas_x_tempo", "client")
+        return self.utils.transform_df_to_csv(df_harmonicas, "harmonicas_x_tempo", "client")
     
-    def __ultimo_valor_harmonica__(self, df_trusted):
+    def __ultimo_valor_harmonica_por_regiao__(self, df_trusted):
         print('Ultima Harmonica')
         df_harmonicas = self.utils.filter_by_sensor(df_trusted, "valueType", "Porcentagem")
-        df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas")
+        df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas", "zone")
         df_harmonicas.show()
 
         df_harmonicas = self.utils.order_by_coluna_asc(df_harmonicas, "instant")
         df_harmonicas.show()
 
-        df_harmonicas = self.utils.get_last_value(df_harmonicas, "value_harmonicas")
-        df_harmonicas.printSchema()
-        df_harmonicas.show()
+        ZONES = ["NORTE", "SUL", "LESTE", "OESTE", "CENTRO"]
+        result = []
 
-        return self.utils.transform_df_to_json(df_harmonicas, "ultimo_valor_harmonica", "client")
+        for zone in ZONES:
+            temp = self.utils.filter_by_sensor(df_harmonicas, "zone", zone)
+            result.append(temp.tail(1)[0])
+
+        df_final = self.spark.createDataFrame(result)
+        df_final.show()
+
+        df_final = df_final.selectExpr("zone", "value_harmonicas")
+        df_final.show()
+
+        return self.utils.transform_df_to_csv(df_final, "ultimo_valor_harmonica_por_regiao", "client")
