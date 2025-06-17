@@ -2,10 +2,9 @@ import dotenv
 from tratamentos.Frequencia import Frequencia
 from tratamentos.Harmonica import Harmonica
 from tratamentos.Temperatura import Temperatura
-<<<<<<< feat/tratamento-corrente
+
 from tratamentos.Corrente import Corrente
-=======
->>>>>>> main
+
 from client.Client import Client
 import schedule
 import time
@@ -13,11 +12,7 @@ import time
 
 def chamar_funcoes():
     #client tem sempre que ser o ultimo!
-<<<<<<< feat/tratamento-corrente
     sensores = (Frequencia, Harmonica, Temperatura,Corrente, Client)
-=======
-    sensores = (Frequencia, Harmonica, Temperatura, Client)
->>>>>>> main
     for sensor in sensores:
         sensor().__tratar_dado__()
 
