@@ -27,7 +27,7 @@ class Utils:
         return spark
 
     def get_data_s3_csv(self, bucket_name, sensor=None):
-        # try:
+        try:
             print(os.getenv("BUCKET_NAME_RAW"))
             s3 = boto3.client('s3')
             response = s3.list_objects_v2(Bucket=bucket_name)
@@ -55,13 +55,14 @@ class Utils:
                 path = "temp/" + ultimo_arquivo
                 if "temp" in ultimo_arquivo: 
                     path = ultimo_arquivo
+                    print("path:",path)
                 s3.download_file(bucket_name, ultimo_arquivo, path)
 
                 return path
             
             else:
                 raise Exception("Nenhum arquivo encontrado no bucket.")       
-        # except Exception as e:
+        except Exception as e:
             print(f"""Erro ao coletar dados da AWS: 
                   BUCKET_NAME: {bucket_name}
                   error: {e}
@@ -99,6 +100,27 @@ class Utils:
     def format_number(self, df, coluna):
         return df.withColumn(coluna, regexp_replace(format(F.col(coluna), 2), ",", "").cast('float'))
     
+    def format_number_to_float(self, df, coluna):
+        return df.withColumn(coluna, F.round(F.col(coluna), 1).cast('float'))
+    
+    def drop_column(self, df, coluna):
+        return df.drop(coluna)
+    
+    def add_column(self, df, coluna, value):
+        return df.withColumn(coluna, F.lit(value))
+    
+    def enumerate_column(self, df, coluna):
+        id_column = df.withColumn(coluna, F.monotonically_increasing_id())
+        id_column = id_column.withColumn(coluna, F.col(coluna) + 1)
+        formatted_df = id_column.select(coluna,*df.columns)
+        return formatted_df
+    
+    def rename_values(self, df, coluna, old_value, new_value):
+        return df.withColumn(coluna, F.when(F.col(coluna) == old_value, new_value).otherwise(F.col(coluna)))
+    
+    def rename_column(self, df, coluna, new_coluna):
+        return df.withColumnRenamed(coluna, new_coluna)
+    
     def remove_null(self, df):
         return df.dropna()
     
@@ -109,7 +131,8 @@ class Utils:
         print("before transform: ")
         df.show()
         dados = df.toPandas().to_dict(orient="records")
-    
+
+ 
         file_name = "temp/" + prefix + "_" + sensor + str(datetime.datetime.now().year) + str(datetime.datetime.now().day) + str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) \
         + str(datetime.datetime.now().microsecond)+ ".json"
 
