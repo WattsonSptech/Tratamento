@@ -2,6 +2,7 @@ import os.path
 import dotenv
 from glob import glob
 from tqdm import tqdm
+from client.Client import Client
 from tratamentos.Frequencia import Frequencia
 from tratamentos.Harmonica import Harmonica
 from tratamentos.Tensao import Tensao
@@ -10,7 +11,7 @@ import time
 
 
 def chamar_funcoes(dev_mode):
-    sensores = (Frequencia, Harmonica, Tensao, Temperatura)
+    sensores = (Frequencia, Harmonica, Tensao, Temperatura, Client)
     for sensor in sensores:
         try:
             print(f"\n\tIniciando tratamento de {sensor.__name__}...\n")
