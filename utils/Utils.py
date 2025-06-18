@@ -104,8 +104,8 @@ class Utils:
         return df.withColumn(coluna, F.col(coluna).cast("float")).filter(F.col(coluna).isNotNull())
     
     def transform_df_to_json(self, df, sensor, prefix):
-        print("before transform: ")
-        df.show()
+        # print("before transform: ")
+        # df.show()
         dados = df.toPandas().to_dict(orient="records")
 
 
@@ -122,8 +122,7 @@ class Utils:
         df.show()
         file_name = f"temp/{prefix}_{sensor}{datetime.datetime.now().strftime('%Y%m%d%H%M%S%f')}.csv"
 
-        pandas_df = df.toPandas()
-        pandas_df.to_csv(file_name, index=False)
+        df.coalesce(1).write.mode("overwrite").option("header", True).csv(file_name) 
 
         print(file_name)
 
