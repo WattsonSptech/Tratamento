@@ -16,10 +16,10 @@ class Utils:
         spark = SparkSession.builder \
             .appName(self.project_name) \
             .master("local[*]") \
-            .config("spark.driver.host", "localhost") \
-            .config("spark.memoffHeap.enabled", "true") \
-            .config("spark.memory.offHeary.op.size", "10g") \
             .config("spark.hadoop.io.native.lib.available", "false") \
+            .config("spark.hadoop.native.io", "false") \
+            .config("spark.driver.host", "localhost") \
+            .config("spark.driver.extraJavaOptions", "-Djava.library.path=C:/winutils/bin") \
             .config("mapreduce.fileoutputcommitter.algorithm.version", "1") \
             .config("spark.hadoop.hadoop.security.authentication", "simple") \
             .getOrCreate()
@@ -96,7 +96,7 @@ class Utils:
 
     def rename_column(self, df, coluna, new_coluna):
         return df.withColumnRenamed(coluna, new_coluna)
-    
+
     def remove_null(self, df):
         return df.dropna()
     
@@ -120,11 +120,13 @@ class Utils:
     def transform_df_to_csv(self, df, sensor, prefix):
         print("before transform: ")
         df.show()
-        file_name = f"temp/{prefix}_{sensor}{datetime.datetime.now().strftime('%Y%m%d%H%M%S%f')}.csv"
+        df = df.limit(10000)  # limite para 10 mil linhas, por exemplo
+        # print(dados)
+        file_name = "temp/" + prefix + "_" + sensor + str(datetime.datetime.now().year) + str(datetime.datetime.now().day) + str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) \
+        + str(datetime.datetime.now().microsecond)+ ".csv"
 
-        df.coalesce(1).write.mode("overwrite").option("header", True).csv(file_name) 
-
-        print(file_name)
+        pandas_df = df.toPandas()
+        pandas_df.to_csv(file_name, index=False)
 
         return file_name
 
