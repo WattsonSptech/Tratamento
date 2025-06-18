@@ -124,8 +124,7 @@ class Utils:
         df.show()
         file_name = f"temp/{prefix}_{sensor}{datetime.datetime.now().strftime('%Y%m%d%H%M%S%f')}.csv"
 
-        pandas_df = df.toPandas()
-        pandas_df.to_csv(file_name, index=False)
+        df.coalesce(1).write.mode("overwrite").option("header", True).csv(file_name) 
 
         print(file_name)
 
