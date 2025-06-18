@@ -84,8 +84,8 @@ class Harmonica(ITratamentoDados):
         df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas", "scenery")
         # df_harmonicas.printSchema()
         # df_harmonicas.show()
-        df_harmonicas = self.spark.read.option("multiline", "true").json(arquivo_harmonicas)
-        df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas")
+        # df_harmonicas = self.spark.read.option("multiline", "true").json(arquivo_harmonicas)
+        # df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas")
         # df_harmonicas.printSchema()
         # df_harmonicas.show()
 
