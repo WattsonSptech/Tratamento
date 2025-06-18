@@ -15,7 +15,7 @@ class Harmonica(ITratamentoDados):
     def __tratar_dado__(self) -> None:
         nome_arquivo = self.utils.get_data_s3_csv(EnumBuckets.RAW.value)
 
-        df = self.spark.read.option("multiline", "true").json(nome_arquivo)
+        df = self.spark.read.json(nome_arquivo)
         # df.printSchema()
         # df.show()
 
@@ -38,7 +38,7 @@ class Harmonica(ITratamentoDados):
 
         tamanho_arquivo = df.count()
 
-        linhas = df.collect()
+        linhas = df.drop("IoTHub").collect()
         linhas_filtradas = []
 
         for i in range(tamanho_arquivo):
@@ -84,7 +84,7 @@ class Harmonica(ITratamentoDados):
         df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas", "scenery")
         # df_harmonicas.printSchema()
         # df_harmonicas.show()
-        # df_harmonicas = self.spark.read.option("multiline", "true").json(arquivo_harmonicas)
+        # df_harmonicas = self.spark.read.json(arquivo_harmonicas)
         # df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas")
         # df_harmonicas.printSchema()
         # df_harmonicas.show()
