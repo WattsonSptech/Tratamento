@@ -1,6 +1,6 @@
 from io import StringIO
 import os
-from typing import override
+# from typing import override
 import pandas as pd
 import requests as req
 from datetime import datetime
@@ -20,7 +20,7 @@ class Tensao(ITratamentoDados):
 
     __ZONE_POPULATION_API_URL__ = "https://pastebin.com/raw/Nz1aMUEM"
     
-    @override
+    # @override
     def __init__(self) -> None:
         self.utils = Utils()
         self.__SOURCE_BUCKET__ = os.getenv("BUCKET_NAME_RAW", None)
@@ -29,7 +29,7 @@ class Tensao(ITratamentoDados):
         if self.__SOURCE_BUCKET__ is None or self.__TARGET_BUCKET__ is None:
             raise EnvironmentError(".env's dos buckets raw e client não definidos")
 
-    @override
+    # @override
     def __tratar_dado__(self) -> None:
         dados_tratamentos = {}
 
@@ -47,7 +47,8 @@ class Tensao(ITratamentoDados):
 
     def __ler_arq_telemetria__(self):
         filepath = self.utils.get_data_s3_csv(self.__SOURCE_BUCKET__)
-        return pd.read_json(filepath, lines=True)
+        print(filepath)
+        return pd.read_json(filepath)
 
     def __limpezas__(self, df: pd.DataFrame):
         df = df[df["valueType"] == "volts"].reset_index(drop=True).drop(columns=['scenery', 'valueType'])

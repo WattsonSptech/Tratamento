@@ -29,12 +29,6 @@ class Frequencia(ITratamentoDados):
         dfTensao = self.utils.filter_by_sensor(df, "valueType", "volts")
         dfTensao = dfTensao.drop("instant")
 
-        dfTensao = self.utils.filter_by_sensor(df, "valueType", "volts")
-        dfTensao = dfTensao.drop("instant")
-
-        dfTensao = self.utils.filter_by_sensor(df, "valueType", "volts")
-        dfTensao = dfTensao.drop("instant")
-
         df = self.utils.filter_by_sensor(df, "valueType", "Hz")
 
         dfTensao = dfTensao.selectExpr("value as value_tensao", "valueType as valueType_tensao")

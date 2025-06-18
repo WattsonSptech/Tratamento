@@ -47,8 +47,11 @@ class Utils:
             ultimo_arquivo = arquivos[0]["Key"]
 
             print("\t\tArquivo mais recente encontrado:", ultimo_arquivo)
-
-            path = "./temp/" + ultimo_arquivo.replace(":", "_")
+            if os.name == "posix":
+                path = "./temp/" + ultimo_arquivo.replace(":", "_")
+            else:
+                ultimo_arquivo = ultimo_arquivo.replace(":", "_")
+                path = "temp/" + os.path.basename(ultimo_arquivo)
             s3.download_file(bucket_name, ultimo_arquivo, path)
 
             print("\t\tSucesso!\n")
@@ -121,7 +124,8 @@ class Utils:
     
         file_name = f"temp/{prefix}_{sensor}.json"
 
-        file_name = f"./temp/{prefix}_{sensor} {datetime.datetime.now().isoformat()}"
+        if os.name == "posix":
+            file_name = f"./temp/{prefix}_{sensor} {datetime.datetime.now().isoformat()}"
 
         with open(file_name, "w") as f:
             json.dump(dados, f, indent=4)
@@ -129,8 +133,8 @@ class Utils:
         return file_name
     
     def transform_df_to_csv(self, df, sensor, prefix):
-        print("before transform: ")
-        df.show()
+        # print("before transform: ")
+        # df.show()
         df = df.limit(10000)  # limite para 10 mil linhas, por exemplo
         # print(dados)
         file_name = "temp/" + prefix + "_" + sensor + str(datetime.datetime.now().year) + str(datetime.datetime.now().day) + str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) \
