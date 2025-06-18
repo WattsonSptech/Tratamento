@@ -15,10 +15,10 @@ class Corrente(ITratamentoDados):
     def __tratar_dado__(self) -> None:
         nome_arquivo = self.utils.get_data_s3_csv(EnumBuckets.RAW.value)
 
-        df_corrente = self.spark.read.option("multiline", "true").json(nome_arquivo)
-        df_tensao = self.spark.read.option("multiline", "true").json(nome_arquivo)
-        df_potencia = self.spark.read.option("multiline", "true").json(nome_arquivo)
-        df_temperatura = self.spark.read.option("multiline", "true").json(nome_arquivo)
+        df_corrente = self.spark.read.json(nome_arquivo)
+        df_tensao = self.spark.read.json(nome_arquivo)
+        df_potencia = self.spark.read.json(nome_arquivo)
+        df_temperatura = self.spark.read.json(nome_arquivo)
 
         
         df_corrente = self.utils.filter_by_sensor(df_corrente, "valueType", "amp\u00e9re")
@@ -36,7 +36,7 @@ class Corrente(ITratamentoDados):
         df_tensao = self.utils.rename_column(df_tensao, "value", "voltage")
         df_tensao = self.utils.enumerate_column(df_tensao, "id")
     
-        df_tensao.show()
+        # df_tensao.show()
 
         df_potencia = self.utils.drop_column(df_potencia, "valueType")
         df_potencia = self.utils.drop_column(df_potencia, "zone")
@@ -47,7 +47,7 @@ class Corrente(ITratamentoDados):
         df_potencia = self.utils.rename_column(df_potencia, "value", "power_factor")
         df_potencia = self.utils.enumerate_column(df_potencia, "id")
 
-        df_potencia.show()
+        # df_potencia.show()
 
         df_temperatura = self.utils.drop_column(df_temperatura, "valueType")
         df_temperatura = self.utils.drop_column(df_temperatura, "zone")
@@ -58,7 +58,7 @@ class Corrente(ITratamentoDados):
         df_temperatura = self.utils.rename_column(df_temperatura, "value", "temperature")
         df_temperatura = self.utils.enumerate_column(df_temperatura, "id")
 
-        df_temperatura.show()
+        # df_temperatura.show()
 
         df_corrente = self.utils.remove_null(df_corrente)
         df_corrente = self.utils.remove_wrong_float(df_corrente, "value")
@@ -68,8 +68,8 @@ class Corrente(ITratamentoDados):
         df_corrente = df_corrente.join(df_potencia, "id")
         df_corrente = df_corrente.join(df_temperatura, "id")
         
-        df_corrente.printSchema()
-        df_corrente.show()
+        # df_corrente.printSchema()
+        # df_corrente.show()
         
         object_name = self.utils.transform_df_to_json(df_corrente, self.tipo_dado, "trusted")
         self.utils.set_data_s3_file(object_name, EnumBuckets.TRUSTED.value)
@@ -90,8 +90,8 @@ class Corrente(ITratamentoDados):
         df = self.__encontrar_corrente_primaria__(df)
         df = self.__encontrar_corrente_curto_circuito__(df)
         df = self.utils.order_by_coluna_asc(df,"id")
-        df.printSchema()
-        df.show()
+        # df.printSchema()
+        # df.show()
 
         client_json_file = self.utils.transform_df_to_csv(df, self.tipo_dado, "client")
         self.utils.set_data_s3_file(client_json_file, os.getenv("BUCKET_NAME_CLIENT"))

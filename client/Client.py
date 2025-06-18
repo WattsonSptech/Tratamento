@@ -15,7 +15,7 @@ class Client(ITratamentoDados):
     # envia para o trusted / client
     # pfv adicionem seus sensores aqui
     def __tratar_dado__(self):
-        arquivo_tensao = self.utils.get_data_s3_csv(EnumBuckets.CLIENT.value, "Tensao") # Porcentagem 
+        arquivo_tensao = self.utils.get_data_s3_csv(EnumBuckets.CLIENT.value, "Tensao_ocorrencias.json") # Porcentagem
         arquivo_frequencia = self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "Hz")
         arquivo_temperatura = self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "ºC")
         if arquivo_frequencia == None:
@@ -23,7 +23,7 @@ class Client(ITratamentoDados):
 
 
         df_tensao = self.spark.read.option("multiline", "true").json(arquivo_tensao)
-        df_tensao = df_tensao.selectExpr("day", "value as value_tensao")
+        df_tensao = df_tensao.selectExpr("instant", "value as value_tensao")
 
         df_frequencia = self.spark.read.option("multiline", "true").json(arquivo_frequencia)
         # df_frequencia.show()

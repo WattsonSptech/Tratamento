@@ -17,7 +17,7 @@ class Temperatura(ITratamentoDados):
     def __tratar_dado__(self) -> None:
         nome_arquivo = self.utils.get_data_s3_csv(EnumBuckets.RAW.value)
 
-        df = self.spark.read.option("multiline", "true").json(nome_arquivo)
+        df = self.spark.read.json(nome_arquivo)
         # df.printSchema()
         # df.show()
         

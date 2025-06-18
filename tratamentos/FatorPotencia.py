@@ -15,8 +15,8 @@ class FatorPotencia(ITratamentoDados):
         nome_arquivo = self.utils.get_data_s3_csv(EnumBuckets.RAW.value)
 
         # criando dataframe com o arquivo lido do bucket RAW
-        df = self.spark.read.option("multiline", "true").json(nome_arquivo)
-        df.printSchema()
+        df = self.spark.read.json(nome_arquivo)
+        # df.printSchema()
         
         # removendo valores nulos
         df = self.utils.remove_null(df)
@@ -29,11 +29,11 @@ class FatorPotencia(ITratamentoDados):
 
         # formatando numeros
         df = self.utils.format_number(df, "value")
-        df.printSchema()
+        # df.printSchema()
 
         # ordenando por data, da maior para a menor
         df = self.utils.order_by_coluna_desc(df, "instant")
-        df.show()
+        # df.show()
         
         # convertendo dataframe filtrado em um json
         trusted_json_file = self.utils.transform_df_to_json(df, self.tipo_dado, "trusted")
@@ -54,23 +54,23 @@ class FatorPotencia(ITratamentoDados):
 
         df_fator = df_fator.selectExpr("instant", "value as value_fator", "valueType as valueType_fator")
         df_temperatura = df_temperatura.selectExpr("instant", "value as value_temperatura", "valueType as valueType_temperatura")
-        df_corrente = df_corrente.selectExpr("instant", "value as value_corrente", "type as valueType_corrente")
+        df_corrente = df_corrente.selectExpr("instant", "value as value_corrente", "valueType as valueType_corrente")
 
         df_fator = df_fator.withColumn("instant", F.substring_index(F.col("instant"), ".", 1))
         df_temperatura = df_temperatura.withColumn("instant", F.substring_index(F.col("instant"), ".", 1))
         df_corrente = df_corrente.withColumn("instant", F.substring_index(F.col("instant"), ".", 1))
 
-        df_fator.show()
-        df_temperatura.show()
-        df_corrente.show()
+        # df_fator.show()
+        # df_temperatura.show()
+        # df_corrente.show()
 
         df_join = df_fator.join(df_temperatura, ['instant'], how='inner') \
                           .join(df_corrente, ['instant'], how='inner')
-        df_join.show()
+        # df_join.show()
 
         # convertendo dataframe filtrado em um csv
         client_json_file = self.utils.transform_df_to_json(df_join, "correlacoes_fator", "client")
         # client_csv_file = self.utils.transform_df_to_csv(df_join, self.tipo_dado, "client")
         # enviando csv filtrado para o bucket client
         self.utils.set_data_s3_file(client_json_file, EnumBuckets.CLIENT.value)
-        print('arquivo enviado client')
+        # print('arquivo enviado client')
