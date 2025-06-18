@@ -76,7 +76,7 @@ class Harmonica(ITratamentoDados):
         ]
 
         for objeto in correlacoes:
-            self.utils.set_data_s3_file(object_name=objeto, bucket_name=os.getenv("BUCKET_NAME_CLIENT"))
+            self.utils.set_data_s3_file(objeto, EnumBuckets.CLIENT.value)
 
 
     def __harmonicas_x_tensao__(self, df_trusted):
