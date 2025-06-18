@@ -28,7 +28,16 @@ class Frequencia(ITratamentoDados):
         print("removendo nulls")
         df.show()
 
+        dfTensao = self.utils.filter_by_sensor(df, "valueType", "volts")
+        dfTensao = dfTensao.drop("instant")
+
         df = self.utils.filter_by_sensor(df, "valueType", "Hz")
+
+        dfTensao = dfTensao.selectExpr("value as value_tensao", "valueType as valueType_tensao")
+        df = df.join(dfTensao)
+        df = df.withColumn("tempo", F.monotonically_increasing_id() * 0.01)
+        df = df.withColumn("tensao_senoidal", F.col("value_tensao") * F.sin(2 * F.pi() * F.col("value") * F.col("tempo")))
+        df = df.drop("valueType_tensao", "value_tensao", "tempo")
 
         df = self.utils.remove_wrong_float(df, "value")
         print("removendo campos que não sao float da coluna frquence")
