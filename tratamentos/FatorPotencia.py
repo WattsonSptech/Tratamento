@@ -69,7 +69,8 @@ class FatorPotencia(ITratamentoDados):
         df_join.show()
 
         # convertendo dataframe filtrado em um csv
-        client_csv_file = self.utils.transform_df_to_csv(df_join, self.tipo_dado, "client")
+        client_json_file = self.utils.transform_df_to_json(df_join, "correlacoes_fator", "client")
+        # client_csv_file = self.utils.transform_df_to_csv(df_join, self.tipo_dado, "client")
         # enviando csv filtrado para o bucket client
-        self.utils.set_data_s3_file(client_csv_file, EnumBuckets.CLIENT.value)
+        self.utils.set_data_s3_file(client_json_file, EnumBuckets.CLIENT.value)
         print('arquivo enviado client')
