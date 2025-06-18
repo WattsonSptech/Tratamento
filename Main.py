@@ -11,7 +11,7 @@ import time
 
 
 def chamar_funcoes(dev_mode):
-    sensores = (Tensao, Client)
+    sensores = (Frequencia, Harmonica, Tensao, Temperatura, Client)
     for sensor in sensores:
         try:
             print(f"\n\tIniciando tratamento de {sensor.__name__}...\n")
