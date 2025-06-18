@@ -30,7 +30,10 @@ if __name__ == "__main__":
         os.mkdir("./temp")
 
     while True:
-        [os.remove(f) for f in glob("./temp/*")]
+        try:
+            [os.remove(f) for f in glob("./temp/*")]
+        except PermissionError as e:
+            print(e)
 
         chamar_funcoes(dev_mode)
         print("Tratamentos concluídos!")
