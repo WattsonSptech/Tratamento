@@ -60,7 +60,7 @@ class Harmonica(ITratamentoDados):
 
         trusted_json_file = self.utils.transform_df_to_json(df_final, "all_sensors", "trusted")
 
-        self.utils.set_data_s3_file(object_name=trusted_json_file, bucket_name=EnumBuckets.TRUSTED.value)
+        self.utils.set_data_s3_file(trusted_json_file, EnumBuckets.TRUSTED.value)
         self.__gerar_arquivo_client__()
 
     def __gerar_arquivo_client__(self) -> None:

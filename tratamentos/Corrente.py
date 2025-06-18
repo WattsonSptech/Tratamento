@@ -94,7 +94,7 @@ class Corrente(ITratamentoDados):
         df.show()
 
         client_json_file = self.utils.transform_df_to_csv(df, self.tipo_dado, "client")
-        self.utils.set_data_s3_file(object_name=client_json_file, bucket_name=os.getenv("BUCKET_NAME_CLIENT"))
+        self.utils.set_data_s3_file(client_json_file, os.getenv("BUCKET_NAME_CLIENT"))
 
     def __encontrar_corrente_primaria__(self,df):
         return df.withColumn("primary_current",(F.col("secundary_current") * 160).cast("int"))

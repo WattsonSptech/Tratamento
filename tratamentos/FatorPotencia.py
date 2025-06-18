@@ -39,7 +39,7 @@ class FatorPotencia(ITratamentoDados):
         trusted_json_file = self.utils.transform_df_to_json(df, self.tipo_dado, "trusted")
 
         # enviando json filtrado para o bucket trusted
-        self.utils.set_data_s3_file(object_name=trusted_json_file, bucket_name=EnumBuckets.TRUSTED.value)
+        self.utils.set_data_s3_file(trusted_json_file, EnumBuckets.TRUSTED.value)
 
         self.__gerar_arquivo_client__()
 
@@ -71,5 +71,5 @@ class FatorPotencia(ITratamentoDados):
         # convertendo dataframe filtrado em um csv
         client_csv_file = self.utils.transform_df_to_csv(df_join, self.tipo_dado, "client")
         # enviando csv filtrado para o bucket client
-        self.utils.set_data_s3_file(object_name=client_csv_file, bucket_name=EnumBuckets.CLIENT.value)
+        self.utils.set_data_s3_file(client_csv_file, EnumBuckets.CLIENT.value)
         print('arquivo enviado client')
