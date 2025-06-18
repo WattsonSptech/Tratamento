@@ -77,7 +77,7 @@ class Corrente(ITratamentoDados):
         self.__gerar_arquivo_client__()
     
     def __gerar_arquivo_client__(self) -> None:
-        arquivo_corrente = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor=self.tipo_dado)
+        arquivo_corrente = self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, self.tipo_dado)
         df = self.spark.read.option("multiline", "true").json(arquivo_corrente)
         df = self.utils.rename_column(df, "value", "secundary_current")
         df = self.utils.format_number_to_float(df, "secundary_current")

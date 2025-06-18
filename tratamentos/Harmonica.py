@@ -64,7 +64,7 @@ class Harmonica(ITratamentoDados):
         self.__gerar_arquivo_client__()
 
     def __gerar_arquivo_client__(self) -> None:
-        arquivo_trusted = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="all_sensors")
+        arquivo_trusted = self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "all_sensors")
         df_trusted = self.spark.read.option("multiline", "true").json(arquivo_trusted)
 
         correlacoes = [

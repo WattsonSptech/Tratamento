@@ -44,9 +44,9 @@ class FatorPotencia(ITratamentoDados):
         self.__gerar_arquivo_client__()
 
     def __gerar_arquivo_client__(self) -> None:
-        arquivo_fator = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="fator")
-        arquivo_temperatura = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="ºC")
-        arquivo_corrente = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, sensor="Ampere")
+        arquivo_fator = self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "fator")
+        arquivo_temperatura = self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value,"ºC")
+        arquivo_corrente = self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value,"Ampere")
 
         df_fator = self.spark.read.option("multiline", "true").json(arquivo_fator)
         df_temperatura = self.spark.read.option("multiline", "true").json(arquivo_temperatura)
