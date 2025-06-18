@@ -133,8 +133,8 @@ class Utils:
         return file_name
     
     def transform_df_to_csv(self, df, sensor, prefix):
-        print("before transform: ")
-        df.show()
+        # print("before transform: ")
+        # df.show()
         df = df.limit(10000)  # limite para 10 mil linhas, por exemplo
         # print(dados)
         file_name = "temp/" + prefix + "_" + sensor + str(datetime.datetime.now().year) + str(datetime.datetime.now().day) + str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) \

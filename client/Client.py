@@ -26,7 +26,7 @@ class Client(ITratamentoDados):
         df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas")
 
         df_frequencia = self.spark.read.option("multiline", "true").json(arquivo_frequencia)
-        df_frequencia.show()
+        # df_frequencia.show()
         df_frequencia = df_frequencia.selectExpr("instant", "value as value_frequencia", "valueType as valueType_frequencia", "tensao_senoidal")
 
         df_temperatura = self.spark.read.option("multiline", "true").json(arquivo_temperatura)
