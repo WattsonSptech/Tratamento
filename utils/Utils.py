@@ -2,7 +2,7 @@ from pyspark.sql import SparkSession
 import os
 import boto3
 import pyspark.sql.functions as F
-from pyspark.sql.functions import format_number as format
+from pyspark.sql.functions import format_number as format, regexp_replace, last_value
 import json
 import datetime
 
@@ -98,7 +98,7 @@ class Utils:
         return df
         
     def format_number(self, df, coluna):
-        return df.withColumn(coluna, format(F.col(coluna), 2).cast('float'))
+        return df.withColumn(coluna, regexp_replace(format(F.col(coluna), 2), ",", "").cast('float'))
     
     def format_number_to_float(self, df, coluna):
         return df.withColumn(coluna, F.round(F.col(coluna), 1).cast('float'))
@@ -131,7 +131,8 @@ class Utils:
         print("before transform: ")
         df.show()
         dados = df.toPandas().to_dict(orient="records")
-        print("dict")
+
+ 
         file_name = "temp/" + prefix + "_" + sensor + str(datetime.datetime.now().year) + str(datetime.datetime.now().day) + str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) \
         + str(datetime.datetime.now().microsecond)+ ".json"
 
@@ -160,3 +161,6 @@ class Utils:
     
     def order_by_coluna_asc(self, df, coluna):
         return df.orderBy(F.asc(coluna))
+    
+    def get_last_value(self, df, coluna):
+        return df.select(last_value(coluna))

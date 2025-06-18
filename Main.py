@@ -13,6 +13,7 @@ import time
 def chamar_funcoes():
     #client tem sempre que ser o ultimo!
     sensores = (Frequencia, Harmonica, Temperatura,Corrente, Client)
+
     for sensor in sensores:
         sensor().__tratar_dado__()
 
