@@ -48,7 +48,7 @@ class Tensao(ITratamentoDados):
     def __ler_arq_telemetria__(self):
         filepath = self.utils.get_data_s3_csv(self.__SOURCE_BUCKET__)
         print(filepath)
-        return pd.read_json(filepath)
+        return pd.read_json(filepath, lines=True)
 
     def __limpezas__(self, df: pd.DataFrame):
         df = df[df["valueType"] == "volts"].reset_index(drop=True).drop(columns=['scenery', 'valueType'])
