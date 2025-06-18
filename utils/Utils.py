@@ -26,58 +26,45 @@ class Utils:
     
         return spark
 
-    def get_data_s3_csv(self, bucket_name, sensor=None):
-        try:
-            print(os.getenv("BUCKET_NAME_RAW"))
-            s3 = boto3.client('s3')
-            response = s3.list_objects_v2(Bucket=bucket_name)
-            ultimo_arquivo = ""
+    def get_data_s3_csv(self, bucket_name, data_type=None):
+        print(f"\t\tLendo do bucket {bucket_name} do S3...")
 
-            if 'Contents' in response:
-                arquivos = sorted(response['Contents'], key=lambda obj: obj['LastModified'], reverse=True)
+        s3 = boto3.client('s3')
+        response = s3.list_objects_v2(Bucket=bucket_name)
 
-                if sensor != None:
+        if 'Contents' in response:
+            arquivos = sorted(response['Contents'], key=lambda obj: obj['LastModified'], reverse=True)
 
-                    arquivo_existe = False
+            if data_type is not None:
+                arquivos = [r for r in arquivos if data_type in r["Key"]]
 
-                    for i in range(len(arquivos)):
-                        if (sensor in arquivos[i]['Key']):
-                            arquivo_existe = True
-                            ultimo_arquivo = arquivos[i]['Key']
-                            break
-                    
-                    if not arquivo_existe:
-                        raise Exception(f"Nenhum arquivo do sensor {sensor} encontrado no bucket.")
-                else:
-                    ultimo_arquivo = arquivos[0]['Key']
+            if not arquivos:
+                if data_type is not None:
+                    print(f"\t\tSem arquivos \"{data_type}\" no bucket \"{bucket_name}\"")
+                print(f"\t\tSem arquivos no bucket \"{bucket_name}\"")
+                return None
 
-                print("Último arquivo:", ultimo_arquivo)
-                path = "temp/" + ultimo_arquivo
-                if "temp" in ultimo_arquivo: 
-                    path = ultimo_arquivo
-                    print("path:",path)
-                s3.download_file(bucket_name, ultimo_arquivo, path)
+            ultimo_arquivo = arquivos[0]["Key"]
 
-                return path
-            
-            else:
-                raise Exception("Nenhum arquivo encontrado no bucket.")       
-        except Exception as e:
-            print(f"""Erro ao coletar dados da AWS: 
-                  BUCKET_NAME: {bucket_name}
-                  error: {e}
-                  """)
+            print("\t\tArquivo mais recente encontrado:", ultimo_arquivo)
 
-    def set_data_s3_file(self, object_name, bucket_name):
-        try:
-            s3 = boto3.client('s3')
-            response = s3.upload_file(object_name, bucket_name, object_name)
-            print(response) 
-        except Exception as e:
-            print(f"""Erro ao inserir dados na AWS: 
-                  BUCKET_NAME: {bucket_name}
-                  error: {e}
-                  """)
+            path = "./temp/" + ultimo_arquivo.replace(":", "_")
+            s3.download_file(bucket_name, ultimo_arquivo, path)
+
+            print("\t\tSucesso!\n")
+            return path
+
+        else:
+            raise FileNotFoundError("Nenhum arquivo encontrado no bucket.")
+
+    def set_data_s3_file(self, filepath, bucket_name):
+        print(f"\t\tInserindo no bucket {bucket_name} do S3...")
+        filename = filepath.split("/")[-1]
+
+        s3 = boto3.client('s3')
+        res = s3.upload_file(filepath, bucket_name, filename)
+
+        print("\t\tSucesso!\n")
 
     def highlight_outlier(self, df, coluna):
         qtr_map = df.select( \
@@ -99,28 +86,28 @@ class Utils:
         
     def format_number(self, df, coluna):
         return df.withColumn(coluna, regexp_replace(format(F.col(coluna), 2), ",", "").cast('float'))
-    
+
     def format_number_to_float(self, df, coluna):
         return df.withColumn(coluna, F.round(F.col(coluna), 1).cast('float'))
-    
+
     def drop_column(self, df, coluna):
         return df.drop(coluna)
-    
+
     def add_column(self, df, coluna, value):
         return df.withColumn(coluna, F.lit(value))
-    
+
     def enumerate_column(self, df, coluna):
         id_column = df.withColumn(coluna, F.monotonically_increasing_id())
         id_column = id_column.withColumn(coluna, F.col(coluna) + 1)
         formatted_df = id_column.select(coluna,*df.columns)
         return formatted_df
-    
+
     def rename_values(self, df, coluna, old_value, new_value):
         return df.withColumn(coluna, F.when(F.col(coluna) == old_value, new_value).otherwise(F.col(coluna)))
-    
+
     def rename_column(self, df, coluna, new_coluna):
         return df.withColumnRenamed(coluna, new_coluna)
-    
+
     def remove_null(self, df):
         return df.dropna()
     
@@ -128,13 +115,13 @@ class Utils:
         return df.withColumn(coluna, F.col(coluna).cast("float")).filter(F.col(coluna).isNotNull())
     
     def transform_df_to_json(self, df, sensor, prefix):
-        print("before transform: ")
-        df.show()
+        # print("before transform: ")
+        # df.show()
         dados = df.toPandas().to_dict(orient="records")
+    
+        file_name = f"temp/{prefix}_{sensor}.json"
 
- 
-        file_name = "temp/" + prefix + "_" + sensor + str(datetime.datetime.now().year) + str(datetime.datetime.now().day) + str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) \
-        + str(datetime.datetime.now().microsecond)+ ".json"
+        file_name = f"./temp/{prefix}_{sensor} {datetime.datetime.now().isoformat()}"
 
         with open(file_name, "w") as f:
             json.dump(dados, f, indent=4)
@@ -151,9 +138,8 @@ class Utils:
 
         pandas_df = df.toPandas()
         pandas_df.to_csv(file_name, index=False)
-        
         return file_name
-    
+
     def filter_by_sensor(self, df, coluna, sensor):
         return df.filter(F.col(coluna) == sensor)
     
@@ -162,6 +148,6 @@ class Utils:
     
     def order_by_coluna_asc(self, df, coluna):
         return df.orderBy(F.asc(coluna))
-    
+
     def get_last_value(self, df, coluna):
         return df.select(last_value(coluna))
