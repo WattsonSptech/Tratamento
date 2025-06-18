@@ -26,14 +26,25 @@ class Utils:
     
         return spark
 
-    def get_data_s3_csv(self, bucket_name):
+    def get_data_s3_csv(self, bucket_name, data_type=None):
         print(f"\t\tLendo do bucket {bucket_name} do S3...")
 
         s3 = boto3.client('s3')
         response = s3.list_objects_v2(Bucket=bucket_name)
 
         if 'Contents' in response:
-            ultimo_arquivo = sorted(response['Contents'], key=lambda obj: obj['LastModified'], reverse=True)[0]['Key']
+            arquivos = sorted(response['Contents'], key=lambda obj: obj['LastModified'], reverse=True)
+
+            if data_type is not None:
+                arquivos = [r for r in arquivos if data_type in r["Key"]]
+
+            if not arquivos:
+                if data_type is not None:
+                    print(f"\t\tSem arquivos \"{data_type}\" no bucket \"{bucket_name}\"")
+                print(f"\t\tSem arquivos no bucket \"{bucket_name}\"")
+                return None
+
+            ultimo_arquivo = arquivos[0]["Key"]
 
             print("\t\tArquivo mais recente encontrado:", ultimo_arquivo)
 
@@ -109,13 +120,12 @@ class Utils:
         dados = df.toPandas().to_dict(orient="records")
 
 
-        file_name = "temp/" + prefix + "_" + sensor + str(datetime.datetime.now().year) + str(datetime.datetime.now().day) + str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) \
-        + str(datetime.datetime.now().microsecond)+ ".json"
+        file_name = f"./temp/{prefix}_{sensor} {datetime.datetime.now().isoformat()}"
 
         with open(file_name, "w") as f:
             json.dump(dados, f, indent=4)
         
-        return f"./temp/{file_name}"
+        return file_name
     
     def transform_df_to_csv(self, df, sensor, prefix):
         print("before transform: ")

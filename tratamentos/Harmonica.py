@@ -20,12 +20,13 @@ class Harmonica(ITratamentoDados):
         # df.show()
 
         df = self.utils.remove_null(df)
+        df = self.utils.filter_by_sensor(df, "valueType", "Porcentagem")
         # df.printSchema()
         # df.show()
 
         df = self.utils.remove_wrong_float(df, "value")
         # df.printSchema()
-        df.show()
+        # df.show()
 
         df = self.utils.format_number(df, "value")
         # df.printSchema()
