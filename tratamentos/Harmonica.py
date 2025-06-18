@@ -98,10 +98,8 @@ class Harmonica(ITratamentoDados):
         # df_tensao.printSchema()
         # df_tensao_harmonicas.show()
 
-        # df_tensao_harmonicas.show()
-
-        return self.utils.transform_df_to_csv(df_tensao_harmonicas, "tensao_x_harmonica", "client")
-
+        return self.utils.transform_df_to_json(df_tensao_harmonicas, "tensao_x_harmonica", "client")
+    
     def __harmonicas_x_corrente__(self, df_trusted):
         df_harmonicas = self.utils.filter_by_sensor(df_trusted, "valueType", "Porcentagem")
         df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas", "scenery")
@@ -116,10 +114,8 @@ class Harmonica(ITratamentoDados):
         df_corrente_harmonicas = df_harmonicas.join(df_corrente, ['instant', 'scenery'], how="inner")
         # df_corrente.printSchema()
         # df_corrente_harmonicas.show()
-        #
-        # df_corrente_harmonicas.show()
 
-        return self.utils.transform_df_to_csv(df_corrente_harmonicas, "corrente_x_harmonica", "client")
+        return self.utils.transform_df_to_json(df_corrente_harmonicas, "corrente_x_harmonica", "client")
 
     def __harmonicas_x_potencia__(self, df_trusted):
         df_harmonicas = self.utils.filter_by_sensor(df_trusted, "valueType", "Porcentagem")
@@ -135,10 +131,8 @@ class Harmonica(ITratamentoDados):
         df_potencia_harmonicas = df_harmonicas.join(df_potencia, ['instant', 'scenery'], how="inner")
         # df_potencia_harmonicas.printSchema()
         # df_potencia_harmonicas.show()
-        #
-        # df_potencia_harmonicas.show()
 
-        return self.utils.transform_df_to_csv(df_potencia_harmonicas, "potencia_x_harmonica", "client")
+        return self.utils.transform_df_to_json(df_potencia_harmonicas, "potencia_x_harmonica", "client")
 
     def __harmonicas_x_tempo__(self, df_trusted):
         df_harmonicas = self.utils.filter_by_sensor(df_trusted, "valueType", "Porcentagem")
@@ -152,7 +146,7 @@ class Harmonica(ITratamentoDados):
         # df_harmonicas.show()
 
         return self.utils.transform_df_to_csv(df_harmonicas, "harmonicas_x_tempo", "client")
-
+    
     def __ultimo_valor_harmonica_por_regiao__(self, df_trusted):
         df_harmonicas = self.utils.filter_by_sensor(df_trusted, "valueType", "Porcentagem")
         df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas", "zone")
@@ -174,4 +168,4 @@ class Harmonica(ITratamentoDados):
         df_final = df_final.selectExpr("zone", "value_harmonicas")
         # df_final.show()
 
-        return self.utils.transform_df_to_csv(df_final, "ultimo_valor_harmonica_por_regiao", "client")
+        return self.utils.transform_df_to_json(df_final, "ultimo_valor_harmonica_por_regiao", "client")

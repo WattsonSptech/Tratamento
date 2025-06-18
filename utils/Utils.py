@@ -118,7 +118,8 @@ class Utils:
         # print("before transform: ")
         # df.show()
         dados = df.toPandas().to_dict(orient="records")
-
+    
+        file_name = f"temp/{prefix}_{sensor}.json"
 
         file_name = f"./temp/{prefix}_{sensor} {datetime.datetime.now().isoformat()}"
 
