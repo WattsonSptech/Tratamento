@@ -120,6 +120,7 @@ class Utils:
     def transform_df_to_json(self, df, sensor, prefix):
         # print("before transform: ")
         # df.show()
+        df = df.limit(10000)
         dados = df.toPandas().to_dict(orient="records")
     
         file_name = f"temp/{prefix}_{sensor}.json"
