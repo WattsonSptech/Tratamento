@@ -47,8 +47,11 @@ class Utils:
             ultimo_arquivo = arquivos[0]["Key"]
 
             print("\t\tArquivo mais recente encontrado:", ultimo_arquivo)
-
-            path = "./temp/" + ultimo_arquivo.replace(":", "_")
+            if os.name == "posix":
+                path = "./temp/" + ultimo_arquivo.replace(":", "_")
+            else:
+                ultimo_arquivo = ultimo_arquivo.replace(":", "_")
+                path = "temp/" + os.path.basename(ultimo_arquivo)
             s3.download_file(bucket_name, ultimo_arquivo, path)
 
             print("\t\tSucesso!\n")
@@ -121,7 +124,8 @@ class Utils:
     
         file_name = f"temp/{prefix}_{sensor}.json"
 
-        file_name = f"./temp/{prefix}_{sensor} {datetime.datetime.now().isoformat()}"
+        if os.name == "posix":
+            file_name = f"./temp/{prefix}_{sensor} {datetime.datetime.now().isoformat()}"
 
         with open(file_name, "w") as f:
             json.dump(dados, f, indent=4)

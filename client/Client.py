@@ -17,7 +17,10 @@ class Client(ITratamentoDados):
     def __tratar_dado__(self):
         arquivo_harmonicas = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, data_type="Porcentagem")
         arquivo_frequencia = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, data_type="Hz")
-        arquivo_temperatura = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, data_type="C°")
+        arquivo_temperatura = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, data_type="ºC")
+        if arquivo_frequencia == None:
+            arquivo_temperatura = self.utils.get_data_s3_csv(bucket_name=EnumBuckets.TRUSTED.value, data_type="\u00b0C")
+
 
         df_harmonicas = self.spark.read.option("multiline", "true").json(arquivo_harmonicas)
         df_harmonicas = df_harmonicas.selectExpr("instant", "value as value_harmonicas", "valueType as valueType_harmonicas")
@@ -39,4 +42,4 @@ class Client(ITratamentoDados):
         # df_join.show()
 
         client_json_file = self.utils.transform_df_to_csv(df_join, "client", "client")
-        self.utils.set_data_s3_file(object_name=client_json_file, bucket_name=EnumBuckets.CLIENT.value)
+        self.utils.set_data_s3_file(filepath=client_json_file, bucket_name=EnumBuckets.CLIENT.value)
