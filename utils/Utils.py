@@ -126,7 +126,7 @@ class Utils:
         file_name = f"temp/{prefix}_{sensor}.json"
 
         if os.name == "posix":
-            file_name = f"./temp/{prefix}_{sensor}"
+            file_name = f"./temp/{prefix}_{sensor}.json"
 
         with open(file_name, "w") as f:
             json.dump(dados, f, indent=4)
