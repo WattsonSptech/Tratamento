@@ -110,8 +110,7 @@ class Utils:
         df.show()
         dados = df.toPandas().to_dict(orient="records")
     
-        file_name = "temp/" + prefix + "_" + sensor + str(datetime.datetime.now().year) + str(datetime.datetime.now().day) + str(datetime.datetime.now().hour) + str(datetime.datetime.now().minute) \
-        + str(datetime.datetime.now().microsecond)+ ".json"
+        file_name = f"temp/{prefix}_{sensor}.json"
 
         with open(file_name, "w") as f:
             json.dump(dados, f, indent=4)
