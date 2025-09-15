@@ -3,6 +3,8 @@ from google.cloud import bigquery
 import basedosdados as bd
 import json
 import datetime
+import kagglehub
+
 
 class DownloadDados:
     def __init__(self) -> None:
@@ -31,4 +33,8 @@ class DownloadDados:
         """
 
         return bd.read_sql(query = query, billing_project_id='projeto-consulta-wattson').text
-
+    
+    def consultarKaggle(self):
+        path = kagglehub.dataset_download("arusouza/daily-eletricity-generation-by-source-on-brazil")
+        print("Path to dataset files:", path)
+        return path + "/daily_eletricity_generation_by_source_brazil.csv"
