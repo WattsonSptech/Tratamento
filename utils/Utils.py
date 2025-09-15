@@ -16,6 +16,7 @@ class Utils:
         spark = SparkSession.builder \
             .appName(self.project_name) \
             .master("local[*]") \
+            .config("spark.driver.memory", "4g") \
             .config("spark.hadoop.io.native.lib.available", "false") \
             .config("spark.hadoop.native.io", "false") \
             .config("spark.driver.host", "localhost") \
