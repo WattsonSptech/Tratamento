@@ -9,11 +9,14 @@ from tratamentos.Harmonica import Harmonica
 from tratamentos.Tensao import Tensao
 from tratamentos.Temperatura import Temperatura
 from tratamentos.FatorPotencia import FatorPotencia
+from bases_externas.Clima import Clima
 import time
+from bases_externas.ElecriticityGeneration import ElecriticityGeneration
+
 
 
 def chamar_funcoes(dev_mode):
-    sensores = (Frequencia, Harmonica, Tensao, Temperatura, Corrente, FatorPotencia, Client)
+    sensores = (ElecriticityGeneration, Frequencia, Harmonica, Tensao, Temperatura, Corrente, FatorPotencia, Clima, Client)
     for sensor in sensores:
         try:
             print(f"\n\tIniciando tratamento de {sensor.__name__}...\n")
