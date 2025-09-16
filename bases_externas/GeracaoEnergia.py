@@ -6,56 +6,46 @@ from utils.DownloadDados import DownloadDados
 import os
 from pyspark.sql.types import StructType, StructField, StringType, DoubleType
 from datetime import datetime, timedelta
-from pyspark.sql.functions import to_timestamp
+from pyspark.sql.functions import to_timestamp, col
 
 
-class Clima(ITratamentoDados):
+class GeracaoEnergia(ITratamentoDados):
 
     def __init__(self):
         super().__init__()
         self.download_dados = DownloadDados()
-        self.nome_sensor = "Clima"
-        self.tipo_dado = "ºC"
+        self.nome_sensor = "GeracaoEnergia"
+        self.tipo_dado = "generation"
 
     def __tratar_dado__(self) -> None:
         end_date = datetime.today().date()
         start_date = end_date - timedelta(days=1)
-        data = self.download_dados.consultarPorUrl(
-            f"https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41"
-            f"&hourly=temperature_2m&start_date={start_date}&end_date={end_date}"
-        )
+        data = self.download_dados.consultarPorQueryBase('teste')
 
+        print(data)
         hourly = data.get("hourly", {})
-        times = hourly.get("time", [])
-        temperatures = hourly.get("temperature_2m", [])
 
-        print("times")
-        print(times)
-        print("temperatures")
-        print(temperatures)
-
-        if len(times) != len(temperatures):
-            raise ValueError("Tamanho de 'time' e 'temperature_2m' não coincidem.")
-
-        records = [
-            {"time": t, "temperature_2m": temp}
-            for t, temp in zip(times, temperatures)
-        ]
-
-        print("Primeiro registro:", records[0])
-        print("Total de registros:", len(records)) 
+        print(type(data))
                 
         schema = StructType([
             StructField("time", StringType(), True),
             StructField("temperature_2m", DoubleType(), True)
         ])
 
-        df = self.spark.createDataFrame(records)
+        df = self.spark.createDataFrame(data)
         df.printSchema()
 
-        df = df.withColumn("time", to_timestamp("time"))
+        df = self.utils.set_null_zero(df=df)
+        df = self.utils.uppercase_strings(df=df)
+
+        df.withColumn("numero_consumidores", col("numero_consumidores").cast('int'))
+
 
         print("apos tratativa")
         df.show(6)
+
+        object_name = self.utils.transform_df_to_json(df, self.tipo_dado, "trusted")
+
+        self.utils.set_data_s3_file(object_name, EnumBuckets.TRUSTED.value)
 
         # print(df.count())

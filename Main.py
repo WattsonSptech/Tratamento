@@ -12,11 +12,11 @@ from tratamentos.FatorPotencia import FatorPotencia
 from bases_externas.Clima import Clima
 import time
 from bases_externas.ElecriticityGeneration import ElecriticityGeneration
-
+from bases_externas.GeracaoEnergia import GeracaoEnergia
 
 
 def chamar_funcoes(dev_mode):
-    sensores = (ElecriticityGeneration, Frequencia, Harmonica, Tensao, Temperatura, Corrente, FatorPotencia, Clima, Client)
+    sensores = (GeracaoEnergia, ElecriticityGeneration, Frequencia, Harmonica, Tensao, Temperatura, Corrente, FatorPotencia, Clima, Client)
     for sensor in sensores:
         try:
             print(f"\n\tIniciando tratamento de {sensor.__name__}...\n")

@@ -2,7 +2,7 @@ from pyspark.sql import SparkSession
 import os
 import boto3
 import pyspark.sql.functions as F
-from pyspark.sql.functions import format_number as format, regexp_replace, last_value
+from pyspark.sql.functions import format_number as format, regexp_replace, last_value, col, upper
 import json
 import datetime
 
@@ -115,6 +115,14 @@ class Utils:
     def remove_null(self, df):
         return df.dropna()
     
+    def set_null_zero(self, df):
+        return df.fillna(0)
+    
+    def uppercase_strings(self, df):
+        string_cols = [f.name for f in df.schema.fields if f.dataType.simpleString() == 'string']
+        for col_name in string_cols:
+            df = df.withColumn(col_name, upper(col(col_name)))
+        return df    
     def remove_wrong_float(self, df, coluna):
         return df.withColumn(coluna, F.col(coluna).cast("float")).filter(F.col(coluna).isNotNull())
     

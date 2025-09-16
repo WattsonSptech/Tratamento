@@ -32,7 +32,7 @@ class DownloadDados:
             ON dados.sigla_uf = diretorio_sigla_uf.sigla
         """
 
-        return bd.read_sql(query = query, billing_project_id='projeto-consulta-wattson').text
+        return bd.read_sql(query = query, billing_project_id='projeto-consulta-wattson')
     
     def consultarKaggle(self):
         path = kagglehub.dataset_download("arusouza/daily-eletricity-generation-by-source-on-brazil")
