@@ -23,8 +23,8 @@ def chamar_funcoes(dev_mode):
             sensor().__tratar_dado__()
         except Exception as e:
             print(f"\t\033[31m[!] Erro no sensor de {sensor.__name__}!\033[0m")
-            if dev_mode:
-                raise e
+            # if dev_mode:
+            #     raise e
 
 if __name__ == "__main__":
     dotenv.load_dotenv()

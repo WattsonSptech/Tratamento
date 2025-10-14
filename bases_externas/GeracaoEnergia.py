@@ -16,22 +16,27 @@ class GeracaoEnergia(ITratamentoDados):
         self.download_dados = DownloadDados()
         self.nome_sensor = "GeracaoEnergia"
         self.tipo_dado = "generation"
+        self.ja_rodou = False
+        self.proximo_horario = datetime.now() + timedelta(days=1)
 
     def __tratar_dado__(self) -> None:
-        end_date = datetime.today().date()
-        start_date = end_date - timedelta(days=1)
+        print(self.horario_ultima)
+        print(self.proximo_horario)
+        if(self.ja_rodou == True):
+            if(self.utils.horario_ja_passou(self.proximo_horario) == False):
+                print("Marcado para rodar: " + self.proximo_horario)
+                return
+            else: 
+                self.horario_ultima = datetime.now()
+                self.proximo_horario = datetime.now() + timedelta(days=30)
+
         data = self.download_dados.consultarPorQueryBase('teste')
 
         print(data)
-        hourly = data.get("hourly", {})
-
         print(type(data))
-                
-        schema = StructType([
-            StructField("time", StringType(), True),
-            StructField("temperature_2m", DoubleType(), True)
-        ])
+        
 
+    
         df = self.spark.createDataFrame(data)
         df.printSchema()
 

@@ -165,3 +165,16 @@ class Utils:
 
     def get_last_value(self, df, coluna):
         return df.select(last_value(coluna))
+    
+    def horario_ja_passou(hora_alvo_str):
+        agora = datetime.now()
+
+        
+        try:
+            hora_alvo_obj = datetime.strptime(hora_alvo_str, "%H:%M")
+            data_hora_alvo = agora.replace(hour=hora_alvo_obj.hour, minute=hora_alvo_obj.minute, second=0, microsecond=0)
+
+            return data_hora_alvo < agora
+        except ValueError:
+            print(f"Formato de horário inválido: {hora_alvo_str}. Use o formato HH:MM.")
+            return False

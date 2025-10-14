@@ -17,11 +17,23 @@ class ElecriticityGeneration(ITratamentoDados):
         self.download_dados = DownloadDados()
         self.nome_sensor = "eletricity"
         self.tipo_dado = "eletricity-generation"
+        self.horario_ultima = datetime.now()
+        self.proximo_horario = datetime.now() + timedelta(hours=1)
 
     def __tratar_dado__(self) -> None:
+        print(self.horario_ultima)
+        print(self.proximo_horario)
+        if(self.utils.horario_ja_passou(self.proximo_horario) == False):
+            return
+        else: 
+            self.horario_ultima = datetime.now()
+            self.proximo_horario = datetime.now() + timedelta(days=30)
+
+
         end_date = datetime.today().date()
         start_date = end_date - timedelta(days=1)
         data = self.download_dados.consultarKaggle()
+
 
         print(data)
 

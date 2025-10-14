@@ -16,6 +16,8 @@ class Clima(ITratamentoDados):
         self.download_dados = DownloadDados()
         self.nome_sensor = "Clima"
         self.tipo_dado = "celsius"
+        self.horario_ultima = datetime.now()
+        self.proximo_horario = datetime.now() + timedelta(hours=1)
 
     def __tratar_dado__(self) -> None:
         end_date = datetime.today().date()
