@@ -1,0 +1,48 @@
+---
+- hosts: ec2
+  become: true
+  vars:
+    project_dir: /home/ec2-user/tratamento
+  tasks:
+    - name: Atualiza pacotes do sistema
+      yum:
+        name: '*'
+        state: latest
+
+    - name: Instala Java
+      yum:
+        name: java-1.8.0-openjdk-devel
+        state: present
+
+    - name: Instala Python 3
+      yum:
+        name: python3
+        state: present
+
+    - name: Instala pip
+      command: python3 -m ensurepip
+
+    - name: Instala PySpark via pip
+      pip:
+        name: pyspark
+        executable: pip3
+
+    - name: Cria diretório do projeto na EC2
+      file:
+        path: "{{ project_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Copia todo o projeto "tratamento/" para a EC2
+      copy:
+        src: ../tratamento/
+        dest: "{{ project_dir }}/"
+        mode: '0755'
+
+    - name: Instala dependências via requirements.txt
+      pip:
+        requirements: "{{ project_dir }}/requirements.txt"
+        executable: pip3
+
+    - name: Executa o main.py do projeto
+      command: python3 "{{ project_dir }}/Main.py"

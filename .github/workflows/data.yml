@@ -1,0 +1,39 @@
+name: Deploy PySpark Project name EC2
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v3
+
+    - name: Configurar credenciais AWS 
+      uses: aws-actions/configure-aws-credentials@v4 
+      with: 
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} 
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} 
+        aws-region: ${{ secrets.AWS_REGION }} 
+        aws-session-token: ${{ secrets.AWS_SESSION_TOKEN }} 
+
+    - name: Instala Ansible
+      run: sudo apt-get update && sudo apt-get install -y ansible
+
+    - name: Adiciona chave SSH para EC2
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa_ansible
+        chmod 600 ~/.ssh/id_rsa_ansible
+
+    - name: Substitui variável no inventory
+      run: |
+        sed "s/{{ ec2_host }}/${{ secrets.EC2_HOST }}/" ansible/inventory.ini > ansible/inventory.ini.tmp
+        mv ansible/inventory.ini.tmp ansible/inventory.ini
+
+    - name: Executa Ansible Playbook
+      run: |
+        ansible-playbook -i ansible/inventory.ini ansible/playbook.yml
