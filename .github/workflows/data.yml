@@ -27,7 +27,7 @@ jobs:
       run: |
         mkdir -p ~/.ssh
         echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/id_rsa_ansible
-        chmod 600 ~/.ssh/id_rsa_ansible
+        chmod 400 ~/.ssh/id_rsa_ansible
 
     - name: Substitui variável no inventory
       run: |
@@ -36,4 +36,4 @@ jobs:
 
     - name: Executa Ansible Playbook
       run: |
-        ansible-playbook -i ansible/inventory ansible/playbook.yml
+        ansible-playbook -i ansible/inventory ansible/setup.yml
