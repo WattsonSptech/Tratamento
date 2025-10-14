@@ -31,8 +31,8 @@ jobs:
 
     - name: Substitui variável no inventory
       run: |
-        sed "s/{{ ec2_host }}/${{ secrets.EC2_HOST }}/" ansible/inventory.ini > ansible/inventory.ini.tmp
-        mv ansible/inventory.ini.tmp ansible/inventory.ini
+        sed "s/{{ ec2_host }}/${{ secrets.EC2_HOST }}/" ansible/inventory > ansible/inventory.tmp
+        mv ansible/inventory.tmp ansible/inventory
 
     - name: Executa Ansible Playbook
       run: |
