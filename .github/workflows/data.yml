@@ -46,6 +46,10 @@ jobs:
       run: |
         cat ansible/inventory
 
+    - name: Testar conexão SSH
+      run: |
+        ssh -i ~/.ssh/public_key_wattson.pem ec2-user@${{ secrets.EC2_HOST }} "echo 'Conexão bem-sucedida'"
+
     - name: Executa Ansible Playbook
       run: |
         ansible-playbook -v -i ansible/inventory ansible/setup.yml
