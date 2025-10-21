@@ -27,7 +27,7 @@ jobs:
       run: |
         mkdir -p ~/.ssh
         echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/public_key_wattson.pem
-        chmod 400 ~/.ssh/id_rsa_ansible
+        chmod 400 ~/.ssh/public_key_wattson.pem
 
     - name: Substitui variável no inventory
       run: |
