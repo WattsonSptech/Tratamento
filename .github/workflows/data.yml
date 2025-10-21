@@ -36,6 +36,11 @@ jobs:
       run: |
         sed "s/{{ ec2_host }}/${{ secrets.EC2_HOST }}/" ansible/inventory > ansible/inventory.tmp
         mv ansible/inventory.tmp ansible/inventory
+        
+            
+    - name: Verificar conteúdo do inventory
+      run: |
+        cat ansible/inventory
 
     - name: Executa Ansible Playbook
       run: |
