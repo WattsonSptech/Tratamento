@@ -29,6 +29,9 @@ jobs:
         echo "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/public_key_wattson.pem
         chmod 400 ~/.ssh/public_key_wattson.pem
 
+    - name: Debug EC2_HOST value 
+      run: echo "EC2_HOST is ${EC2_HOST}"
+
     - name: Substitui variável no inventory
       run: |
         sed "s/{{ ec2_host }}/${{ secrets.EC2_HOST }}/" ansible/inventory > ansible/inventory.tmp
