@@ -4,6 +4,11 @@
   vars:
     project_dir: /home/ubuntu/tratamento
   tasks:
+    - name: Instala python3-apt
+      apt:
+        name: python3-apt
+        state: present
+
     - name: Atualiza pacotes do sistema
       apt:
         update_cache: yes
