@@ -48,7 +48,7 @@ jobs:
 
     - name: Testar conexão SSH
       run: |
-        ssh -i ~/.ssh/public_key_wattson.pem ec2-user@${{ secrets.EC2_HOST }} "echo 'Conexão bem-sucedida'"
+        ssh -i ~/.ssh/public_key_wattson.pem ubuntu@${{ secrets.EC2_HOST }} "echo 'Conexão bem-sucedida'"
 
     - name: Executa Ansible Playbook
       run: |
