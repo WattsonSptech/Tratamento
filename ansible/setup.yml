@@ -2,20 +2,21 @@
 - hosts: ec2
   become: true
   vars:
-    project_dir: /home/ec2-user/tratamento
+    project_dir: /home/ubuntu/tratamento
   tasks:
     - name: Atualiza pacotes do sistema
-      yum:
-        name: '*'
+      apt:
+        update_cache: yes
+        upgrade: dist
         state: latest
 
     - name: Instala Java
-      yum:
-        name: java-1.8.0-openjdk-devel
+      apt:
+        name: openjdk-8-jdk
         state: present
 
     - name: Instala Python 3
-      yum:
+      apt:
         name: python3
         state: present
 
