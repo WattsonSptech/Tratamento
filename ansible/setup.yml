@@ -4,16 +4,8 @@
   vars:
     project_dir: /home/ubuntu/tratamento
   tasks:
-    - name: Instala python3-apt
-      apt:
-        name: python3-apt
-        state: present
-
-    - name: Atualiza pacotes do sistema
-      apt:
-        update_cache: yes
-        upgrade: dist
-        state: latest
+    - name: Atualiza pacotes do sistema (usando apt-get)
+      command: apt-get update && apt-get upgrade -y
 
     - name: Instala Java
       apt:
