@@ -37,7 +37,11 @@ jobs:
         sed "s/{{ ec2_host }}/${{ secrets.EC2_HOST }}/" ansible/inventory > ansible/inventory.tmp
         mv ansible/inventory.tmp ansible/inventory
         
-            
+    - name: Adiciona chave SSH ao known_hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+              
     - name: Verificar conteúdo do inventory
       run: |
         cat ansible/inventory
