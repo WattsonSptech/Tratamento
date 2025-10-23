@@ -5,13 +5,13 @@
     ansible_python_interpreter: /usr/bin/python3
     
   tasks:
-    - name: Update apt package cache
-      apt:
-        update_cache: yes
+    # - name: Update apt package cache
+    #   apt:
+    #     update_cache: yes
 
-    - name: Upgrade all apt packages
-      apt:
-        upgrade: yes
+    # - name: Upgrade all apt packages
+    #   apt:
+    #     upgrade: yes
         
     - name: Instala Java
       apt:
