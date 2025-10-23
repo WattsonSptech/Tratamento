@@ -1,18 +1,10 @@
 - hosts: ec2
-  become: true              
+  become: true
   vars:
     project_dir: /home/ubuntu/tratamento
     ansible_python_interpreter: /usr/bin/python3
-    
-  tasks:
-    # - name: Update apt package cache
-    #   apt:
-    #     update_cache: yes
 
-    # - name: Upgrade all apt packages
-    #   apt:
-    #     upgrade: yes
-        
+  tasks:
     - name: Install OpenJDK on Debian/Ubuntu
       hosts: your_target_hosts
       become: true
@@ -40,13 +32,13 @@
       file:
         path: "{{ project_dir }}"
         state: directory
-        mode: '0755'
+        mode: "0755"
 
     - name: Copia todo o projeto "tratamento/" para a EC2
       copy:
         src: ../tratamento/
         dest: "{{ project_dir }}/"
-        mode: '0755'
+        mode: "0755"
 
     - name: Instala dependências via requirements.txt
       pip:
