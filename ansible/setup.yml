@@ -5,6 +5,12 @@
     ansible_python_interpreter: /usr/bin/python3
 
   tasks:
+    - name: Reinstall Python3
+      command: sudo apt remove python3-apt
+
+    - name: Reinstall Python3 2
+      command: sudo apt install python3-apt
+  
     - name: Install OpenJDK 11 JDK
       ansible.builtin.apt:
         name: openjdk-11-jdk
