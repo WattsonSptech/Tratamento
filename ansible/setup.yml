@@ -3,7 +3,6 @@
   vars:
     project_dir: /home/ubuntu/tratamento
     ansible_python_interpreter: /usr/bin/python3
-  tasks:
 
   tasks:
     - name: Install OpenJDK on Debian/Ubuntu
