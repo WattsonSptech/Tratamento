@@ -1,11 +1,17 @@
 - hosts: ec2
-  become: true
+  become: true              
   vars:
     project_dir: /home/ubuntu/tratamento
+    
   tasks:
-    - name: Atualiza pacotes do sistema (usando apt-get)
-      command: sudo apt-get update && apt-get upgrade -y
+    - name: Update apt package cache
+      apt:
+        update_cache: yes
 
+    - name: Upgrade all apt packages
+      apt:
+        upgrade: yes
+        
     - name: Instala Java
       apt:
         name: openjdk-8-jdk
