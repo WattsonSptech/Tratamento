@@ -1,8 +1,9 @@
-- hosts: ec2
-  become: true
+- hosts: ec2  # Replace with your inventory group or hostname
+  become: true                # This ensures tasks run with elevated privileges (sudo)
   vars:
     project_dir: /home/ubuntu/tratamento
     ansible_python_interpreter: /usr/bin/python3
+  tasks:
 
   tasks:
     - name: Install OpenJDK on Debian/Ubuntu
