@@ -5,15 +5,11 @@
     ansible_python_interpreter: /usr/bin/python3
 
   tasks:
-    - name: Install OpenJDK on Debian/Ubuntu
-      hosts: your_target_hosts
-      become: true
-      tasks:
-        - name: Install OpenJDK 11 JDK
-          ansible.builtin.apt:
-            name: openjdk-11-jdk
-            update_cache: yes
-            state: present
+    - name: Install OpenJDK 11 JDK
+      ansible.builtin.apt:
+        name: openjdk-11-jdk
+        update_cache: yes
+        state: present # or '
 
     - name: Instala Python 3
       apt:
