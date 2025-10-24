@@ -4,7 +4,7 @@
   vars:
      project_dir: /home/ubuntu/tratamento
   tasks:
-    - name: Update apt cache (for Debian/Ubuntu)
+    - name: Update apt cache
       apt:
         update_cache: yes
       when: ansible_os_family == "Debian"
@@ -14,13 +14,13 @@
         name: python3
         state: present
 
-    - name: Install OpenJDK Java 11 (for Debian/Ubuntu)
+    - name: Install OpenJDK Java 11 
       apt:
         name: openjdk-11-jdk
         state: present
       
-     - name: Install pip
-       apt:
+    - name: Install pip
+      apt:
          name: python3-pip
          state: present
 
