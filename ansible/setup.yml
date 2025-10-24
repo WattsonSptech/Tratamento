@@ -24,10 +24,15 @@
          name: python3-pip
          state: present
 
-    - name: python3 pyspark download
-      apt:
-         name: python3-pyspark
-         state: present
+    - name: Instalar PySpark com pip
+      pip:
+        name: pyspark
+        executable: pip3
+
+    - name: Verificar versão do PySpark
+      command: python3 -m pip show pyspark
+      register: pyspark_info
+
 
     - name: Cria diretório do projeto na EC2
       file:
