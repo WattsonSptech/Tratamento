@@ -1,6 +1,8 @@
 - name: Install Python 3 and Java 11
   hosts: all
   become: yes
+  vars:
+     project_dir: /home/ubuntu/tratamento
   tasks:
     - name: Update apt cache (for Debian/Ubuntu)
       apt:
@@ -16,9 +18,11 @@
       apt:
         name: openjdk-11-jdk
         state: present
-      when: ansible_os_family == "Debian"
-    - name: Instala pip
-      command: python3 -m ensurepip
+      
+     - name: Install pip
+       apt:
+         name: python3-pip
+         state: present
 
     - name: Instala PySpark via pip
       pip:
