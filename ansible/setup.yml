@@ -24,10 +24,16 @@
          name: python3-pip
          state: present
 
-    - name: Instalar PySpark com pip
+
+    - name: Criar virtualenv para PySpark
+      command: python3 -m venv /opt/pyspark-venv
+      args:
+        creates: /opt/pyspark-venv/bin/activate
+
+    - name: Instalar PySpark dentro da virtualenv
       pip:
         name: pyspark
-        executable: pip3
+        virtualenv: /opt/pyspark-venv
 
     - name: Verificar versão do PySpark
       command: python3 -m pip show pyspark
