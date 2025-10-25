@@ -6,3 +6,5 @@ setuptools~=80.9.0
 dotenv~=0.9.9
 python-decouple~=3.8
 tdqm~=4.67.1
+basedosdados~=2.0.2
+kaggle~=1.7.4.5
