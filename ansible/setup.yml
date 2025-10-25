@@ -111,4 +111,5 @@
         var: credentials_content.stdout
         
     - name: Executar Main.py dentro do virtualenv
+      become_user: ubuntu
       command: "{{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py"
