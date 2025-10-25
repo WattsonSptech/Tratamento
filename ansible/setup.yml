@@ -52,8 +52,41 @@
       register: pyspark_info
       ignore_errors: yes
 
-    # - debug:
-    #     var: pyspark_info.stdout_lines
+    
+    - name: Criar arquivo .env
+      ansible.builtin.lineinfile:
+        path: "{{ app_dir }}/.env"
+        line: "DB_HOST={{ db_host }}"
+        create: yes
+        state: present
 
+    - name: Adicionar DB_USER ao .env
+      ansible.builtin.lineinfile:
+        path: "{{ app_dir }}"
+        line: "BUCKET_NAME_RAW=bkt-wattson-raw-381492193669"
+        insertafter: EOF
+        state: present
+
+    - name: Adicionar DB_PASSWORD ao .env
+      ansible.builtin.lineinfile:
+        path: "{{ app_dir }}"
+        line: "BUCKET_NAME_TRUSTED=bkt-wattson-trusted-381492193669"
+        insertafter: EOF
+        state: present
+
+    - name: Adicionar DB_NAME ao .env
+      ansible.builtin.lineinfile:
+        path: "{{ env_file }}"
+        line: "BUCKET_NAME_CLIENT=bkt-wattson-client-381492193669"
+        insertafter: EOF
+        state: present
+
+    - name: Adicionar DB_NAME ao .env
+      ansible.builtin.lineinfile:
+        path: "{{ env_file }}"
+        line: "DEV_MODE=1"
+        insertafter: EOF
+        state: present
+        
     - name: Executar Main.py dentro do virtualenv
       command: "{{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py"
