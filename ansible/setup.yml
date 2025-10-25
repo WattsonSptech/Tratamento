@@ -57,6 +57,6 @@
 
 
     - name: Executar Main.py dentro do virtualenv
-      command: "{{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py"
+      command: "/venv/bin/python Main.py"
       args:
         chdir: "{{ app_dir }}"
