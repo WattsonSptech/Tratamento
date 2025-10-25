@@ -48,13 +48,8 @@
       register: pyspark_info
       ignore_errors: yes
 
-    - debug:
-        var: pyspark_info.stdout_lines
-
-    - name:
-      command: "tree {{ app_dir }}"
-      ignore_errors: yes
-
+    # - debug:
+    #     var: pyspark_info.stdout_lines
 
     - name: Executar Main.py dentro do virtualenv
       command: "/venv/bin/python Main.py"
