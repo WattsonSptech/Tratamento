@@ -69,14 +69,14 @@
 
     - name: Adicionar DB_NAME ao .env
       ansible.builtin.lineinfile:
-        path: "{{ env_file }}/.env"
+        path: "{{ app_dir }}/.env"
         line: "BUCKET_NAME_CLIENT=bkt-wattson-client-381492193669"
         insertafter: EOF
         state: present
 
     - name: Adicionar DB_NAME ao .env
       ansible.builtin.lineinfile:
-        path: "{{ env_file }}/.env"
+        path: "{{ app_dir }}/.env"
         line: "DEV_MODE=1"
         insertafter: EOF
         state: present
