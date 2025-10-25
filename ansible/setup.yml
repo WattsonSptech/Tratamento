@@ -3,7 +3,12 @@
   become: yes
   vars:
     app_dir: /opt/tratamento
-  tasks:
+    aws_access_key: "{{ lookup('env', 'AWS_ACCESS_KEY_ID') }}"
+    aws_secret_key: "{{ lookup('env', 'AWS_SECRET_ACCESS_KEY') }}"
+    aws_region: "{{ lookup('env', 'AWS_DEFAULT_REGION') | default('us-east-1') }}
+    aws_session_token: "{{ lookup('env', 'AWS_SESSION_TOKEN') }}
+    aws_dir: "/home/ubuntu/.aws"
+tasks:
     - name: Atualizar cache do apt
       apt:
         update_cache: yes
@@ -80,6 +85,21 @@
         line: "DEV_MODE=1"
         insertafter: EOF
         state: present
+
+    - name: Criar diretório ~/.aws
+          file:
+            path: "{{ aws_dir }}"
+            state: directory
+            mode: '0700'
+
+    - name: Criar arquivo de credenciais AWS
+      copy:
+        dest: "{{ aws_dir }}/credentials"
+        mode: '0600'
+        content: |
+          [default]
+          aws_access_key_id = {{ lookup('env', 'AWS_ACCESS_KEY_ID') }}
+          aws_secret_access_key = {{ lookup('env', 'AWS_SECRET_ACCESS_KEY') }}
         
     - name: Executar Main.py dentro do virtualenv
       command: "{{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py"
