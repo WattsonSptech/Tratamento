@@ -52,6 +52,4 @@
     #     var: pyspark_info.stdout_lines
 
     - name: Executar Main.py dentro do virtualenv
-      command: "/venv/bin/python Main.py"
-      args:
-        chdir: "{{ app_dir }}"
+      command: "{{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py"
