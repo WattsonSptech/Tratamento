@@ -8,7 +8,7 @@
     aws_region: "{{ lookup('env', 'AWS_DEFAULT_REGION') | default('us-east-1') }}"
     aws_session_token: "{{ lookup('env', 'AWS_SESSION_TOKEN') }}"
     aws_dir: "/home/ubuntu/.aws"
-tasks:
+  tasks:
     - name: Atualizar cache do apt
       apt:
         update_cache: yes
