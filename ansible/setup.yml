@@ -37,13 +37,15 @@
       args:
         creates: "{{ app_dir }}/venv/bin/activate"
 
+    - name: Desinstalar pacotes listados no requirements.txt
+      command: "{{ app_dir }}/venv/bin/pip uninstall -y -r {{ app_dir }}/requirements.txt"
+      when: ansible_virtualenv is defined
+
     - name: Instalar PySpark e dependências no virtualenv
       pip:
         requirements: "{{ app_dir }}/requirements.txt"
         virtualenv: "{{ app_dir }}/venv"
-        state: present
-        extra_args: "--no-warn-already-satisfied"
-        
+        state: present        
 
     - name: Exibir versão do PySpark
       command: "{{ app_dir }}/venv/bin/python -m pip show pyspark"
