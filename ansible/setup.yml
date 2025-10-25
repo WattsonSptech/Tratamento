@@ -42,6 +42,8 @@
         requirements: "{{ app_dir }}/requirements.txt"
         virtualenv: "{{ app_dir }}/venv"
         state: present
+        extra_args: "--no-warn-already-satisfied"
+        
 
     - name: Exibir versão do PySpark
       command: "{{ app_dir }}/venv/bin/python -m pip show pyspark"
