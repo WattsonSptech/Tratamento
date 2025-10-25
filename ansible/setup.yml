@@ -51,6 +51,11 @@
     - debug:
         var: pyspark_info.stdout_lines
 
+    - name:
+      command: "tree {{ app_dir }}"
+      ignore_errors: yes
+
+
     - name: Executar Main.py dentro do virtualenv
       command: "{{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py"
       args:
