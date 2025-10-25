@@ -51,5 +51,10 @@ jobs:
         ssh -i ~/.ssh/public_key_wattson.pem ubuntu@${{ secrets.EC2_HOST }} "echo 'Conexão bem-sucedida'"
 
     - name: Executa Ansible Playbook
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+        AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }} 
       run: |
         ansible-playbook -v -i ansible/inventory ansible/setup.yml
