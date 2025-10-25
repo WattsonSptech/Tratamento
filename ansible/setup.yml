@@ -87,10 +87,10 @@
         state: present
 
     - name: Criar diretório ~/.aws
-          file:
-            path: "{{ aws_dir }}"
-            state: directory
-            mode: '0700'
+      file:
+        path: "{{ aws_dir }}"
+        state: directory
+        mode: '0700'
 
     - name: Criar arquivo de credenciais AWS
       copy:
