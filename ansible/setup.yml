@@ -40,8 +40,8 @@
         name: pyspark
         virtualenv: /opt/pyspark-venv
 
-    - name: Verificar versão do PySpark
-      command: python3 -m pip show pyspark
+    - name: Mostrar versão do PySpark
+      command: /opt/pyspark-venv/bin/python -m pip show pyspark
       register: pyspark_info
 
 
