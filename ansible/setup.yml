@@ -100,11 +100,7 @@
           [default]
           aws_access_key_id = {{ lookup('env', 'AWS_ACCESS_KEY_ID') }}
           aws_secret_access_key = {{ lookup('env', 'AWS_SECRET_ACCESS_KEY') }}
-        - name: Mostrar o conteúdo do arquivo de credenciais AWS
-      command: cat /home/ubuntu/.aws/credentials
-      register: credentials_content
-      ignore_errors: yes  # Caso o arquivo não exista ou haja algum erro
-
+     
     - name: Mostrar o conteúdo do arquivo de credenciais AWS
       command: cat /home/ubuntu/.aws/credentials
       register: credentials_content
