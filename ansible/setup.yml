@@ -82,7 +82,7 @@
     - name: Adicionar DB_NAME ao .env
       ansible.builtin.lineinfile:
         path: "{{ app_dir }}/.env"
-        line: "DEV_MODE=1"
+        line: "DEV_MODE=0"
         insertafter: EOF
         state: present
 
@@ -113,6 +113,8 @@
         
     - name: Executar Main.py dentro do virtualenv
       command: "{{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py"
+      shell: |
+        nohup {{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py > {{ app_dir }}/main.log 2>&1 &
       environment:
         AWS_ACCESS_KEY_ID: "{{ aws_access_key }}"
         AWS_SECRET_ACCESS_KEY: "{{ aws_secret_key }}"
