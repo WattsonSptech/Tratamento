@@ -3,10 +3,10 @@
   become: yes
   vars:
     app_dir: /opt/tratamento
-    aws_access_key: "{{ lookup('env', 'AWS_ACCESS_KEY_ID') }}"
-    aws_secret_key: "{{ lookup('env', 'AWS_SECRET_ACCESS_KEY') }}"
-    aws_region: "{{ lookup('env', 'AWS_DEFAULT_REGION') | default('us-east-1') }}"
-    aws_session_token: "{{ lookup('env', 'AWS_SESSION_TOKEN') }}"
+    aws_access_key: "{{ AWS_ACCESS_KEY_ID }}"
+    aws_secret_key: "{{ AWS_SECRET_ACCESS_KEY }}"
+    aws_region: "{{ AWS_DEFAULT_REGION | default('us-east-1') }}"
+    aws_session_token: "{{ AWS_SESSION_TOKEN }}"
     aws_dir: "/home/ubuntu/.aws"
   tasks:
     - name: Atualizar cache do apt
@@ -98,8 +98,9 @@
         mode: '0600'
         content: |
           [default]
-          aws_access_key_id = {{ lookup('env', 'AWS_ACCESS_KEY_ID') }}
-          aws_secret_access_key = {{ lookup('env', 'AWS_SECRET_ACCESS_KEY') }}
+          aws_access_key_id = {{ aws_access_key }}
+          aws_secret_access_key = {{ aws_secret_key }}
+          aws_session_token = {{ aws_session_token }}
      
     - name: Mostrar o conteúdo do arquivo de credenciais AWS
       command: cat /home/ubuntu/.aws/credentials
@@ -115,4 +116,5 @@
       environment:
         AWS_ACCESS_KEY_ID: "{{ aws_access_key }}"
         AWS_SECRET_ACCESS_KEY: "{{ aws_secret_key }}"
+        AWS_SESSION_TOKEN: "{{  aws_session_token  }}"
         AWS_DEFAULT_REGION: "{{ aws_region }}"
