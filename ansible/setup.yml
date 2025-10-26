@@ -112,7 +112,6 @@
         var: credentials_content.stdout
         
     - name: Executar Main.py dentro do virtualenv
-      command: "{{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py"
       shell: |
         nohup {{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py > {{ app_dir }}/main.log 2>&1 &
       environment:
