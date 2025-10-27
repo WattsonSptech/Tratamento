@@ -11,7 +11,7 @@
     gcp_dir: "/home/ubuntu/.config/gcloud"
     gcp_project_id: "projeto-consulta-wattson"
     gcp_credentials_file: "/home/ubuntu/.config/gcloud/service-account.json"
-    gcp_service_account_key: "{{ GCP_SERVICE_ACCOUNT_KEY }}"
+    gcp_service_account_key: "{{ lookup('env', 'GCP_SERVICE_ACCOUNT_KEY') }}"
   tasks:
     - name: Atualizar cache do apt
       apt:
