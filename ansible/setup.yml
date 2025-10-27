@@ -13,6 +13,10 @@
     gcp_credentials_file: "/home/ubuntu/.config/gcloud/service-account.json"
     gcp_service_account_key: "{{ lookup('env', 'GCP_SERVICE_ACCOUNT_KEY') }}"
   tasks:
+    - name: Parar o processo Main.py se estiver rodando
+      shell: |
+        pkill -f "{{ app_dir }}/Main.py" || true
+      ignore_errors: yes
     - name: Atualizar cache do apt
       apt:
         update_cache: yes
