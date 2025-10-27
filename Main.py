@@ -9,19 +9,22 @@ from tratamentos.Harmonica import Harmonica
 from tratamentos.Tensao import Tensao
 from tratamentos.Temperatura import Temperatura
 from tratamentos.FatorPotencia import FatorPotencia
+from bases_externas.Clima import Clima
 import time
+from bases_externas.ElecriticityGeneration import ElecriticityGeneration
+from bases_externas.GeracaoEnergia import GeracaoEnergia
 
 
 def chamar_funcoes(dev_mode):
-    sensores = (Frequencia, Harmonica, Tensao, Temperatura, Corrente, FatorPotencia, Client)
+    sensores = (GeracaoEnergia, ElecriticityGeneration, Frequencia, Harmonica, Tensao, Temperatura, Corrente, FatorPotencia, Clima, Client)
     for sensor in sensores:
         try:
             print(f"\n\tIniciando tratamento de {sensor.__name__}...\n")
             sensor().__tratar_dado__()
         except Exception as e:
             print(f"\t\033[31m[!] Erro no sensor de {sensor.__name__}!\033[0m")
-            if dev_mode:
-                raise e
+            # if dev_mode:
+            #     raise e
 
 if __name__ == "__main__":
     dotenv.load_dotenv()

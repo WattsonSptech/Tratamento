@@ -2,7 +2,7 @@ from pyspark.sql import SparkSession
 import os
 import boto3
 import pyspark.sql.functions as F
-from pyspark.sql.functions import format_number as format, regexp_replace, last_value
+from pyspark.sql.functions import format_number as format, regexp_replace, last_value, col, upper
 import json
 import datetime
 
@@ -16,6 +16,7 @@ class Utils:
         spark = SparkSession.builder \
             .appName(self.project_name) \
             .master("local[*]") \
+            .config("spark.driver.memory", "4g") \
             .config("spark.hadoop.io.native.lib.available", "false") \
             .config("spark.hadoop.native.io", "false") \
             .config("spark.driver.host", "localhost") \
@@ -114,6 +115,14 @@ class Utils:
     def remove_null(self, df):
         return df.dropna()
     
+    def set_null_zero(self, df):
+        return df.fillna(0)
+    
+    def uppercase_strings(self, df):
+        string_cols = [f.name for f in df.schema.fields if f.dataType.simpleString() == 'string']
+        for col_name in string_cols:
+            df = df.withColumn(col_name, upper(col(col_name)))
+        return df    
     def remove_wrong_float(self, df, coluna):
         return df.withColumn(coluna, F.col(coluna).cast("float")).filter(F.col(coluna).isNotNull())
     
@@ -156,3 +165,16 @@ class Utils:
 
     def get_last_value(self, df, coluna):
         return df.select(last_value(coluna))
+    
+    def horario_ja_passou(hora_alvo_str):
+        agora = datetime.now()
+
+        
+        try:
+            hora_alvo_obj = datetime.strptime(hora_alvo_str, "%H:%M")
+            data_hora_alvo = agora.replace(hour=hora_alvo_obj.hour, minute=hora_alvo_obj.minute, second=0, microsecond=0)
+
+            return data_hora_alvo < agora
+        except ValueError:
+            print(f"Formato de horário inválido: {hora_alvo_str}. Use o formato HH:MM.")
+            return False

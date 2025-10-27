@@ -4,3 +4,17 @@
 python version = 3.12.10
 
 adicionar hadoop ao C:// caso seja windows
+
+
+usar essa sequencia de comandos para rodar
+
+spark_env/Scripts/activate
+
+$env:JAVA_HOME = "C:\Program Files\Java\jdk-11"               
+$env:Path="$env=:JAVA_HOME\bin;$env:Path"   
+$env:PYSPARK_PYTHON="$PWD\spark_env\Scripts\python.exe"
+$env:PYSPARK_DRIVER_PYTHON="$PWD\spark_env\Scripts\python.exe"
+& "$pwd\spark_env\Scripts\python.exe" .\Main.py
+
+
+ainda mapeando o do Linux
