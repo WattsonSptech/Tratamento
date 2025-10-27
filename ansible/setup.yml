@@ -121,18 +121,11 @@
         state: directory
         mode: '0700'
 
-    
     - name: Criar arquivo service-account.json a partir do secret
       copy:
         dest: "{{ gcp_credentials_file }}"
         mode: '0600'
         content: "{{ gcp_service_account_key }}"
-
-    - name: Copiar chave de conta de serviço do GCP
-      copy:
-        dest: "{{ gcp_credentials_file }}"
-        mode: '0600'
-        content: "{{ lookup('file', './service-account.json') }}"  # arquivo local do Ansible
 
     - name: Exportar variáveis de ambiente GCP para futuras tarefas
       lineinfile:
