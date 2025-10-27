@@ -8,6 +8,10 @@
     aws_region: "{{ AWS_DEFAULT_REGION | default('us-east-1') }}"
     aws_session_token: "{{ AWS_SESSION_TOKEN }}"
     aws_dir: "/home/ubuntu/.aws"
+    gcp_dir: "/home/ubuntu/.config/gcloud"
+    gcp_project_id: "projeto-consulta-wattson"
+    gcp_credentials_file: "/home/ubuntu/.config/gcloud/service-account.json"
+    gcp_service_account_key: "{{ GCP_SERVICE_ACCOUNT_KEY }}"
   tasks:
     - name: Atualizar cache do apt
       apt:
@@ -110,6 +114,45 @@
     - name: Exibir conteúdo do arquivo de credenciais
       debug:
         var: credentials_content.stdout
+
+    - name: Criar diretório de credenciais GCP
+      file:
+        path: "{{ gcp_dir }}"
+        state: directory
+        mode: '0700'
+
+    
+    - name: Criar arquivo service-account.json a partir do secret
+      copy:
+        dest: "{{ gcp_credentials_file }}"
+        mode: '0600'
+        content: "{{ gcp_service_account_key }}"
+
+    - name: Copiar chave de conta de serviço do GCP
+      copy:
+        dest: "{{ gcp_credentials_file }}"
+        mode: '0600'
+        content: "{{ lookup('file', './service-account.json') }}"  # arquivo local do Ansible
+
+    - name: Exportar variáveis de ambiente GCP para futuras tarefas
+      lineinfile:
+        path: /etc/environment
+        line: "{{ item }}"
+        create: yes
+      loop:
+        - "GOOGLE_CLOUD_PROJECT={{ gcp_project_id }}"
+        - "GOOGLE_APPLICATION_CREDENTIALS={{ gcp_credentials_file }}"
+        - "GOOGLE_CLOUD_AUTH_KIND=serviceaccount"
+
+    - name: Exibir configuração do GCP
+      command: "echo $GOOGLE_APPLICATION_CREDENTIALS"
+      environment:
+        GOOGLE_APPLICATION_CREDENTIALS: "{{ gcp_credentials_file }}"
+      register: gcp_env_check
+
+    - name: Mostrar caminho da chave GCP configurada
+      debug:
+        msg: "Arquivo de credenciais GCP: {{ gcp_env_check.stdout }}"
         
     - name: Executar Main.py dentro do virtualenv
       shell: |
