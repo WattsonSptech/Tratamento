@@ -7,4 +7,4 @@ dotenv~=0.9.9
 python-decouple~=3.8
 tqdm~=4.67.1
 basedosdados~=2.0.2
-kaggle~=1.7.4.5
+kagglehub~=0.1.4
