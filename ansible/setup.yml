@@ -1,50 +1,170 @@
-- name: Install Python 3 and Java 11
+- name: Instalar Python, Java, PySpark e rodar projeto
   hosts: all
   become: yes
   vars:
-     project_dir: /home/ubuntu/tratamento
+    app_dir: /opt/tratamento
+    aws_access_key: "{{ AWS_ACCESS_KEY_ID }}"
+    aws_secret_key: "{{ AWS_SECRET_ACCESS_KEY }}"
+    aws_region: "{{ AWS_DEFAULT_REGION | default('us-east-1') }}"
+    aws_session_token: "{{ AWS_SESSION_TOKEN }}"
+    aws_dir: "/home/ubuntu/.aws"
+    gcp_dir: "/home/ubuntu/.config/gcloud"
+    gcp_project_id: "projeto-consulta-wattson"
+    gcp_credentials_file: "/home/ubuntu/.config/gcloud/service-account.json"
+    gcp_service_account_key: "{{ lookup('env', 'GCP_SERVICE_ACCOUNT_KEY') }}"
   tasks:
-    - name: Update apt cache (for Debian/Ubuntu)
+    - name: Parar o processo Main.py se estiver rodando
+      shell: |
+        pkill -f "{{ app_dir }}/Main.py" || true
+      ignore_errors: yes
+    - name: Atualizar cache do apt
       apt:
         update_cache: yes
       when: ansible_os_family == "Debian"
 
-    - name: Install Python 3
-      package:
-        name: python3
-        state: present
-
-    - name: Install OpenJDK Java 11 (for Debian/Ubuntu)
+    - name: Instalar dependências básicas
       apt:
-        name: openjdk-11-jdk
+        name:
+          - python3
+          - python3-pip
+          - python3.12-venv
+          - openjdk-17-jdk
+          - git
         state: present
-      
-     - name: Install pip
-       apt:
-         name: python3-pip
-         state: present
 
-    - name: Instala PySpark via pip
-      pip:
-        name: pyspark
-        executable: pip3
-
-    - name: Cria diretório do projeto na EC2
+    - name: Criar diretório do app
       file:
-        path: "{{ project_dir }}"
+        path: "{{ app_dir }}"
         state: directory
-        mode: "0755"
+        mode: '0755'
 
-    - name: Copia todo o projeto "tratamento/" para a EC2
-      copy:
-        src: ../tratamento/
-        dest: "{{ project_dir }}/"
-        mode: "0755"
+    - name: Clonar ou atualizar repositório
+      git:
+        repo: "https://github.com/WattsonSptech/Tratamento.git"
+        dest: "{{ app_dir }}"
+        version: "{{ github_ref | default('main') }}"
+        force: yes
 
-    - name: Instala dependências via requirements.txt
+    - name: Criar virtualenv para PySpark
+      command: python3 -m venv {{ app_dir }}/venv
+      args:
+        creates: "{{ app_dir }}/venv/bin/activate"
+
+    - name: Desinstalar pacotes listados no requirements.txt
+      command: "{{ app_dir }}/venv/bin/pip uninstall -y -r {{ app_dir }}/requirements.txt"
+      when: ansible_virtualenv is defined
+
+    - name: Instalar PySpark e dependências no virtualenv
       pip:
-        requirements: "{{ project_dir }}/requirements.txt"
-        executable: pip3
+        requirements: "{{ app_dir }}/requirements.txt"
+        virtualenv: "{{ app_dir }}/venv"
+        state: present        
 
-    - name: Executa o main.py do projeto
-      command: python3 "{{ project_dir }}/Main.py"
+    - name: Exibir versão do PySpark
+      command: "{{ app_dir }}/venv/bin/python -m pip show pyspark"
+      register: pyspark_info
+      ignore_errors: yes
+
+    
+    - name: Criar arquivo .env
+      ansible.builtin.lineinfile:
+        path: "{{ app_dir }}/.env"
+        line: "BUCKET_NAME_RAW=bkt-wattson-raw-637952174709"
+        create: yes
+        state: present
+
+    - name: Adicionar DB_PASSWORD ao .env
+      ansible.builtin.lineinfile:
+        path: "{{ app_dir }}/.env"
+        line: "BUCKET_NAME_TRUSTED=bkt-wattson-trusted-637952174709"
+        insertafter: EOF
+        state: present
+
+    - name: Adicionar DB_NAME ao .env
+      ansible.builtin.lineinfile:
+        path: "{{ app_dir }}/.env"
+        line: "BUCKET_NAME_CLIENT=bkt-wattson-client-637952174709"
+        insertafter: EOF
+        state: present
+
+    - name: Adicionar DB_NAME ao .env
+      ansible.builtin.lineinfile:
+        path: "{{ app_dir }}/.env"
+        line: "DEV_MODE=0"
+        insertafter: EOF
+        state: present
+
+    - name: Criar diretório ~/.aws
+      file:
+        path: "{{ aws_dir }}"
+        state: directory
+        mode: '0700'
+
+    - name: Criar arquivo de credenciais AWS
+      copy:
+        dest: "{{ aws_dir }}/credentials"
+        mode: '0600'
+        content: |
+          [default]
+          aws_access_key_id = {{ aws_access_key }}
+          aws_secret_access_key = {{ aws_secret_key }}
+          aws_session_token = {{ aws_session_token }}
+     
+    - name: Mostrar o conteúdo do arquivo de credenciais AWS
+      command: cat /home/ubuntu/.aws/credentials
+      register: credentials_content
+      ignore_errors: yes  # Caso o arquivo não exista ou haja algum erro
+
+    - name: Exibir conteúdo do arquivo de credenciais
+      debug:
+        var: credentials_content.stdout
+
+    - name: Criar diretório de credenciais GCP
+      file:
+        path: "{{ gcp_dir }}"
+        state: directory
+        mode: '0700'
+
+    - name: Criar arquivo service-account.json a partir do secret
+      copy:
+        dest: "{{ gcp_credentials_file }}"
+        mode: '0600'
+        content: "{{ gcp_service_account_key }}"
+
+    - name: Exportar variáveis de ambiente GCP para futuras tarefas
+      lineinfile:
+        path: /etc/environment
+        line: "{{ item }}"
+        create: yes
+      loop:
+        - "GOOGLE_CLOUD_PROJECT={{ gcp_project_id }}"
+        - "GOOGLE_APPLICATION_CREDENTIALS={{ gcp_credentials_file }}"
+        - "GOOGLE_CLOUD_AUTH_KIND=serviceaccount"
+
+    - name: Exibir configuração do GCP
+      command: "echo $GOOGLE_APPLICATION_CREDENTIALS"
+      environment:
+        GOOGLE_APPLICATION_CREDENTIALS: "{{ gcp_credentials_file }}"
+      register: gcp_env_check
+
+    - name: Mostrar caminho da chave GCP configurada
+      debug:
+        msg: "Arquivo de credenciais GCP: {{ gcp_env_check.stdout }}"
+        
+    - name: Executar Main.py dentro do virtualenv
+      shell: |
+        nohup {{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py > /dev/null 2>&1 &
+      environment:
+        AWS_ACCESS_KEY_ID: "{{ aws_access_key }}"
+        AWS_SECRET_ACCESS_KEY: "{{ aws_secret_key }}"
+        AWS_SESSION_TOKEN: "{{  aws_session_token  }}"
+        AWS_DEFAULT_REGION: "{{ aws_region }}"
+
+    # - name: Executar Main.py dentro do virtualenv
+    #   shell: |
+    #     nohup {{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py > {{ app_dir }}/main.log 2>&1 &
+    #   environment:
+    #     AWS_ACCESS_KEY_ID: "{{ aws_access_key }}"
+    #     AWS_SECRET_ACCESS_KEY: "{{ aws_secret_key }}"
+    #     AWS_SESSION_TOKEN: "{{  aws_session_token  }}"
+    #     AWS_DEFAULT_REGION: "{{ aws_region }}"
