@@ -153,7 +153,7 @@
         
     - name: Executar Main.py dentro do virtualenv
       shell: |
-        nohup {{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py &
+        nohup {{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py > /dev/null 2>&1 &
       environment:
         AWS_ACCESS_KEY_ID: "{{ aws_access_key }}"
         AWS_SECRET_ACCESS_KEY: "{{ aws_secret_key }}"
