@@ -69,21 +69,21 @@
     - name: Criar arquivo .env
       ansible.builtin.lineinfile:
         path: "{{ app_dir }}/.env"
-        line: "BUCKET_NAME_RAW=bkt-wattson-raw-381492193669"
+        line: "BUCKET_NAME_RAW=bkt-wattson-raw-637952174709"
         create: yes
         state: present
 
     - name: Adicionar DB_PASSWORD ao .env
       ansible.builtin.lineinfile:
         path: "{{ app_dir }}/.env"
-        line: "BUCKET_NAME_TRUSTED=bkt-wattson-trusted-381492193669"
+        line: "BUCKET_NAME_TRUSTED=bkt-wattson-trusted-637952174709"
         insertafter: EOF
         state: present
 
     - name: Adicionar DB_NAME ao .env
       ansible.builtin.lineinfile:
         path: "{{ app_dir }}/.env"
-        line: "BUCKET_NAME_CLIENT=bkt-wattson-client-381492193669"
+        line: "BUCKET_NAME_CLIENT=bkt-wattson-client-637952174709"
         insertafter: EOF
         state: present
 
