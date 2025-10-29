@@ -12,7 +12,7 @@ from bases_externas.GeracaoEnergia import GeracaoEnergia
 
 def chamar_funcoes(dev_mode):
     # sensores = (Tensao, GeracaoEnergia, Clima, ReclameAqui)
-    sensores = [Tensao, ReclameAqui]
+    sensores = [Clima]
     for sensor in sensores:
         try:
             print(f"\n\tIniciando tratamento de {sensor.__name__}...\n")
