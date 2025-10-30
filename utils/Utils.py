@@ -150,7 +150,7 @@ class Utils:
         + str(datetime.datetime.now().microsecond)+ ".csv"
 
         pandas_df = df.toPandas()
-        pandas_df.to_csv(file_name, index=False)
+        pandas_df.to_csv(file_name, index=False, sep=";")
         return file_name
 
     def filter_by_sensor(self, df, coluna, sensor):
