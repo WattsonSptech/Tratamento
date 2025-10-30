@@ -159,6 +159,9 @@
           billing_project_id = "{{ gcp_project_id }}"
           auth_mode = "service_account"
 
+          [storage]
+          bucket_name = "basedosdados"
+
     - name: Exportar variáveis de ambiente GCP para futuras tarefas
       lineinfile:
         path: /etc/environment
