@@ -60,9 +60,12 @@ class Utils:
         else:
             raise FileNotFoundError("Nenhum arquivo encontrado no bucket.")
 
-    def set_data_s3_file(self, filepath, bucket_name):
+    def set_data_s3_file(self, filepath, bucket_name, dict: str = None):
         print(f"\t\tInserindo no bucket {bucket_name} do S3...")
         filename = filepath.split("/")[-1]
+        
+        if dict is not None:
+            filename = dict + filename
 
         s3 = boto3.client('s3')
         res = s3.upload_file(filepath, bucket_name, filename)
