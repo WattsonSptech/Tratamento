@@ -37,17 +37,17 @@ class GerarTabelaFato(ITratamentoDados):
         df_fato_sensor = self.__merge_fato_reclamacoes__(df_trusted_tensao, df_trusted_reclamacoes)
         df_fato_sensor = self.__merge_fato_clima__(df_fato_sensor, df_trusted_clima)
 
-        if df_fato_historico_sensor != None:
+        if df_fato_historico_sensor is not None:
             df_fato_sensor = self.__agregar_dados_historicos__(df_fato_historico_sensor, df_fato_sensor, ["DATA_HORA_GERACAO"])
         
         df_fato_consumo = self.__create_fato_consumo__(df_trusted_consumo)
 
-        if df_fato_historico_consumo != None:
+        if df_fato_historico_consumo is not None:
             df_fato_consumo = self.__agregar_dados_historicos__(df_fato_historico_consumo, df_fato_consumo, ["ANO_MES_COLETA"])
         
         df_fato_reclamacao = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "ReclameAqui_TRUSTED_"), sep=";")
         
-        if df_fato_historico_reclamacao != None:
+        if df_fato_historico_reclamacao is not None:
             df_fato_consumo = self.__agregar_dados_historicos__(df_fato_historico_reclamacao, df_fato_reclamacao, ["DATA_HORA_RECLAMACAO"])
         
         filepath = "./temp/Fato_Tensao_Clima.csv" 
@@ -59,7 +59,7 @@ class GerarTabelaFato(ITratamentoDados):
         self.utils.set_data_s3_file(factpath, EnumBuckets.CLIENT.value)
 
         reclamacaopath = "./temp/Fato_Reclamacao.csv" 
-        df_fato_reclamacao.to_csv(filepath, sep=";")
+        df_fato_reclamacao.to_csv(reclamacaopath, sep=";")
         self.utils.set_data_s3_file(reclamacaopath, EnumBuckets.CLIENT.value)
 
     def __merge_fato_reclamacoes__(self, df_trusted_tensao, df_trusted_reclamacoes):
