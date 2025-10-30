@@ -111,10 +111,23 @@
       register: credentials_content
       ignore_errors: yes
 
-    - name: Mostrar o conteúdo do arquivo de credenciais AWS
+    - name: Criar arquivo de credenciais AWS no root
+      copy:
+        dest: "/root/.aws/credentials"
+        mode: '0600'
+        owner: root
+        group: root
+        content: |
+          [default]
+          aws_access_key_id = {{ aws_access_key | trim }}
+          aws_secret_access_key = {{ aws_secret_key | trim }}
+          aws_session_token = {{ aws_session_token | trim }}
+
+    - name: Mostrar o conteúdo do arquivo de credenciais AWS root
       command: cat /root/.aws/credentials
       register: credentials_content
       ignore_errors: yes
+          
 
     - name: Exibir conteúdo do arquivo de credenciais
       debug:
