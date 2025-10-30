@@ -153,14 +153,22 @@
         group: root
         mode: '0600'
         content: |
-          [gcloud]
-          project_id = "{{ gcp_project_id }}"
-          credentials_path = "{{ bd_root_file }}"
-          billing_project_id = "{{ gcp_project_id }}"
-          auth_mode = "service_account"
-
-          [storage]
+          # What is the bucket that you are saving all the data?
+          # It should be an unique name.
           bucket_name = "basedosdados"
+          
+          [gcloud-projects]
+          
+              [gcloud-projects.staging]
+              name = "projeto-consulta-wattson"
+              credentials_path = "/root/.basedosdados/credentials/staging.json"
+          
+              [gcloud-projects.prod]
+              name = "projeto-consulta-wattson"
+              credentials_path = "/root/.basedosdados/credentials/prod.json"
+          
+          [api]
+          url = "https://staging.api.basedosdados.org/api/v1/graphql"
 
     - name: Exportar variáveis de ambiente GCP para futuras tarefas
       lineinfile:
