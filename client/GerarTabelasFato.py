@@ -14,17 +14,17 @@ class GerarTabelaFato(ITratamentoDados):
         df_fato_historico_reclamacao = None
 
         try:
-            df_fato_historico_sensor = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.CLIENT.value, "Fato_Tensao_Clima"), sep=";")
+            df_fato_historico_sensor = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.CLIENT.value, "tensao_clima/Fato_Tensao_Clima"), sep=";")
         except Exception as e:
             print("Erro: tabela fato Fato_Tensao_Clima ainda não existe: ", e)
 
         try:
-            df_fato_historico_consumo = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.CLIENT.value, "Fato_Consumo"), sep=";")
+            df_fato_historico_consumo = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.CLIENT.value, "consumo/Fato_Consumo"), sep=";")
         except Exception as e:
             print("Erro: tabela fato Fato_Consumo ainda não existe: ", e)
 
         try:
-            df_fato_historico_reclamacao = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.CLIENT.value, "Fato_Reclamacao"), sep=";")
+            df_fato_historico_reclamacao = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.CLIENT.value, "reclamacao_cliente/Fato_Reclamacao"), sep=";")
         except Exception as e:
             print("Erro: tabela fato Fato_Reclamacao ainda não existe: ", e)
 
@@ -90,15 +90,15 @@ class GerarTabelaFato(ITratamentoDados):
         
         filepath = "./temp/Fato_Tensao_Clima.csv" 
         df_fato_sensor.to_csv(filepath, sep=";")
-        self.utils.set_data_s3_file(filepath, EnumBuckets.CLIENT.value)
+        self.utils.set_data_s3_file(filepath, EnumBuckets.CLIENT.value, "tensao_clima/")
         
         factpath = "./temp/Fato_Consumo.csv"
         df_fato_consumo.to_csv(factpath, sep=";")
-        self.utils.set_data_s3_file(factpath, EnumBuckets.CLIENT.value)
+        self.utils.set_data_s3_file(factpath, EnumBuckets.CLIENT.value, "consumo/")
 
         reclamacaopath = "./temp/Fato_Reclamacao.csv" 
         df_fato_reclamacao.to_csv(reclamacaopath, sep=";")
-        self.utils.set_data_s3_file(reclamacaopath, EnumBuckets.CLIENT.value)
+        self.utils.set_data_s3_file(reclamacaopath, EnumBuckets.CLIENT.value, "reclamacao_cliente/")
 
     def __merge_fato_reclamacoes__(self, df_trusted_tensao, df_trusted_reclamacoes):
         df_fato_sensor = pd.merge(
