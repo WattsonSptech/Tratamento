@@ -111,6 +111,14 @@
       register: credentials_content
       ignore_errors: yes
 
+    - name: Criar diretório ~/.aws para root
+      file:
+        path: "/root/.aws"
+        state: directory
+        mode: '0700'
+        owner: root
+        group: root
+
     - name: Criar arquivo de credenciais AWS no root
       copy:
         dest: "/root/.aws/credentials"
