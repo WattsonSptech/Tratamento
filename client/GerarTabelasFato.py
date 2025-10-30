@@ -73,7 +73,7 @@ class GerarTabelaFato(ITratamentoDados):
             how="left"
         )
 
-        df_fato_sensor["CLIMA_SEVERIDADE"] = df_fato_sensor["CLIMA_CHUVA"] >= 50 or df_fato_sensor["CLIMA_VENTO"] >= 50
+        df_fato_sensor["CLIMA_SEVERIDADE"] = (df_fato_sensor["CLIMA_CHUVA"] >= 50) | (df_fato_sensor["CLIMA_VENTO"] >= 50)
         df_fato_sensor["CLIMA_EVENTO"] = "N/A" if df_fato_sensor["CLIMA_SEVERIDADE"] else "VENTO" if df_fato_sensor["CLIMA_VENTO"] >= 50 else "CHUVA"
 
         df_fato_sensor = df_fato_sensor.drop(
