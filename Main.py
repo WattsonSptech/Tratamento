@@ -24,12 +24,13 @@ def chamar_funcoes(dev_mode):
             #     raise e
     try:
         print(f"\n\tIniciando geração das tabelas flat...\n")
+        GerarTabelaFato().__gerar_fato_sensores__()
+
     except Exception as e:
         print(f"\t\033[31m[!] Erro ao gerar tabelas flat!\033[0m")
         print(e)
         # if dev_mode:
         #     raise e
-    GerarTabelaFato().__gerar_fato_sensores__()
 
 if __name__ == "__main__":
     dotenv.load_dotenv()
