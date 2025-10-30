@@ -2,29 +2,27 @@ import os.path
 import dotenv
 from glob import glob
 from tqdm import tqdm
-from client.Client import Client
-from tratamentos.Corrente import Corrente
-from tratamentos.Frequencia import Frequencia
-from tratamentos.Harmonica import Harmonica
-from tratamentos.Tensao import Tensao
-from tratamentos.Temperatura import Temperatura
-from tratamentos.FatorPotencia import FatorPotencia
-from bases_externas.Clima import Clima
 import time
-from bases_externas.ElecriticityGeneration import ElecriticityGeneration
+from tratamentos.Tensao import Tensao
+from bases_externas.Clima import Clima
+from bases_externas.ReclameAqui import ReclameAqui
+# from bases_externas.ElecriticityGeneration import ElecriticityGeneration
 from bases_externas.GeracaoEnergia import GeracaoEnergia
+from client.GerarTabelasFato import GerarTabelaFato
 
 
 def chamar_funcoes(dev_mode):
-    sensores = (GeracaoEnergia, ElecriticityGeneration, Frequencia, Harmonica, Tensao, Temperatura, Corrente, FatorPotencia, Clima, Client)
+    sensores = (Tensao, GeracaoEnergia, Clima, ReclameAqui)
     for sensor in sensores:
         try:
             print(f"\n\tIniciando tratamento de {sensor.__name__}...\n")
             sensor().__tratar_dado__()
         except Exception as e:
             print(f"\t\033[31m[!] Erro no sensor de {sensor.__name__}!\033[0m")
+            print(e)
             # if dev_mode:
             #     raise e
+    GerarTabelaFato().__gerar_fato_sensores__()
 
 if __name__ == "__main__":
     dotenv.load_dotenv()
@@ -42,7 +40,7 @@ if __name__ == "__main__":
 
         chamar_funcoes(dev_mode)
         print("Tratamentos concluídos!")
-
+    
         print("\nTempo para a próxima execução...")
         for i in tqdm(range(treatment_timeout)):
             time.sleep(1)

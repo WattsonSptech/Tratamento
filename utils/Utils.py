@@ -51,8 +51,7 @@ class Utils:
             if os.name == "posix":
                 path = "./temp/" + ultimo_arquivo.replace(":", "_")
             else:
-                ultimo_arquivo = ultimo_arquivo.replace(":", "_")
-                path = "temp/" + os.path.basename(ultimo_arquivo)
+                path = "./temp/" + os.path.basename(ultimo_arquivo.replace(":", "_"))
             s3.download_file(bucket_name, ultimo_arquivo, path)
 
             print("\t\tSucesso!\n")

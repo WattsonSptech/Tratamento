@@ -76,28 +76,11 @@ class Clima(ITratamentoDados):
 
         df = self.utils.order_by_coluna_desc(df, "time")
 
-        object_name = self.utils.transform_df_to_json(df, self.tipo_dado, "trusted")
+        df = self.utils.rename_column(df, 'time', 'DATA_HORA_CLIMA')
+        df = self.utils.rename_column(df, 'temperature_2m', 'CLIMA_TEMPERATURA')
+        df = self.utils.rename_column(df, 'rain', 'CLIMA_CHUVA')
+        df = self.utils.rename_column(df, 'wind_speed_10m', 'CLIMA_VENTO')
+
+        object_name = self.utils.transform_df_to_csv(df, self.tipo_dado, "TRUSTED")
 
         self.utils.set_data_s3_file(object_name, EnumBuckets.TRUSTED.value)
-
-    def __gerar_arquivo_client__(self) -> None:
-        arquivo_fator = self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "fator")
-        arquivo_clima = self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "clima")
-        arquivo_corrente = self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "Ampere")
-
-        df_fator = self.spark.read.option("multiline", "true").json(arquivo_fator)
-        df_clima = self.spark.read.option("multiline", "true").json(arquivo_clima)
-        df_corrente = self.spark.read.option("multiline", "true").json(arquivo_corrente)
-
-        df_fator = df_fator.selectExpr("instant", "value as value_fator", "valueType as valueType_fator")
-        df_clima = df_clima.selectExpr("instant", "temperature_2m as temp", "rain as rain", "wind_speed_10m as wind")
-        df_corrente = df_corrente.selectExpr("instant", "value as value_corrente", "valueType as valueType_corrente")
-
-        for df in [df_fator, df_clima, df_corrente]:
-            df = df.withColumn("instant", F.substring_index(F.col("instant"), ".", 1))
-
-        df_join = df_fator.join(df_clima, ['instant'], how='inner') \
-                          .join(df_corrente, ['instant'], how='inner')
-
-        client_json_file = self.utils.transform_df_to_json(df_join, "correlacoes_fator", "client")
-        self.utils.set_data_s3_file(client_json_file, EnumBuckets.CLIENT.value)

@@ -17,6 +17,7 @@ class GeracaoEnergia(ITratamentoDados):
         self.nome_sensor = "GeracaoEnergia"
         self.tipo_dado = "generation"
         self.ja_rodou = False
+        self.horario_ultima = datetime.now()
         self.proximo_horario = datetime.now() + timedelta(days=1)
 
     def __tratar_dado__(self) -> None:
