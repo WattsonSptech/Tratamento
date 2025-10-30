@@ -8,11 +8,11 @@ from bases_externas.Clima import Clima
 from bases_externas.ReclameAqui import ReclameAqui
 # from bases_externas.ElecriticityGeneration import ElecriticityGeneration
 from bases_externas.GeracaoEnergia import GeracaoEnergia
+from client.GerarTabelasFato import GerarTabelaFato
 
 
 def chamar_funcoes(dev_mode):
-    # sensores = (Tensao, GeracaoEnergia, Clima, ReclameAqui)
-    sensores = [Clima]
+    sensores = (Tensao, GeracaoEnergia, Clima, ReclameAqui)
     for sensor in sensores:
         try:
             print(f"\n\tIniciando tratamento de {sensor.__name__}...\n")
@@ -22,6 +22,7 @@ def chamar_funcoes(dev_mode):
             print(e)
             # if dev_mode:
             #     raise e
+    GerarTabelaFato().__gerar_fato_sensores__()
 
 if __name__ == "__main__":
     dotenv.load_dotenv()

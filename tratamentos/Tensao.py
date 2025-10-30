@@ -17,8 +17,6 @@ class Tensao(ITratamentoDados):
 
     __SOURCE_BUCKET__: str
     __TARGET_BUCKET__: str
-
-    __ZONE_POPULATION_API_URL__ = "https://pastebin.com/raw/Nz1aMUEM"
     
     # @override
     def __init__(self) -> None:
@@ -39,7 +37,7 @@ class Tensao(ITratamentoDados):
         self.__subir_dados_s3__(dados_tratamentos)
 
     def __ler_arq_telemetria__(self):
-        filepath = self.utils.get_data_s3_csv(self.__SOURCE_BUCKET__, "generation-")
+        filepath = self.utils.get_data_s3_csv(self.__SOURCE_BUCKET__, "telemetry_")
         return pd.read_json(filepath)
 
     def __limpezas__(self, df: pd.DataFrame):
@@ -47,22 +45,24 @@ class Tensao(ITratamentoDados):
         df = df.rename(
             columns=
             {
-                'valor': 'VALOR', 
-                'zona': "ZONA", 
+                'valor': 'TENSAO_VALOR', 
+                'zona': "ZONA_GERACAO", 
                 'timestamp': 'DATA_HORA_GERACAO'
             }
         )
 
         df["DATA_HORA_GERACAO"] = pd.to_datetime(df["DATA_HORA_GERACAO"])
 
+        df = df.loc[df["DATA_HORA_GERACAO"] <= datetime.today().now()]
+
         df["DATA_GERACAO"] = df["DATA_HORA_GERACAO"].dt.date
         df["ANO_MES_GERACAO"] = df["DATA_HORA_GERACAO"].dt.strftime('%Y-%m')
         df["HORA_MINUTO_GERACAO"] = df["DATA_HORA_GERACAO"].dt.strftime('%H:%M')
-        df["VALOR"] = df["VALOR"].round(3)
+        df["TENSAO_VALOR"] = df["TENSAO_VALOR"].round(1)
 
 
         df = df.sort_values(["DATA_GERACAO", "HORA_MINUTO_GERACAO"], ascending=[False, False])
-        df = df.groupby(["DATA_GERACAO", "HORA_MINUTO_GERACAO", "ANO_MES_GERACAO", "ZONA", "DATA_HORA_GERACAO"])[['VALOR']].mean()
+        df = df.groupby(["DATA_GERACAO", "HORA_MINUTO_GERACAO", "ANO_MES_GERACAO", "ZONA_GERACAO", "DATA_HORA_GERACAO"])[['TENSAO_VALOR']].mean()
 
         return df
 
