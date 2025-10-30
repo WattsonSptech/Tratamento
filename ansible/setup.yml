@@ -111,6 +111,32 @@
       register: credentials_content
       ignore_errors: yes
 
+    - name: Criar diretório ~/.aws para root
+      file:
+        path: "/root/.aws"
+        state: directory
+        mode: '0700'
+        owner: root
+        group: root
+
+    - name: Criar arquivo de credenciais AWS no root
+      copy:
+        dest: "/root/.aws/credentials"
+        mode: '0600'
+        owner: root
+        group: root
+        content: |
+          [default]
+          aws_access_key_id = {{ aws_access_key | trim }}
+          aws_secret_access_key = {{ aws_secret_key | trim }}
+          aws_session_token = {{ aws_session_token | trim }}
+
+    - name: Mostrar o conteúdo do arquivo de credenciais AWS root
+      command: cat /root/.aws/credentials
+      register: credentials_content
+      ignore_errors: yes
+          
+
     - name: Exibir conteúdo do arquivo de credenciais
       debug:
         var: credentials_content.stdout
@@ -145,6 +171,15 @@
         content: "{{ gcp_service_account_key }}"
       no_log: true
 
+    - name: Copiar credenciais também para /root/.basedosdados/credentials/prod.json
+      copy:
+        dest: "/root/.basedosdados/credentials/prod.json"
+        mode: '0600'
+        owner: root
+        group: root
+        content: "{{ gcp_service_account_key }}"
+      no_log: true
+
     # 🚀 NOVO BLOCO — evita perguntas interativas do basedosdados
     - name: Criar arquivo de configuração do basedosdados (/root/.basedosdados/config.toml)
       copy:
@@ -153,14 +188,22 @@
         group: root
         mode: '0600'
         content: |
-          [gcloud]
-          project_id = "{{ gcp_project_id }}"
-          credentials_path = "{{ bd_root_file }}"
-          billing_project_id = "{{ gcp_project_id }}"
-          auth_mode = "service_account"
-
-          [storage]
+          # What is the bucket that you are saving all the data?
+          # It should be an unique name.
           bucket_name = "basedosdados"
+          
+          [gcloud-projects]
+          
+              [gcloud-projects.staging]
+              name = "projeto-consulta-wattson"
+              credentials_path = "/root/.basedosdados/credentials/staging.json"
+          
+              [gcloud-projects.prod]
+              name = "projeto-consulta-wattson"
+              credentials_path = "/root/.basedosdados/credentials/prod.json"
+          
+          [api]
+          url = "https://staging.api.basedosdados.org/api/v1/graphql"
 
     - name: Exportar variáveis de ambiente GCP para futuras tarefas
       lineinfile:
