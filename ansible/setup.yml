@@ -12,6 +12,9 @@
     gcp_project_id: "projeto-consulta-wattson"
     gcp_credentials_file: "/home/ubuntu/.config/gcloud/service-account.json"
     gcp_service_account_key: "{{ lookup('env', 'GCP_SERVICE_ACCOUNT_KEY') }}"
+    bd_root_dir: "/root/.basedosdados/credentials"
+    bd_root_file: "/root/.basedosdados/credentials/staging.json"
+    
   tasks:
     - name: Parar o processo Main.py se estiver rodando
       shell: |
@@ -131,6 +134,24 @@
         mode: '0600'
         content: "{{ gcp_service_account_key }}"
 
+    
+    - name: Criar diretório padrão do basedosdados (/root/.basedosdados/credentials)
+      file:
+        path: "{{ bd_root_dir }}"
+        state: directory
+        owner: root
+        group: root
+        mode: '0700'
+
+    - name: Copiar credenciais também para /root/.basedosdados/credentials/staging.json
+      copy:
+        dest: "{{ bd_root_file }}"
+        mode: '0600'
+        owner: root
+        group: root
+        content: "{{ gcp_service_account_key }}"
+      no_log: true
+
     - name: Exportar variáveis de ambiente GCP para futuras tarefas
       lineinfile:
         path: /etc/environment
@@ -141,7 +162,6 @@
         - "GOOGLE_APPLICATION_CREDENTIALS={{ gcp_credentials_file }}"
         - "GOOGLE_CLOUD_AUTH_KIND=serviceaccount"    
         - "BASEDOSDADOS_BILLING_PROJECT_ID={{ gcp_project_id }}"
-
 
     - name: Exibir configuração do GCP
       command: "echo $GOOGLE_APPLICATION_CREDENTIALS"
