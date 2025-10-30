@@ -59,7 +59,7 @@ class GeracaoEnergia(ITratamentoDados):
         print("apos tratativa")
         df.show(6)
 
-        object_name = self.utils.transform_df_to_json(df, self.tipo_dado, "trusted")
+        object_name = self.utils.transform_df_to_csv(df, self.tipo_dado, "trusted")
 
         self.utils.set_data_s3_file(object_name, EnumBuckets.TRUSTED.value)
 
