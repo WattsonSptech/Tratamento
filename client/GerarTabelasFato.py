@@ -13,7 +13,6 @@ class GerarTabelaFato(ITratamentoDados):
         df_fato_historico_consumo = None
         df_fato_historico_reclamacao = None
 
-
         try:
             df_fato_historico_sensor = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.CLIENT.value, "Fato_Tensao_Clima"), sep=";")
         except Exception as e:
@@ -48,7 +47,7 @@ class GerarTabelaFato(ITratamentoDados):
         df_fato_reclamacao = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "ReclameAqui_TRUSTED_"), sep=";")
         
         if df_fato_historico_reclamacao is not None:
-            df_fato_consumo = self.__agregar_dados_historicos__(df_fato_historico_reclamacao, df_fato_reclamacao, ["DATA_HORA_RECLAMACAO"])
+            df_fato_reclamacao = self.__agregar_dados_historicos__(df_fato_historico_reclamacao, df_fato_reclamacao, ["DATA_HORA_RECLAMACAO"])
         
         filepath = "./temp/Fato_Tensao_Clima.csv" 
         df_fato_sensor.to_csv(filepath, sep=";")
@@ -118,8 +117,8 @@ class GerarTabelaFato(ITratamentoDados):
 
         df_fato_sensor["CLIMA_SEVERIDADE"] = (df_fato_sensor["CLIMA_CHUVA"] >= 50) | (df_fato_sensor["CLIMA_VENTO"] >= 50)
         df_fato_sensor["CLIMA_EVENTO"] = "N/A"
-        df_fato_sensor.loc[(df_fato_sensor["CLIMA_SEVERIDADE"] == True) & (df_fato_sensor["CLIMA_VENTO"] >= 50), "CLIMA_SEVERIDADE"] = "VENTO"
-        df_fato_sensor.loc[(df_fato_sensor["CLIMA_SEVERIDADE"] == True) & (df_fato_sensor["CLIMA_CHUVA"] >= 50), "CLIMA_SEVERIDADE"] = "CHUVA"
+        df_fato_sensor.loc[(df_fato_sensor["CLIMA_SEVERIDADE"] == True) & (df_fato_sensor["CLIMA_VENTO"] >= 50), "CLIMA_EVENTO"] = "VENTO"
+        df_fato_sensor.loc[(df_fato_sensor["CLIMA_SEVERIDADE"] == True) & (df_fato_sensor["CLIMA_CHUVA"] >= 50), "CLIMA_EVENTO"] = "CHUVA"
 
         df_fato_sensor = df_fato_sensor.drop(
             [
@@ -149,13 +148,14 @@ class GerarTabelaFato(ITratamentoDados):
         return df_client_consumo
 
     def __agregar_dados_historicos__(self, df_fato_historico, df_fato, sort_column):
-        df_final = pd.concat([df_fato_historico, df_fato], ignore_index=True)
 
-        df_final = df_final.drop(   
+        df_fato_historico = df_fato_historico.drop(   
             [
                 'Unnamed: 0',
             ], axis=1
         )
+
+        df_final = pd.concat([df_fato_historico, df_fato], ignore_index=True)
 
         df_final = df_final.drop_duplicates(keep="first")
         df_final = df_final.sort_values(by=sort_column, ascending=False)
