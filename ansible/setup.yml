@@ -111,6 +111,11 @@
       register: credentials_content
       ignore_errors: yes
 
+    - name: Mostrar o conteúdo do arquivo de credenciais AWS
+      command: cat /root/.aws/credentials
+      register: credentials_content
+      ignore_errors: yes
+
     - name: Exibir conteúdo do arquivo de credenciais
       debug:
         var: credentials_content.stdout
