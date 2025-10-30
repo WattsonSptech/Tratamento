@@ -19,6 +19,7 @@ class GeracaoEnergia(ITratamentoDados):
         self.ja_rodou = False
         self.horario_ultima = datetime.now()
         self.proximo_horario = datetime.now() + timedelta(days=1)
+        self.horario_ultima = datetime.now()
 
     def __tratar_dado__(self) -> None:
         print(self.horario_ultima)
@@ -44,7 +45,15 @@ class GeracaoEnergia(ITratamentoDados):
         df = self.utils.set_null_zero(df=df)
         df = self.utils.uppercase_strings(df=df)
 
+        df = self.utils.rename_column(df=df, coluna="numero_consumidores", new_coluna="NUMERO_CONSUMIDORES")
+        df = self.utils.rename_column(df=df, coluna="tipo_consumo", new_coluna="TIPO_CONSUMO")
+        df = self.utils.rename_column(df=df, coluna="consumo", new_coluna="CONSUMO")
+        df = self.utils.rename_column(df=df, coluna="sigla_uf", new_coluna="SIGLA_UF")
+        df = self.utils.rename_column(df=df, coluna="ano", new_coluna="ANO")
+        df = self.utils.rename_column(df=df, coluna="mes", new_coluna="MES")
+        
         df.withColumn("numero_consumidores", col("numero_consumidores").cast('int'))
+        df.withColumn("consumo", col("consumo").cast('int'))
 
 
         print("apos tratativa")

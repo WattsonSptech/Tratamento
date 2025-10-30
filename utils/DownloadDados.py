@@ -17,19 +17,18 @@ class DownloadDados:
     
     def consultarPorQueryBase(self, query):
         query = """
-        SELECT
+       SELECT
             dados.ano as ano,
             dados.mes as mes,
             dados.sigla_uf AS sigla_uf,
-            diretorio_sigla_uf.nome AS sigla_uf_nome,
             dados.tipo_consumo as tipo_consumo,
             dados.numero_consumidores as numero_consumidores,
             dados.consumo as consumo
         FROM `basedosdados.br_mme_consumo_energia_eletrica.uf` AS dados
         LEFT JOIN (SELECT DISTINCT sigla,nome  FROM `basedosdados.br_bd_diretorios_brasil.uf`) AS diretorio_sigla_uf
-            ON dados.sigla_uf = diretorio_sigla_uf.sigla
+            ON dados.sigla_uf = diretorio_sigla_uf.sigla WHERE dados.ano = 2023 AND dados.sigla_uf = 'SP' AND diretorio_sigla_uf.sigla = 'SP' 
+            AND dados.tipo_consumo IN ('Comercial','Residencial','Industrial')
         """
-
         return bd.read_sql(query = query, billing_project_id='projeto-consulta-wattson')
     
     # def consultarKaggle(self):
