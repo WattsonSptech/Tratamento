@@ -145,6 +145,15 @@
         content: "{{ gcp_service_account_key }}"
       no_log: true
 
+    - name: Copiar credenciais também para /root/.basedosdados/credentials/prod.json
+      copy:
+        dest: "/root/.basedosdados/credentials/prod.json"
+        mode: '0600'
+        owner: root
+        group: root
+        content: "{{ gcp_service_account_key }}"
+      no_log: true
+
     # 🚀 NOVO BLOCO — evita perguntas interativas do basedosdados
     - name: Criar arquivo de configuração do basedosdados (/root/.basedosdados/config.toml)
       copy:
