@@ -115,10 +115,10 @@ class GerarTabelaFato(ITratamentoDados):
             how="left"
         )
 
-        df_fato_sensor["CLIMA_SEVERIDADE"] = (df_fato_sensor["CLIMA_CHUVA"] >= 50) | (df_fato_sensor["CLIMA_VENTO"] >= 50)
+        df_fato_sensor["CLIMA_SEVERIDADE"] = (df_fato_sensor["CLIMA_CHUVA"] >= 25) | (df_fato_sensor["CLIMA_VENTO"] >= 25)
         df_fato_sensor["CLIMA_EVENTO"] = "SEM EVENTO"
-        df_fato_sensor.loc[(df_fato_sensor["CLIMA_SEVERIDADE"] == True) & (df_fato_sensor["CLIMA_VENTO"] >= 50), "CLIMA_EVENTO"] = "VENTO"
-        df_fato_sensor.loc[(df_fato_sensor["CLIMA_SEVERIDADE"] == True) & (df_fato_sensor["CLIMA_CHUVA"] >= 50), "CLIMA_EVENTO"] = "CHUVA"
+        df_fato_sensor.loc[(df_fato_sensor["CLIMA_SEVERIDADE"] == True) & (df_fato_sensor["CLIMA_VENTO"] >= 25), "CLIMA_EVENTO"] = "VENTO"
+        df_fato_sensor.loc[(df_fato_sensor["CLIMA_SEVERIDADE"] == True) & (df_fato_sensor["CLIMA_CHUVA"] >= 25), "CLIMA_EVENTO"] = "CHUVA"
 
         df_fato_sensor = df_fato_sensor.drop(
             [
