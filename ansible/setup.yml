@@ -139,7 +139,9 @@
       loop:
         - "GOOGLE_CLOUD_PROJECT={{ gcp_project_id }}"
         - "GOOGLE_APPLICATION_CREDENTIALS={{ gcp_credentials_file }}"
-        - "GOOGLE_CLOUD_AUTH_KIND=serviceaccount"
+        - "GOOGLE_CLOUD_AUTH_KIND=serviceaccount"    
+        - "BASEDOSDADOS_BILLING_PROJECT_ID={{ gcp_project_id }}"
+
 
     - name: Exibir configuração do GCP
       command: "echo $GOOGLE_APPLICATION_CREDENTIALS"
@@ -159,6 +161,9 @@
         AWS_SECRET_ACCESS_KEY: "{{ aws_secret_key }}"
         AWS_SESSION_TOKEN: "{{  aws_session_token  }}"
         AWS_DEFAULT_REGION: "{{ aws_region }}"
+        GOOGLE_APPLICATION_CREDENTIALS: "{{ gcp_credentials_file }}"
+        BASEDOSDADOS_BILLING_PROJECT_ID: "{{ gcp_project_id }}"
+
 
     # - name: Executar Main.py dentro do virtualenv
     #   shell: |
