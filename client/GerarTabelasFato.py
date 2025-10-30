@@ -37,17 +37,56 @@ class GerarTabelaFato(ITratamentoDados):
         df_fato_sensor = self.__merge_fato_clima__(df_fato_sensor, df_trusted_clima)
 
         if df_fato_historico_sensor is not None:
-            df_fato_sensor = self.__agregar_dados_historicos__(df_fato_historico_sensor, df_fato_sensor, ["DATA_HORA_GERACAO"])
+            df_fato_sensor = self.__agregar_dados_historicos__(
+                df_fato_historico_sensor, 
+                df_fato_sensor, 
+                ["DATA_HORA_GERACAO"], 
+                [
+                    'DATA_GERACAO',
+                    'HORA_MINUTO_GERACAO',
+                    'ANO_MES_GERACAO',
+                    'ZONA_GERACAO',
+                    'DATA_HORA_GERACAO',
+                    'TENSAO_VALOR',
+                    'TENSAO_SEVERIDADE',
+                    'CLIMA_TEMPERATURA',
+                    'CLIMA_CHUVA',
+                    'CLIMA_VENTO',
+                    'CLIMA_SEVERIDADE',
+                    'CLIMA_EVENTO'
+                    'INDICE_APROVACAO',
+                ])
         
         df_fato_consumo = self.__create_fato_consumo__(df_trusted_consumo)
 
         if df_fato_historico_consumo is not None:
-            df_fato_consumo = self.__agregar_dados_historicos__(df_fato_historico_consumo, df_fato_consumo, ["ANO_MES_COLETA"])
+            df_fato_consumo = self.__agregar_dados_historicos__(
+                df_fato_historico_consumo, 
+                df_fato_consumo, 
+                ["ANO_MES_COLETA"],
+                [
+                    'ANO_MES_COLETA',
+                    'NUMERO_CONSUMIDORES',
+                    'NUMERO_CONSUMO',
+                    'TIPO_CONSUMO'
+                ])
         
         df_fato_reclamacao = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "ReclameAqui_TRUSTED_"), sep=";")
         
         if df_fato_historico_reclamacao is not None:
-            df_fato_reclamacao = self.__agregar_dados_historicos__(df_fato_historico_reclamacao, df_fato_reclamacao, ["DATA_HORA_RECLAMACAO"])
+            df_fato_reclamacao = self.__agregar_dados_historicos__(
+                df_fato_historico_reclamacao, 
+                df_fato_reclamacao, 
+                ["DATA_HORA_RECLAMACAO"],
+                ['DATA_RECLAMACAO',
+                 'HORA_MINUTO_RECLAMACAO',
+                 'RECLAMACAO_STATUS',
+                 'RECLAMACAO_CATEGORIA',
+                 'TIPO_PRODUTO',
+                 'TIPO_PROBLEMA',
+                 'RECLAMACAO_SENTIMENTO',
+                 'DATA_HORA_RECLAMACAO'
+                ])
         
         filepath = "./temp/Fato_Tensao_Clima.csv" 
         df_fato_sensor.to_csv(filepath, sep=";")
@@ -115,10 +154,10 @@ class GerarTabelaFato(ITratamentoDados):
             how="left"
         )
 
-        df_fato_sensor["CLIMA_SEVERIDADE"] = (df_fato_sensor["CLIMA_CHUVA"] >= 50) | (df_fato_sensor["CLIMA_VENTO"] >= 50)
+        df_fato_sensor["CLIMA_SEVERIDADE"] = (df_fato_sensor["CLIMA_CHUVA"] >= 25) | (df_fato_sensor["CLIMA_VENTO"] >= 25)
         df_fato_sensor["CLIMA_EVENTO"] = "SEM EVENTO"
-        df_fato_sensor.loc[(df_fato_sensor["CLIMA_SEVERIDADE"] == True) & (df_fato_sensor["CLIMA_VENTO"] >= 50), "CLIMA_EVENTO"] = "VENTO"
-        df_fato_sensor.loc[(df_fato_sensor["CLIMA_SEVERIDADE"] == True) & (df_fato_sensor["CLIMA_CHUVA"] >= 50), "CLIMA_EVENTO"] = "CHUVA"
+        df_fato_sensor.loc[(df_fato_sensor["CLIMA_SEVERIDADE"] == True) & (df_fato_sensor["CLIMA_VENTO"] >= 25), "CLIMA_EVENTO"] = "VENTO"
+        df_fato_sensor.loc[(df_fato_sensor["CLIMA_SEVERIDADE"] == True) & (df_fato_sensor["CLIMA_CHUVA"] >= 25), "CLIMA_EVENTO"] = "CHUVA"
 
         df_fato_sensor = df_fato_sensor.drop(
             [
@@ -147,7 +186,7 @@ class GerarTabelaFato(ITratamentoDados):
 
         return df_client_consumo
 
-    def __agregar_dados_historicos__(self, df_fato_historico, df_fato, sort_column):
+    def __agregar_dados_historicos__(self, df_fato_historico, df_fato, sort_column, return_columns):
 
         df_fato_historico = df_fato_historico.drop(   
             [
@@ -156,6 +195,8 @@ class GerarTabelaFato(ITratamentoDados):
         )
 
         df_final = pd.concat([df_fato_historico, df_fato], ignore_index=True)
+
+        df_final = df_final[return_columns]
 
         df_final = df_final.drop_duplicates(keep="first")
         df_final = df_final.sort_values(by=sort_column, ascending=False)
