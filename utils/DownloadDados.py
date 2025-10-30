@@ -15,7 +15,7 @@ class DownloadDados:
         print(data)
         return data
     
-    def consultarPorQueryBase(self, query):
+    def consultarPorQueryBase(self):
         query = """
        SELECT
             dados.ano as ano,
@@ -29,7 +29,9 @@ class DownloadDados:
             ON dados.sigla_uf = diretorio_sigla_uf.sigla WHERE dados.ano = 2023 AND dados.sigla_uf = 'SP' AND diretorio_sigla_uf.sigla = 'SP' 
             AND dados.tipo_consumo IN ('Comercial','Residencial','Industrial')
         """
-        return bd.read_sql(query = query, billing_project_id='projeto-consulta-wattson')
+
+
+        return bd.read_sql(query = query, billing_project_id='projeto-consulta-wattson', from_file=True)
     
     # def consultarKaggle(self):
     #     path = kagglehub.dataset_download("arusouza/daily-eletricity-generation-by-source-on-brazil")

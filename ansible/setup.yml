@@ -12,11 +12,15 @@
     gcp_project_id: "projeto-consulta-wattson"
     gcp_credentials_file: "/home/ubuntu/.config/gcloud/service-account.json"
     gcp_service_account_key: "{{ lookup('env', 'GCP_SERVICE_ACCOUNT_KEY') }}"
+    bd_root_dir: "/root/.basedosdados/credentials"
+    bd_root_file: "/root/.basedosdados/credentials/staging.json"
+
   tasks:
     - name: Parar o processo Main.py se estiver rodando
       shell: |
         pkill -f "{{ app_dir }}/Main.py" || true
       ignore_errors: yes
+
     - name: Atualizar cache do apt
       apt:
         update_cache: yes
@@ -65,7 +69,6 @@
       register: pyspark_info
       ignore_errors: yes
 
-    
     - name: Criar arquivo .env
       ansible.builtin.lineinfile:
         path: "{{ app_dir }}/.env"
@@ -73,47 +76,66 @@
         create: yes
         state: present
 
-    - name: Adicionar DB_PASSWORD ao .env
+    - name: Adicionar variáveis ao .env
       ansible.builtin.lineinfile:
         path: "{{ app_dir }}/.env"
-        line: "BUCKET_NAME_TRUSTED=bkt-wattson-trusted-637952174709"
         insertafter: EOF
-        state: present
-
-    - name: Adicionar DB_NAME ao .env
-      ansible.builtin.lineinfile:
-        path: "{{ app_dir }}/.env"
-        line: "BUCKET_NAME_CLIENT=bkt-wattson-client-637952174709"
-        insertafter: EOF
-        state: present
-
-    - name: Adicionar DB_NAME ao .env
-      ansible.builtin.lineinfile:
-        path: "{{ app_dir }}/.env"
-        line: "DEV_MODE=0"
-        insertafter: EOF
-        state: present
+        line: "{{ item }}"
+      loop:
+        - "BUCKET_NAME_TRUSTED=bkt-wattson-trusted-637952174709"
+        - "BUCKET_NAME_CLIENT=bkt-wattson-client-637952174709"
+        - "DEV_MODE=0"
 
     - name: Criar diretório ~/.aws
       file:
         path: "{{ aws_dir }}"
         state: directory
         mode: '0700'
+        owner: ubuntu
+        group: ubuntu
 
     - name: Criar arquivo de credenciais AWS
       copy:
         dest: "{{ aws_dir }}/credentials"
         mode: '0600'
+        owner: ubuntu
+        group: ubuntu
         content: |
           [default]
-          aws_access_key_id = {{ aws_access_key }}
-          aws_secret_access_key = {{ aws_secret_key }}
-          aws_session_token = {{ aws_session_token }}
+          aws_access_key_id = {{ aws_access_key | trim }}
+          aws_secret_access_key = {{ aws_secret_key | trim }}
+          aws_session_token = {{ aws_session_token | trim }}
      
     - name: Mostrar o conteúdo do arquivo de credenciais AWS
       command: cat /home/ubuntu/.aws/credentials
       register: credentials_content
-      ignore_errors: yes  # Caso o arquivo não exista ou haja algum erro
+      ignore_errors: yes
+
+    - name: Criar diretório ~/.aws para root
+      file:
+        path: "/root/.aws"
+        state: directory
+        mode: '0700'
+        owner: root
+        group: root
+
+    - name: Criar arquivo de credenciais AWS no root
+      copy:
+        dest: "/root/.aws/credentials"
+        mode: '0600'
+        owner: root
+        group: root
+        content: |
+          [default]
+          aws_access_key_id = {{ aws_access_key | trim }}
+          aws_secret_access_key = {{ aws_secret_key | trim }}
+          aws_session_token = {{ aws_session_token | trim }}
+
+    - name: Mostrar o conteúdo do arquivo de credenciais AWS root
+      command: cat /root/.aws/credentials
+      register: credentials_content
+      ignore_errors: yes
+          
 
     - name: Exibir conteúdo do arquivo de credenciais
       debug:
@@ -130,6 +152,58 @@
         dest: "{{ gcp_credentials_file }}"
         mode: '0600'
         content: "{{ gcp_service_account_key }}"
+      no_log: true
+
+    - name: Criar diretório padrão do basedosdados (/root/.basedosdados/credentials)
+      file:
+        path: "{{ bd_root_dir }}"
+        state: directory
+        owner: root
+        group: root
+        mode: '0700'
+
+    - name: Copiar credenciais também para /root/.basedosdados/credentials/staging.json
+      copy:
+        dest: "{{ bd_root_file }}"
+        mode: '0600'
+        owner: root
+        group: root
+        content: "{{ gcp_service_account_key }}"
+      no_log: true
+
+    - name: Copiar credenciais também para /root/.basedosdados/credentials/prod.json
+      copy:
+        dest: "/root/.basedosdados/credentials/prod.json"
+        mode: '0600'
+        owner: root
+        group: root
+        content: "{{ gcp_service_account_key }}"
+      no_log: true
+
+    # 🚀 NOVO BLOCO — evita perguntas interativas do basedosdados
+    - name: Criar arquivo de configuração do basedosdados (/root/.basedosdados/config.toml)
+      copy:
+        dest: /root/.basedosdados/config.toml
+        owner: root
+        group: root
+        mode: '0600'
+        content: |
+          # What is the bucket that you are saving all the data?
+          # It should be an unique name.
+          bucket_name = "basedosdados"
+          
+          [gcloud-projects]
+          
+              [gcloud-projects.staging]
+              name = "projeto-consulta-wattson"
+              credentials_path = "/root/.basedosdados/credentials/staging.json"
+          
+              [gcloud-projects.prod]
+              name = "projeto-consulta-wattson"
+              credentials_path = "/root/.basedosdados/credentials/prod.json"
+          
+          [api]
+          url = "https://staging.api.basedosdados.org/api/v1/graphql"
 
     - name: Exportar variáveis de ambiente GCP para futuras tarefas
       lineinfile:
@@ -139,7 +213,8 @@
       loop:
         - "GOOGLE_CLOUD_PROJECT={{ gcp_project_id }}"
         - "GOOGLE_APPLICATION_CREDENTIALS={{ gcp_credentials_file }}"
-        - "GOOGLE_CLOUD_AUTH_KIND=serviceaccount"
+        - "GOOGLE_CLOUD_AUTH_KIND=serviceaccount"    
+        - "BASEDOSDADOS_BILLING_PROJECT_ID={{ gcp_project_id }}"
 
     - name: Exibir configuração do GCP
       command: "echo $GOOGLE_APPLICATION_CREDENTIALS"
@@ -151,14 +226,18 @@
       debug:
         msg: "Arquivo de credenciais GCP: {{ gcp_env_check.stdout }}"
         
-    - name: Executar Main.py dentro do virtualenv
+    - name: Executar Main.py dentro do virtualenv como ubuntu
+      become_user: ubuntu
       shell: |
         nohup {{ app_dir }}/venv/bin/python {{ app_dir }}/Main.py > /dev/null 2>&1 &
       environment:
         AWS_ACCESS_KEY_ID: "{{ aws_access_key }}"
         AWS_SECRET_ACCESS_KEY: "{{ aws_secret_key }}"
-        AWS_SESSION_TOKEN: "{{  aws_session_token  }}"
+        AWS_SESSION_TOKEN: "{{ aws_session_token }}"
         AWS_DEFAULT_REGION: "{{ aws_region }}"
+        GOOGLE_APPLICATION_CREDENTIALS: "{{ gcp_credentials_file }}"
+        BASEDOSDADOS_BILLING_PROJECT_ID: "{{ gcp_project_id }}"
+
 
     # - name: Executar Main.py dentro do virtualenv
     #   shell: |

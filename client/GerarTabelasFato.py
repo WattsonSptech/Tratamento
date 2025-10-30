@@ -10,7 +10,7 @@ class GerarTabelaFato(ITratamentoDados):
     def __gerar_fato_sensores__(self):
     
         df_trusted_tensao = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "Tensao_TRUSTED_"), sep=";")
-        df_trusted_clima = pd.read_json(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "trusted_clima"), orient='records')
+        df_trusted_clima = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "TRUSTED_clima"), sep=";")
         df_trusted_reclamacoes = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "ReclameAqui_TRUSTED_"), sep=";")
         df_trusted_consumo = pd.read_json(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "trusted_generation"), orient='records')
 
@@ -78,7 +78,7 @@ class GerarTabelaFato(ITratamentoDados):
             how="left"
         )
 
-        df_fato_sensor["CLIMA_SEVERIDADE"] = df_fato_sensor["CLIMA_CHUVA"] >= 50 or df_fato_sensor["CLIMA_VENTO"] >= 50
+        df_fato_sensor["CLIMA_SEVERIDADE"] = (df_fato_sensor["CLIMA_CHUVA"] >= 50) | (df_fato_sensor["CLIMA_VENTO"] >= 50)
         df_fato_sensor["CLIMA_EVENTO"] = "N/A" if df_fato_sensor["CLIMA_SEVERIDADE"] else "VENTO" if df_fato_sensor["CLIMA_VENTO"] >= 50 else "CHUVA"
 
         df_fato_sensor = df_fato_sensor.drop(
