@@ -10,7 +10,7 @@ class GerarTabelaFato(ITratamentoDados):
     def __gerar_fato_sensores__(self):
     
         df_trusted_tensao = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "Tensao_TRUSTED_"), sep=";")
-        df_trusted_clima = pd.read_json(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "trusted_clima"), orient='records')
+        df_trusted_clima = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "TRUSTED_clima"), sep=";")
         df_trusted_reclamacoes = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "ReclameAqui_TRUSTED_"), sep=";")
 
         df_fato_sensor = self.__merge_fato_reclamacoes__(df_trusted_tensao, df_trusted_reclamacoes)
