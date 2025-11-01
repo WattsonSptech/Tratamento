@@ -85,6 +85,7 @@
         - "BUCKET_NAME_TRUSTED=bkt-wattson-trusted-090221722251"
         - "BUCKET_NAME_CLIENT=bkt-wattson-client-090221722251"
         - "DEV_MODE=0"
+        
 
     - name: Criar diretório ~/.aws
       file:
