@@ -5,8 +5,7 @@ import pyspark.sql.functions as F
 from pyspark.sql.functions import format_number as format, regexp_replace, last_value, col, upper
 import json
 import datetime
-
-
+import pandas as pd
 
 class Utils:
     def __init__(self) -> None:
@@ -171,7 +170,6 @@ class Utils:
     def horario_ja_passou(hora_alvo_str):
         agora = datetime.now()
 
-        
         try:
             hora_alvo_obj = datetime.strptime(hora_alvo_str, "%H:%M")
             data_hora_alvo = agora.replace(hour=hora_alvo_obj.hour, minute=hora_alvo_obj.minute, second=0, microsecond=0)
@@ -180,3 +178,18 @@ class Utils:
         except ValueError:
             print(f"Formato de horário inválido: {hora_alvo_str}. Use o formato HH:MM.")
             return False
+    
+    def select_columns_pd(self, df, cols):
+        return df[cols]
+    
+    def concat_pd_dataframes(self, origin: pd.DataFrame, mergewith: pd.DataFrame, sort_column):
+        origin = origin.drop(   
+            [
+                'Unnamed: 0',
+            ], axis=1
+        )
+
+        df = pd.concat([origin, mergewith], ignore_index=True)
+        df = df.drop_duplicates(keep="first")
+        df = df.sort_values(by=sort_column, ascending=False)
+        return df

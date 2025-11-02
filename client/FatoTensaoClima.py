@@ -1,105 +1,43 @@
 from interfaces.EnumBuckets import EnumBuckets
-from interfaces.ITratamento import ITratamentoDados
+from interfaces.ITabelasFato import ITabelasFato
 import pandas as pd
 
-class GerarTabelaFato(ITratamentoDados):
+class FatoTensaoClima(ITabelasFato):
     
     def __init__(self):
         super().__init__()
+        self.colunas_fato_sensor = ['DATA_GERACAO','HORA_MINUTO_GERACAO','ANO_MES_GERACAO','ZONA_GERACAO','DATA_HORA_GERACAO','TENSAO_VALOR','TENSAO_SEVERIDADE','CLIMA_TEMPERATURA','CLIMA_CHUVA','CLIMA_VENTO','CLIMA_SEVERIDADE','CLIMA_EVENTO''INDICE_APROVACAO']
 
-    def __gerar_fato_sensores__(self):
+    def __gerar_tabela_fato__(self):
         
         df_fato_historico_sensor = None
-        df_fato_historico_consumo = None
-        df_fato_historico_reclamacao = None
 
         try:
             df_fato_historico_sensor = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.CLIENT.value, "tensao_clima/Fato_Tensao_Clima"), sep=";")
         except Exception as e:
             print("Erro: tabela fato Fato_Tensao_Clima ainda não existe: ", e)
 
-        try:
-            df_fato_historico_consumo = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.CLIENT.value, "consumo/Fato_Consumo"), sep=";")
-        except Exception as e:
-            print("Erro: tabela fato Fato_Consumo ainda não existe: ", e)
-
-        try:
-            df_fato_historico_reclamacao = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.CLIENT.value, "reclamacao_cliente/Fato_Reclamacao"), sep=";")
-        except Exception as e:
-            print("Erro: tabela fato Fato_Reclamacao ainda não existe: ", e)
 
         df_trusted_tensao = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "Tensao_TRUSTED_"), sep=";")
         df_trusted_clima = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "TRUSTED_clima"), sep=";")
         df_trusted_reclamacoes = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "ReclameAqui_TRUSTED_"), sep=";")
-        df_trusted_consumo = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "trusted_generation"), sep=";")
         
         df_fato_sensor = self.__merge_fato_reclamacoes__(df_trusted_tensao, df_trusted_reclamacoes)
         df_fato_sensor = self.__merge_fato_clima__(df_fato_sensor, df_trusted_clima)
 
         if df_fato_historico_sensor is not None:
-            df_fato_sensor = self.__agregar_dados_historicos__(
+            df_fato_sensor = self.utils.concat_pd_dataframes(
                 df_fato_historico_sensor, 
                 df_fato_sensor, 
                 ["DATA_HORA_GERACAO"], 
-                [
-                    'DATA_GERACAO',
-                    'HORA_MINUTO_GERACAO',
-                    'ANO_MES_GERACAO',
-                    'ZONA_GERACAO',
-                    'DATA_HORA_GERACAO',
-                    'TENSAO_VALOR',
-                    'TENSAO_SEVERIDADE',
-                    'CLIMA_TEMPERATURA',
-                    'CLIMA_CHUVA',
-                    'CLIMA_VENTO',
-                    'CLIMA_SEVERIDADE',
-                    'CLIMA_EVENTO'
-                    'INDICE_APROVACAO',
-                ])
-        
-        df_fato_consumo = self.__create_fato_consumo__(df_trusted_consumo)
+            )
 
-        if df_fato_historico_consumo is not None:
-            df_fato_consumo = self.__agregar_dados_historicos__(
-                df_fato_historico_consumo, 
-                df_fato_consumo, 
-                ["ANO_MES_COLETA"],
-                [
-                    'ANO_MES_COLETA',
-                    'NUMERO_CONSUMIDORES',
-                    'NUMERO_CONSUMO',
-                    'TIPO_CONSUMO'
-                ])
-        
-        df_fato_reclamacao = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "ReclameAqui_TRUSTED_"), sep=";")
-        
-        if df_fato_historico_reclamacao is not None:
-            df_fato_reclamacao = self.__agregar_dados_historicos__(
-                df_fato_historico_reclamacao, 
-                df_fato_reclamacao, 
-                ["DATA_HORA_RECLAMACAO"],
-                ['DATA_RECLAMACAO',
-                 'HORA_MINUTO_RECLAMACAO',
-                 'RECLAMACAO_STATUS',
-                 'RECLAMACAO_CATEGORIA',
-                 'TIPO_PRODUTO',
-                 'TIPO_PROBLEMA',
-                 'RECLAMACAO_SENTIMENTO',
-                 'DATA_HORA_RECLAMACAO'
-                ])
+        df_fato_sensor = self.utils.select_columns_pd(df_fato_sensor, self.colunas_fato_sensor)
+        df_fato_sensor = df_fato_sensor.drop_duplicates(keep="first")
         
         filepath = "./temp/Fato_Tensao_Clima.csv" 
-        df_fato_sensor.to_csv(filepath, sep=";")
-        self.utils.set_data_s3_file(filepath, EnumBuckets.CLIENT.value, "tensao_clima/")
+        self.__salvar_flat_na_s3__(df_fato_sensor, filepath)
         
-        factpath = "./temp/Fato_Consumo.csv"
-        df_fato_consumo.to_csv(factpath, sep=";")
-        self.utils.set_data_s3_file(factpath, EnumBuckets.CLIENT.value, "consumo/")
-
-        reclamacaopath = "./temp/Fato_Reclamacao.csv" 
-        df_fato_reclamacao.to_csv(reclamacaopath, sep=";")
-        self.utils.set_data_s3_file(reclamacaopath, EnumBuckets.CLIENT.value, "reclamacao_cliente/")
-
     def __merge_fato_reclamacoes__(self, df_trusted_tensao, df_trusted_reclamacoes):
         df_fato_sensor = pd.merge(
             df_trusted_tensao, 
@@ -171,34 +109,6 @@ class GerarTabelaFato(ITratamentoDados):
 
         return df_fato_sensor
     
-    def __create_fato_consumo__(self,df_consumo):
-
-        df_client_consumo = df_consumo.copy()
-        df_client_consumo = df_client_consumo.drop('SIGLA_UF', axis=1)
-        df_client_consumo["ANO_MES_COLETA"] = (
-            df_client_consumo["ANO"].astype(str) + "-" + df_client_consumo["MES"].astype(str).str.zfill(2)
-        )
-        df_client_consumo = df_client_consumo.drop(
-            ['ANO', 'MES'], axis=1
-        )
-
-        df_client_consumo = df_client_consumo.drop_duplicates(keep="first")
-
-        return df_client_consumo
-
-    def __agregar_dados_historicos__(self, df_fato_historico, df_fato, sort_column, return_columns):
-
-        df_fato_historico = df_fato_historico.drop(   
-            [
-                'Unnamed: 0',
-            ], axis=1
-        )
-
-        df_final = pd.concat([df_fato_historico, df_fato], ignore_index=True)
-
-        df_final = df_final[return_columns]
-
-        df_final = df_final.drop_duplicates(keep="first")
-        df_final = df_final.sort_values(by=sort_column, ascending=False)
-        return df_final
-
+    def __salvar_flat_na_s3__(self, df, path):
+        df.to_csv(path, sep=";")
+        self.utils.set_data_s3_file(path, EnumBuckets.CLIENT.value, "tensao_clima/")

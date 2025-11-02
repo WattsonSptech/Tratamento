@@ -6,13 +6,15 @@ import time
 from tratamentos.Tensao import Tensao
 from bases_externas.Clima import Clima
 from bases_externas.ReclameAqui import ReclameAqui
-# from bases_externas.ElecriticityGeneration import ElecriticityGeneration
 from bases_externas.GeracaoEnergia import GeracaoEnergia
-from client.GerarTabelasFato import GerarTabelaFato
+from client.FatoTensaoClima import FatoTensaoClima
+from client.FatoConsumo import FatoConsumo
+from client.FatoReclamacao import FatoReclamacao
 
 
-def chamar_funcoes(dev_mode):
+def chamar_funcoes_tratamento():
     sensores = (Tensao, GeracaoEnergia, Clima, ReclameAqui)
+
     for sensor in sensores:
         try:
             print(f"\n\tIniciando tratamento de {sensor.__name__}...\n")
@@ -20,21 +22,23 @@ def chamar_funcoes(dev_mode):
         except Exception as e:
             print(f"\t\033[31m[!] Erro no sensor de {sensor.__name__}!\033[0m")
             print(e)
-            # if dev_mode:
-            #     raise e
-    try:
-        print(f"\n\tIniciando geração das tabelas flat...\n")
-        GerarTabelaFato().__gerar_fato_sensores__()
+    
 
-    except Exception as e:
-        print(f"\t\033[31m[!] Erro ao gerar tabelas flat!\033[0m")
-        print(e)
-        # if dev_mode:
-        #     raise e
+def chamar_funcoes_tabelas_flat():
+    flats = (FatoTensaoClima, FatoConsumo, FatoReclamacao)
+    
+    for flat in flats:
+        try:
+            print(f"\n\tIniciando tratamento da tabela {flat.__name__}...\n")
+            flat.__gerar_tabela_fato__()
+
+        except Exception as e:
+            print(f"\t\033[31m[!] Erro no flat {flat.__name__}!\033[0m")
+            print(e)
+
 
 if __name__ == "__main__":
     dotenv.load_dotenv()
-    dev_mode = os.getenv("DEV_MODE", 0) == "1"
     treatment_timeout = int(os.getenv("TREATMENT_TIMEOUT", "50"))
 
     if not os.path.exists("./temp"):
@@ -46,9 +50,12 @@ if __name__ == "__main__":
         except PermissionError as e:
             print(e)
 
-        chamar_funcoes(dev_mode)
+        chamar_funcoes_tratamento()
         print("Tratamentos concluídos!")
-    
+
+        chamar_funcoes_tabelas_flat()
+        print("Criação das tabelas flat concluída!")
+
         print("\nTempo para a próxima execução...")
         for i in tqdm(range(treatment_timeout)):
             time.sleep(1)
