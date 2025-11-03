@@ -30,7 +30,7 @@ class FatoReclamacao(ITabelasFato):
         df_fato_reclamacao = df_fato_reclamacao.drop_duplicates(keep="first")
 
         filepath = "./temp/Fato_Reclamacao.csv"
-        self.__salvar_flat_na_s3__(df_fato_historico_reclamacao, filepath)  
+        self.__salvar_flat_na_s3__(df_fato_reclamacao, filepath)  
     
     def __salvar_flat_na_s3__(self, df: pd.DataFrame, path: str):
         df.to_csv(path, sep=";")

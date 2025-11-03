@@ -17,19 +17,19 @@ class FatoConsumo(ITabelasFato):
         except Exception as e:
             print("Erro: tabela fato Fato_Consumo ainda não existe: ", e)
 
-        df_consumo = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "trusted_generation"), sep=";")
+        df_trusted_consumo = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.TRUSTED.value, "trusted_generation"), sep=";")
 
-        df_client_consumo = df_consumo.copy()
-        df_client_consumo = df_client_consumo.drop('SIGLA_UF', axis=1)
-        df_client_consumo["ANO_MES_COLETA"] = (
-            df_client_consumo["ANO"].astype(str) + "-" + df_client_consumo["MES"].astype(str).str.zfill(2)
+        df_fato_consumo = df_trusted_consumo.copy()
+        df_fato_consumo = df_fato_consumo.drop('SIGLA_UF', axis=1)
+        df_fato_consumo["ANO_MES_COLETA"] = (
+            df_fato_consumo["ANO"].astype(str) + "-" + df_fato_consumo["MES"].astype(str).str.zfill(2)
         )
         
-        df_client_consumo = df_client_consumo.drop(
+        df_fato_consumo = df_fato_consumo.drop(
             ['ANO', 'MES'], axis=1
         )
 
-        df_client_consumo = df_client_consumo.drop_duplicates(keep="first")
+        df_fato_consumo = df_fato_consumo.drop_duplicates(keep="first")
 
         if df_fato_historico_consumo is not None:
             df_fato_consumo = self.utils.concat_pd_dataframes(
