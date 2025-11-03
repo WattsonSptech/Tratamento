@@ -6,7 +6,7 @@ class FatoConsumo(ITabelasFato):
     
     def __init__(self):
         super().__init__()
-        self.colunas_fato_consumo = ['ANO_MES_COLETA','NUMERO_CONSUMIDORES','NUMERO_CONSUMO','TIPO_CONSUMO']
+        self.colunas_fato_consumo = ['TIPO_CONSUMO', 'NUMERO_CONSUMIDORES', 'CONSUMO', 'ANO_MES_COLETA']
 
     def __gerar_tabela_fato__(self):
 
