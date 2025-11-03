@@ -51,6 +51,9 @@ class Utils:
                 path = "./temp/" + ultimo_arquivo.replace(":", "_")
             else:
                 path = "./temp/" + os.path.basename(ultimo_arquivo.replace(":", "_"))
+                if "/" in path:
+                    path = path.split("/")[-1]
+
             s3.download_file(bucket_name, ultimo_arquivo, path)
 
             print("\t\tSucesso!\n")

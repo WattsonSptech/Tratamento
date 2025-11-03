@@ -30,7 +30,7 @@ def chamar_funcoes_tabelas_flat():
     for flat in flats:
         try:
             print(f"\n\tIniciando tratamento da tabela {flat.__name__}...\n")
-            flat.__gerar_tabela_fato__()
+            flat().__gerar_tabela_fato__()
 
         except Exception as e:
             print(f"\t\033[31m[!] Erro no flat {flat.__name__}!\033[0m")
