@@ -72,7 +72,7 @@
     - name: Criar arquivo .env
       ansible.builtin.lineinfile:
         path: "{{ app_dir }}/.env"
-        line: "BUCKET_NAME_RAW=bkt-wattson-raw-211125766382"
+        line: "BUCKET_NAME_RAW=bkt-wattson-raw-174980806975"
         create: yes
         state: present
 
@@ -82,8 +82,8 @@
         insertafter: EOF
         line: "{{ item }}"
       loop:
-        - "BUCKET_NAME_TRUSTED=bkt-wattson-trusted-211125766382"
-        - "BUCKET_NAME_CLIENT=bkt-wattson-client-211125766382"
+        - "BUCKET_NAME_TRUSTED=bkt-wattson-trusted-174980806975"
+        - "BUCKET_NAME_CLIENT=bkt-wattson-client-174980806975"
         - "DEV_MODE=0"
 
     - name: Criar diretório ~/.aws
