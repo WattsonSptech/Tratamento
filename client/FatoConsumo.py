@@ -1,6 +1,7 @@
 from interfaces.EnumBuckets import EnumBuckets
 from interfaces.ITabelasFato import ITabelasFato
 import pandas as pd
+import os
 
 class FatoConsumo(ITabelasFato):
     
@@ -11,6 +12,9 @@ class FatoConsumo(ITabelasFato):
     def __gerar_tabela_fato__(self):
 
         df_fato_historico_consumo = None
+
+        if not os.path.isdir("temp/consumo"):
+            os.mkdir("temp/consumo")
 
         try:
             df_fato_historico_consumo = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.CLIENT.value, "consumo/Fato_Consumo"), sep=";")
