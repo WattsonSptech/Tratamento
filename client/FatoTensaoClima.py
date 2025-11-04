@@ -1,6 +1,7 @@
 from interfaces.EnumBuckets import EnumBuckets
 from interfaces.ITabelasFato import ITabelasFato
 import pandas as pd
+import os
 
 class FatoTensaoClima(ITabelasFato):
     
@@ -11,6 +12,9 @@ class FatoTensaoClima(ITabelasFato):
     def __gerar_tabela_fato__(self):
         
         df_fato_historico_sensor = None
+
+        if not os.path.isdir("temp/tensao_clima"):
+            os.mkdir("temp/tensao_clima")
 
         try:
             df_fato_historico_sensor = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.CLIENT.value, "tensao_clima/Fato_Tensao_Clima"), sep=";")
