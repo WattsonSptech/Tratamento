@@ -69,6 +69,12 @@
       register: pyspark_info
       ignore_errors: yes
 
+    - name: Apagar arquivo .env se existir
+      ansible.builtin.file:
+        path: "{{ app_dir }}/.env"
+        state: absent
+      ignore_errors: yes
+    
     - name: Criar arquivo .env
       ansible.builtin.lineinfile:
         path: "{{ app_dir }}/.env"
