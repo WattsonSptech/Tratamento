@@ -36,6 +36,23 @@ def chamar_funcoes_tabelas_flat():
             print(f"\t\033[31m[!] Erro no flat {flat.__name__}!\033[0m")
             print(e)
 
+def remover_arquivos_temp():
+    try:
+        if os.path.exists("./temp/tensao_clima"):
+            [os.remove(f) for f in glob("./temp/tensao_clima/*")]
+            os.rmdir("./temp/tensao_clima")
+
+        if os.path.exists("./temp/reclamacao_cliente"):
+            [os.remove(f) for f in glob("./temp/reclamacao_cliente/*")]
+            os.rmdir("./temp/reclamacao_cliente")
+
+        if os.path.exists("./temp/consumo"):
+            [os.remove(f) for f in glob("./temp/consumo/*")]
+            os.rmdir("./temp/consumo")
+
+        [os.remove(f) for f in glob("./temp/*")]
+    except PermissionError as e:
+        print(e)
 
 if __name__ == "__main__":
     dotenv.load_dotenv()
@@ -45,10 +62,7 @@ if __name__ == "__main__":
         os.mkdir("./temp")
 
     while True:
-        try:
-            [os.remove(f) for f in glob("./temp/*")]
-        except PermissionError as e:
-            print(e)
+        remover_arquivos_temp()
 
         chamar_funcoes_tratamento()
         print("Tratamentos concluídos!")
