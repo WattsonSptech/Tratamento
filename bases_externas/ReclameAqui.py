@@ -12,40 +12,21 @@ class ReclameAqui(ITratamentoDados):
         
     
     def __tratar_dado__(self):
-
         df = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.RAW.value, "ReclameAqui_Raw_"), sep=";")
-
-
-        df['CIDADE'] = self.__remover_acentos__(df['CIDADE'])
-
-        df = df.loc[df['UF'] == 'SP']
-        df = df.loc[df['CIDADE'] == 'SAO PAULO']
-
-        df['STATUS'] = self.__remover_acentos__(df['STATUS'])
-        df['CATEGORIA'] = self.__remover_acentos__(df['CATEGORIA'])
-        df['TIPO_PRODUTO'] = self.__remover_acentos__(df['TIPO_PRODUTO'])
-        df['TIPO_PROBLEMA'] = self.__remover_acentos__(df['TIPO_PROBLEMA'])
-        df['SENTIMENTO_FRASE'] = self.__remover_acentos__(df['SENTIMENTO_FRASE'])
-        df['DATA'] = self.__converter_data_para_formato_iso__(df['DATA'])
-
-        df['DATA'] = pd.to_datetime(df['DATA'])
-
-        df = df.drop(['Unnamed: 0', 'URL', 'TITULO', 'RECLAMACAO', 'UF', 'CIDADE'], axis=1)
-        
-        df['DATA_HORA_RECLAMACAO'] = self.__converter_para_timestamp__(df['DATA'], df['HORA'])
-        df['DATA_HORA_RECLAMACAO'] = pd.to_datetime(df['DATA_HORA_RECLAMACAO'])
+        df = self.__gerar_colunas_data_e_hora__(df, df['Data-hora'])
 
         df = df.rename(
             columns={
+                'Data-hora': 'DATA_HORA_RECLAMACAO',
                 'DATA': 'DATA_RECLAMACAO',
-                'HORA': 'HORA_MINUTO_RECLAMACAO', 
-                'SENTIMENTO_FRASE': 'RECLAMACAO_SENTIMENTO',
-                'STATUS': 'RECLAMACAO_STATUS',
-                'PRODUTO': 'RECLAMACAO_PRODUTO',
-                'CATEGORIA': 'RECLAMACAO_CATEGORIA',
-                'PROBLEMA': 'RECLAMACAO_PROBLEMA',
-             }
-            )
+                'HORA': 'HORA_MINUTO_RECLAMACAO',
+            }
+        )
+
+        df['DATA'] = pd.to_datetime(df['DATA'])
+        df['DATA_HORA_RECLAMACAO'] = pd.to_datetime(df['DATA_HORA_RECLAMACAO'])
+        
+        df = df.drop(['Reclamação'], axis=1)
 
         self.__subir_dados_s3__(df)
 
@@ -58,15 +39,25 @@ class ReclameAqui(ITratamentoDados):
             series_normalizada.append(texto_sem_acentos.upper())
         return series_normalizada
 
-    def __converter_data_para_formato_iso__(self, series):
-        series_normalizada = []
+    def __gerar_colunas_data_e_hora__(self, df, coluna_data_hora):
+        data_hora = data = hora = []
 
-        for data in series:
-            data_separada = str(data).split('/')
-            data_separada.reverse()
-            data_normalizada = '-'.join(data_separada)
-            series_normalizada.append(data_normalizada)
-        return series_normalizada
+        for item in coluna_data_hora:
+            data_separada = str(item).split('T')
+
+            data_reclamacao = data_separada[0]
+            hora_reclamacao = data_separada[1][:8]
+            data_hora_reclamacao = data_separada[0] + " " + hora_reclamacao
+
+            data.append(data_reclamacao)
+            hora.append(hora_reclamacao)
+            data_hora.append(data_hora_reclamacao)
+
+            df['Data-hora'] = data_hora
+            df['DATA'] = data
+            df['HORA'] = hora
+
+        return df
     
     def __converter_para_timestamp__(self, data, horario):
         series_normalizada = []
