@@ -20,12 +20,13 @@ class ReclameAqui(ITratamentoDados):
                 'Data-hora': 'DATA_HORA_RECLAMACAO',
                 'DATA': 'DATA_RECLAMACAO',
                 'HORA': 'HORA_MINUTO_RECLAMACAO',
+                'Avaliação': 'AVALIACAO'
             }
         )
 
         df['DATA'] = pd.to_datetime(df['DATA'])
         df['DATA_HORA_RECLAMACAO'] = pd.to_datetime(df['DATA_HORA_RECLAMACAO'])
-        
+
         df = df.drop(['Reclamação'], axis=1)
 
         self.__subir_dados_s3__(df)
