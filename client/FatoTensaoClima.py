@@ -53,29 +53,13 @@ class FatoTensaoClima(ITabelasFato):
 
         df_fato_sensor["TENSAO_SEVERIDADE"] = df_fato_sensor["TENSAO_VALOR"] <= 0
 
-        reclamacoes_por_dia_e_tipo = df_trusted_reclamacoes.groupby(['DATA_RECLAMACAO', 'RECLAMACAO_SENTIMENTO']).size().reset_index(name='TOTAL_NEGATIVOS')
-
-        reclamacoes_negativas_por_dia = reclamacoes_por_dia_e_tipo[reclamacoes_por_dia_e_tipo['RECLAMACAO_SENTIMENTO'] == 'NEGATIVO'][['DATA_RECLAMACAO', 'TOTAL_NEGATIVOS']]
-        total_reclamacoes_por_dia = df_trusted_reclamacoes.groupby('DATA_RECLAMACAO').size().reset_index(name='TOTAL_DIA')
-
-        df_fato_sensor = df_fato_sensor.merge(reclamacoes_negativas_por_dia, on="DATA_RECLAMACAO", how='left')
-        df_fato_sensor = df_fato_sensor.merge(total_reclamacoes_por_dia, on="DATA_RECLAMACAO", how='left')
-
-        df_fato_sensor['INDICE_APROVACAO'] = (df_fato_sensor['TOTAL_DIA'] - df_fato_sensor['TOTAL_NEGATIVOS']) / df_fato_sensor['TOTAL_DIA']
+        df = df.rename(columns={'AVALIACAO': 'INDICE_APROVACAO'})
 
         df_fato_sensor = df_fato_sensor.drop(
             [
-                'Unnamed: 0', 
                 'HORA_MINUTO_RECLAMACAO', 
-                'RECLAMACAO_STATUS', 
-                'RECLAMACAO_CATEGORIA',
-                'TIPO_PRODUTO', 
-                'TIPO_PROBLEMA', 
                 'DATA_HORA_RECLAMACAO',
                 'DATA_RECLAMACAO',
-                'RECLAMACAO_SENTIMENTO',
-                'TOTAL_NEGATIVOS', 
-                'TOTAL_DIA'
             ], axis=1
         )
 
