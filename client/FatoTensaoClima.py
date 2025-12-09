@@ -53,7 +53,7 @@ class FatoTensaoClima(ITabelasFato):
 
         df_fato_sensor["TENSAO_SEVERIDADE"] = df_fato_sensor["TENSAO_VALOR"] <= 0
 
-        df = df.rename(columns={'AVALIACAO': 'INDICE_APROVACAO'})
+        df_fato_sensor = df_fato_sensor.rename(columns={'AVALIACAO': 'INDICE_APROVACAO'})
 
         df_fato_sensor = df_fato_sensor.drop(
             [
