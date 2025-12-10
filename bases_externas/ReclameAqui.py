@@ -54,9 +54,9 @@ class ReclameAqui(ITratamentoDados):
             hora.append(hora_reclamacao)
             data_hora.append(data_hora_reclamacao)
 
-            df['Data-hora'] = data_hora
-            df['DATA'] = data
-            df['HORA'] = hora
+        df['Data-hora'] = data_hora
+        df['DATA'] = data
+        df['HORA'] = hora
 
         return df
     
