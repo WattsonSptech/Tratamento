@@ -7,7 +7,7 @@ class FatoReclamacao(ITabelasFato):
     
     def __init__(self):
         super().__init__()
-        self.colunas_fato_reclamacao = ['DATA_RECLAMACAO','HORA_MINUTO_RECLAMACAO','DATA_HORA_RECLAMACAO', 'AVALIACAO']
+        self.colunas_fato_reclamacao = ['DATA_RECLAMACAO','HORA_RECLAMACAO','DATA_HORA_RECLAMACAO', 'AVALIACAO']
 
     def __gerar_tabela_fato__(self):
     

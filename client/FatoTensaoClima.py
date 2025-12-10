@@ -57,7 +57,7 @@ class FatoTensaoClima(ITabelasFato):
 
         df_fato_sensor = df_fato_sensor.drop(
             [
-                'HORA_MINUTO_RECLAMACAO', 
+                'HORA_RECLAMACAO', 
                 'DATA_HORA_RECLAMACAO',
                 'DATA_RECLAMACAO',
             ], axis=1

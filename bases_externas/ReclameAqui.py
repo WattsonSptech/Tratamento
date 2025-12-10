@@ -15,19 +15,12 @@ class ReclameAqui(ITratamentoDados):
         df = pd.read_csv(self.utils.get_data_s3_csv(EnumBuckets.RAW.value, "ReclameAqui_Raw_"), sep=";")
         df = self.__gerar_colunas_data_e_hora__(df, df['Data-hora'])
 
-        df = df.rename(
-            columns={
-                'Data-hora': 'DATA_HORA_RECLAMACAO',
-                'DATA': 'DATA_RECLAMACAO',
-                'HORA': 'HORA_MINUTO_RECLAMACAO',
-                'Avaliação': 'AVALIACAO'
-            }
-        )
+        df = df.rename(columns={'Avaliação': 'AVALIACAO'})
 
-        df['DATA'] = pd.to_datetime(df['DATA'])
+        df['DATA_RECLAMACAO'] = pd.to_datetime(df['DATA_RECLAMACAO'])
         df['DATA_HORA_RECLAMACAO'] = pd.to_datetime(df['DATA_HORA_RECLAMACAO'])
 
-        df = df.drop(['Reclamação'], axis=1)
+        df = df.drop(['Reclamação','Data-hora'], axis=1)
 
         self.__subir_dados_s3__(df)
 
@@ -41,22 +34,24 @@ class ReclameAqui(ITratamentoDados):
         return series_normalizada
 
     def __gerar_colunas_data_e_hora__(self, df, coluna_data_hora):
-        data_hora = data = hora = []
+        data_hora = []
+        data = []
+        hora = []
 
         for item in coluna_data_hora:
             data_separada = str(item).split('T')
 
             data_reclamacao = data_separada[0]
             hora_reclamacao = data_separada[1][:8]
-            data_hora_reclamacao = data_separada[0] + " " + hora_reclamacao
+            data_hora_reclamacao = data_reclamacao + " " + hora_reclamacao
 
             data.append(data_reclamacao)
             hora.append(hora_reclamacao)
             data_hora.append(data_hora_reclamacao)
 
-        df['Data-hora'] = data_hora
-        df['DATA'] = data
-        df['HORA'] = hora
+        df['DATA_HORA_RECLAMACAO'] = data_hora
+        df['DATA_RECLAMACAO'] = data
+        df['HORA_RECLAMACAO'] = hora
 
         return df
     
